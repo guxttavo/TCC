@@ -1,6 +1,6 @@
 namespace Core.Settings
 {
-    public class ConnectionStrings
+    public class ConnectionString
     {
         public string Default { get; set; }
     }
