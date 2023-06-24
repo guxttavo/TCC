@@ -13,7 +13,7 @@ namespace Data.Configurations.Application
             builder.HasKey(x => x.Id).HasName("pk_bairro");
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd().HasColumnName("id");
-            builder.Property(x => x.Id).HasColumnName("nome");
+            builder.Property(x => x.Nome).HasColumnName("nome");
         }
     }
 }

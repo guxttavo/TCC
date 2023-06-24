@@ -1,7 +1,4 @@
 @model IEnumerable<Bairro>
-@{
-    Layout = null;
-}
 <table class="table">
     <thead>
         <tr>
@@ -10,11 +7,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var batata in Model)
+        @foreach (var item in Model)
         {
             <tr>
-                <th scope="row">@batata.Id</th>
-                <td>@batata.Nome</td>
+                <th scope="row">@item.Id</th>
+                <td>@item.Nome</td>
             </tr>
         }
     </tbody>

@@ -14,5 +14,8 @@ namespace Web.Controllers
         }
 
         public ActionResult Index() => View();
+
+        [HttpGet("buscar")]
+        public ActionResult BuscarBairros() => View("Listar", _bairroRepository.BuscarBairros());
     }
 }
