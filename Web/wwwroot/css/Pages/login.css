@@ -1,0 +1,56 @@
+:root {
+    --cor-primaria: #4A4C55;
+    --cor-secundaria: #E1DDDD;
+    --cor-input: black;
+}
+
+.container-geral {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.container-esquerdo {
+    width: 50%;
+}
+
+.imagem {
+    height: 100%;
+    width: 100%;
+}
+
+.container-direito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: var(--cor-secundaria);
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    width: 450px;
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 150px;
+    margin: 15px;
+    /* border: solid 4px; */
+}
+
+.criar-conta {
+    margin: 30px;
+}
+
+.btn {
+    color: black;
+}
