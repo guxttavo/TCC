@@ -14,11 +14,12 @@
                 <h1>Login</h1>
                 <div class="form-group">
                     <label for="email">CPF</label>
-                    <input type="email" class="form-control" id="email" placeholder="Digite seu CPF">
+                    <input name="cpf" type="email" class="form-control" id="email" placeholder="Digite seu CPF">
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                    <input name="senha" type="password" class="form-control" id="password"
+                        placeholder="Digite sua senha">
                 </div>
                 <div class="form-group form-check opcoes-form">
                     <input type="checkbox" class="form-check-input" id="remember">
@@ -26,11 +27,25 @@
                     <a class="esqueci-minha-senha" href="">Esqueci minha senha</a>
                 </div>
                 <div class="buttons">
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                    <button type="submit" class="btn btn-primary">Criar Conta</button>
+                    <button type="submit" class="btn btn-primary" onclick="login.login()">Entrar</button>
+                    <button type=" submit" class="btn btn-primary">Criar Conta</button>
                     <button type="submit" class="btn btn-primary">Ver Gráficos </button>
                 </div>
             </form>
         </div>
     </div>
 </body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/iziToast/dist/js/iziToast.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/Pages/login.js"></script>
+
+<script>
+    login.init({
+        urls: {
+            logar: '@Url.Action("Logar", "Login")',
+            home: '@Url.Action("Index", "Home")',
+        }
+    });
+</script>
