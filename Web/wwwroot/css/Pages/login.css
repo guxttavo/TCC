@@ -54,3 +54,19 @@
 .btn {
     color: black;
 }
+
+.opcoes-form {
+    display: flex;
+    flex-direction: column;
+    /* border: solid 3px; */
+    width: 200px;
+    /* height: 100px; */
+}
+
+.esqueci-minha-senha {
+    all: unset;
+}
+
+.esqueci-minha-senha:hover {
+    color: #39e991;
+}
