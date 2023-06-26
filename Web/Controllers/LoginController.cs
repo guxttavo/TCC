@@ -12,12 +12,15 @@ namespace Web.Controllers
         private readonly Notification _notification;
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly CryptographySettings _cryptographySettings;
+        private readonly AppSettings _appSettings;
 
-        public LoginController(Notification notification, IUsuarioRepository usuarioRepository, CryptographySettings cryptographySettings)
+
+        public LoginController(Notification notification, IUsuarioRepository usuarioRepository, CryptographySettings cryptographySettings, AppSettings appSettings)
         {
             _notification = notification;
             _usuarioRepository = usuarioRepository;
             _cryptographySettings = cryptographySettings;
+            _appSettings = appSettings;
         }
 
         public IActionResult Index() => View();
@@ -32,7 +35,10 @@ namespace Web.Controllers
 
             if (!loginViewModel.Senha.Cryptograph().Equals(usuario.Senha))
                 return BadRequest("Email ou senha incorretos!");
-
+            else
+            {
+                var jwt = Core.Configuration.TokenService.GenerateToken(usuario, _appSettings.TokenSettings.Chave);
+            }
             return Ok();
         }
 
