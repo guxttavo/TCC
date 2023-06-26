@@ -1,4 +1,6 @@
+using Core.Helpers;
 using Core.Interfaces;
+using Core.Interfaces.Repositories;
 using Core.Settings;
 using Data;
 using Data.Repositories;
@@ -14,7 +16,9 @@ namespace Web.Configurations
             services.AddControllersWithViews();
 
             services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<Notification>();
             services.AddScoped<IBairroRepository, BairroRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
     }
 }
