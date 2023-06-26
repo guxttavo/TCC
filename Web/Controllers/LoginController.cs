@@ -9,11 +9,9 @@ namespace Web.Controllers
 {
     public class LoginController : Controller
     {
-
         private readonly Notification _notification;
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly CryptographySettings _cryptographySettings;
-
 
         public LoginController(Notification notification, IUsuarioRepository usuarioRepository, CryptographySettings cryptographySettings)
         {
