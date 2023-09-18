@@ -1,28 +1,27 @@
 var login = (function () {
     var configs = {
         urls: {
-            logar: '',
-            home: '',
-        }
+            realizarLogin: '',
+            viewHome: ''
+        },
     };
+
     var init = function ($configs) {
         configs = $configs;
     };
 
-    var login = function () {
-        model = $('.formulario').serializeObject();
-        console.log(model);
-        if (!model || !model.cpf || !model.senha)
-            return site.toast.error("Insira todos os dados");
-        $.post(configs.urls.logar, model).done(function () {
-            location.reload();
+    var logar = function () {
+        model = $('#formularioLogin').serializeObject();
+
+        $.post(configs.urls.realizarLogin, model).done(function () {
+            location.href = configs.urls.viewHome;
         }).fail(function (msg) {
-            site.toast.error(msg);
+            console.log("JooJ");
         });
     };
 
     return {
         init: init,
-        login: login
+        logar: logar
     }
-})();
+})()

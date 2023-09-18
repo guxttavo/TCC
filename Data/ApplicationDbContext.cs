@@ -10,7 +10,6 @@ namespace Data
         {
         }
 
-        public DbSet<Bairro> Bairros { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }

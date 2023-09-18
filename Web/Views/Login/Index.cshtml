@@ -10,16 +10,13 @@
             <img class="imagem" src="~/img/Login.png" alt="">
         </div>
         <div class="container-direito">
-            <form class="formulario">
+            <form class="formulario" id="formularioLogin">
                 <h1>Login</h1>
                 <div class="form-group">
-                    <label for="email">CPF</label>
-                    <input name="cpf" type="email" class="form-control" id="email" placeholder="Digite seu CPF">
+                    <input type="text" name="Apelido" class="form-control" placeholder="Apelido">
                 </div>
                 <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input name="senha" type="password" class="form-control" id="password"
-                        placeholder="Digite sua senha">
+                    <input type="password" name="Senha" class="form-control" placeholder="Senha">
                 </div>
                 <div class="form-group form-check opcoes-form">
                     <input type="checkbox" class="form-check-input" id="remember">
@@ -27,7 +24,7 @@
                     <a class="esqueci-minha-senha" href="">Esqueci minha senha</a>
                 </div>
                 <div class="buttons">
-                    <button type="submit" class="btn btn-primary" onclick="login.login()">Entrar</button>
+                    <button type="button" class="btn btn-primary" onclick="login.logar()">Entrar</button>
                     <button type=" submit" class="btn btn-primary">Criar Conta</button>
                     <button type="submit" class="btn btn-primary">Ver Gráficos </button>
                 </div>
@@ -44,8 +41,8 @@
 <script>
     login.init({
         urls: {
-            logar: '@Url.Action("Logar", "Login")',
-            home: '@Url.Action("Index", "Home")',
+            realizarLogin: '@Url.Action("Entrar", "login")',
+            viewHome: '@Url.Action("Index","home")'
         }
     });
 </script>

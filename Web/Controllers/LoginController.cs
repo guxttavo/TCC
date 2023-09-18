@@ -1,9 +1,7 @@
-using Core.Configuration;
 using Core.Helpers;
 using Core.Interfaces.Repositories;
-using Core.Settings;
 using Microsoft.AspNetCore.Mvc;
-using Web.ViewModels.Usuario;
+using Web.ViewModels.Login;
 
 namespace Web.Controllers
 {
@@ -11,35 +9,36 @@ namespace Web.Controllers
     {
         private readonly Notification _notification;
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly CryptographySettings _cryptographySettings;
-        private readonly AppSettings _appSettings;
 
-
-        public LoginController(Notification notification, IUsuarioRepository usuarioRepository, CryptographySettings cryptographySettings, AppSettings appSettings)
+        public LoginController(Notification notification, IUsuarioRepository usuarioRepository)
         {
             _notification = notification;
             _usuarioRepository = usuarioRepository;
-            _cryptographySettings = cryptographySettings;
-            _appSettings = appSettings;
         }
 
-        public IActionResult Index() => View();
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        [HttpPost("Logar")]
-        public async Task<IActionResult> Logar(LoginViewModel loginViewModel)
+        [HttpPost]
+        public IActionResult Entrar(LoginViewModel loginViewModel)
         {
             if (!loginViewModel.IsValid(_notification))
+            {
                 return BadRequest(_notification);
+            }
 
-            var usuario = await _usuarioRepository.BuscarPorEmail(loginViewModel.Email);
+            var usuario = _usuarioRepository.BuscarPorLogin(loginViewModel.Apelido);
 
-            if (!loginViewModel.Senha.Cryptograph().Equals(usuario.Senha))
-                return BadRequest("Email ou senha incorretos!");
+            if (!loginViewModel.Senha.Equals(usuario.senha) || (!loginViewModel.Apelido.Equals(usuario.apelido)))
+            {
+                return BadRequest("Login ou senha incorretos!");
+            }
             else
             {
-                var jwt = Core.Configuration.TokenService.GenerateToken(usuario, _appSettings.TokenSettings.Chave);
+                return Ok();
             }
-            return Ok();
         }
 
     }

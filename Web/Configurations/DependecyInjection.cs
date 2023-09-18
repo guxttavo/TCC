@@ -18,7 +18,6 @@ namespace Web.Configurations
             services.AddScoped<ApplicationDbContext>();
             services.AddScoped<Notification>();
             services.AddScoped<CryptographySettings>();
-            services.AddScoped<IBairroRepository, BairroRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
     }

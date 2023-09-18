@@ -1,0 +1,55 @@
+using Core.Interfaces.Repositories;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Web.Controllers
+{
+    public class UsuarioController : Controller
+    {
+        private readonly IUsuarioRepository _usuarioRepository;
+        public UsuarioController(IUsuarioRepository usuarioRepository)
+        {
+            _usuarioRepository = usuarioRepository;
+        }
+
+        public IActionResult Index()
+        {
+            List<Usuario> usuarios = _usuarioRepository.BuscarTodos();
+
+            return View("Index", usuarios);
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarUsuario(Usuario usuario)
+        {
+            _usuarioRepository.CadastrarUsuario(usuario);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ViewCadastrar()
+        {
+            return View("_cadastrar");
+        }
+
+        [HttpGet]
+        public IActionResult ViewEditar(int id)
+        {
+            var usuarioSelecionado = _usuarioRepository.BuscarPorId(id);
+            return View("_editar", usuarioSelecionado);
+        }
+
+        [HttpPost]
+        public IActionResult EditarUsuario(Usuario usuario)
+        {
+            _usuarioRepository.EditarUsuario(usuario);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult DeletarUsuario(int id)
+        {
+            _usuarioRepository.DeletarUsuario(id);
+            return RedirectToAction("Index");
+        }
+    }
+}
