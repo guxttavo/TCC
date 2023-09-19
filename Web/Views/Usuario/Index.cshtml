@@ -1,0 +1,67 @@
+@model List<Usuario>
+@* @{
+    Layout = null;
+} *@
+<div class="container-listar"></div>
+<div class="container-cadastrar"></div>
+<div class="container-editar"></div>
+
+<div class="container-listar">
+    <button type="button" class="btn btn-primary" onclick="usuario.viewCadastrar()">Cadastrar Novo Usuario</button>
+    <div class="text-center">
+        <h1 class="display-4">Listagem de Usuarios</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Apelido</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Senha</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col">Data Cadastro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (Usuario usuario in Model)
+                    {
+                        <tr>
+                            <td>@usuario.id</td>
+                            <td>@usuario.nome_completo</td>
+                            <td>@usuario.apelido</td>
+                            <td>@usuario.email</td>
+                            <td>@usuario.senha</td>
+                            <td>@usuario.perfil</td>
+                            <td>@usuario.data_cadastro</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-primary" onclick="usuario.viewEditar(@usuario.id)">Editar</a>
+                                    <a class="btn btn-danger" onclick="usuario.excluir(@usuario.id)">Apagar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/Pages/usuario.js" asp-append-version="true"></script>
+
+<script>
+    usuario.init({
+        urls: {
+            viewCadastrar: '@Url.Action("ViewCadastrar", "usuario")',
+            viewListar: '@Url.Action("Index", "usuario")',
+            viewEditar: '@Url.Action("ViewEditar", "usuario")',
+            cadastrarUsuario: '@Url.Action("CadastrarUsuario", "usuario")',
+            deletarUsuario: '@Url.Action("DeletarUsuario", "usuario")',
+            editarUsuario: '@Url.Action("EditarUsuario", "usuario")'
+        }
+    });
+</script>

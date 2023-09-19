@@ -1,22 +1,32 @@
-/* html {
-  font-size: 14px;
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+#main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
 }
 
-.btn:focus,
-.btn:active:focus,
-.btn-link.nav-link:focus,
-.form-control:focus,
-.form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+#corpo {
+  max-height: 100%;
+  /* max-width: 82.5%; */
+  width: 82.5%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-} */
+.header {
+  border: solid orange;
+}
+
+.conteudo-geral {
+  background-color: red;
+}
+
+.barra-lateral {
+  background-color: #4A4C55;
+  width: 15vw;
+  height: 100vh;
+}

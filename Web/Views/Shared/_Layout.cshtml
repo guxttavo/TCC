@@ -6,15 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MapInfra</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 
 <body>
-    <div class="">
-        <main role="main">
+    <main id="main">
+        <aside id="menu-lateral">
+            <div class="gabiru">
+                <div class="row barra-lateral">
+                    <div>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Página
+                            Inicial</a>
+                        <ul class="opcoes">
+                            <li class="nav-item">
+                                <a asp-controller="Usuario" asp-action="Index" class="nav-link text-white">Usuários</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white" aria-current="page">JooJ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white" aria-current="page">JooJ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section id="corpo">
             @RenderBody()
-        </main>
-    </div>
+        </section>
+    </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
