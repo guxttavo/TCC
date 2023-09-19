@@ -4,3 +4,9 @@
     width: 100vw;
     /* height: 100vh !important; */
 }
+
+#suas-denuncias{
+    background-color: #4A4C55;
+    color: white;
+    font-size: 40px;
+}

@@ -12,21 +12,56 @@ body {
 #corpo {
   max-height: 100%;
   /* max-width: 82.5%; */
-  width: 82.5%;
+  width: 90vw;
   overflow-y: auto;
   overflow-x: hidden;
+  margin-left: 265px;
+  border: solid 1px;
 }
 
-.header {
-  border: solid orange;
-}
-
-.conteudo-geral {
-  background-color: red;
-}
+.container-geral {}
 
 .barra-lateral {
+  position: absolute;
   background-color: #4A4C55;
-  width: 15vw;
+  width: 18vw;
   height: 100vh;
+}
+
+/* código referente ao menu lateral */
+
+.titulo {
+  color: white;
+  font-size: 45px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.opcoes {
+  list-style: none;
+  font-size: 18px;
+  /* border: solid 1px black; */
+  width: 266px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0px;
+  margin-top: 20px;
+  padding-top: 50px;
+}
+
+.opcao-menu {
+  color: white;
+  text-decoration: none;
+}
+
+/* .opcoes-lista:hover {
+  background-color: black
+} */
+
+.selecionado{
+  background-color: yellow;
+}
+
+.opcoes-lista {
+  /* border: solid 1px red; */
 }
