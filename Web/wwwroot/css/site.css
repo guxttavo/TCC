@@ -69,7 +69,7 @@ body {
 }
 
 .opcoes-lista:hover {
-  background-color: #444;
+  background-color: #242323;
   width: 250px;
   /* height: 30px; */
   /* padding: 10px; */
@@ -77,6 +77,10 @@ body {
 
 .opcao-menu {
   display: flex;
+}
+
+.opcao-menu span {
+  margin-right: 10px;
 }
 
 .bem-vindo {
