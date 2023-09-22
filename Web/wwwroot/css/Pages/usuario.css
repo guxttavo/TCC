@@ -1,52 +1,9 @@
-.container-cadastrar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px;
-    color: white;
-}
 
-.cor-de-fundo {
-    height: 550px;
-    width: 800px;
+
+.gerenciamento-de-usuarios {
+    font-family: 'Montserrat', sans-serif;
     background-color: #17171a;
-    /* border-radius: 100px; */
-}
-
-.cadastrar-usuario {
-    background-color: rgb(12, 12, 12);
-    margin-bottom: 60px;
-    padding: 5px;
-}
-
-#cadastroUsuario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px red;
-}
-
-/* Estilizando o campo de entrada para cadastro de usuário */
-.cadastro-input {
-    display: inline-block;
+    color: white;
+    font-size: 40px;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-    transition: border-color 0.2s;
-}
-
-/* Estilo quando o campo de entrada está em foco (hover) */
-.cadastro-input:focus {
-    border-color: #007bff;
-    /* Cor de destaque ao focar */
-    outline: none;
-    /* Remove a borda de destaque padrão */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    /* Sombra ao focar */
 }
