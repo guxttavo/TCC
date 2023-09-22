@@ -3,6 +3,10 @@ body {
   width: 100vw;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #main {
   height: 100vh;
   width: 100vw;
@@ -28,22 +32,32 @@ body {
 
 /* código referente ao menu lateral */
 
-.titulo {
+.titulo-principal {
   color: white;
   font-size: 45px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   margin-left: 20px;
-  color: rgba(0, 89, 255, 0.62);
+  color: #0d6efd;
 }
 
-.titulo:hover {
+.titulo-geral {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #17171a;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  margin: 0px;
+}
+
+
+.titulo-principal:hover {
   color: white;
   font-size: 45px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   margin-left: 20px;
-  color: rgba(0, 89, 255, 0.62);
+  color: #0364f5;
 }
 
 .opcoes {
@@ -88,8 +102,14 @@ body {
 
 /* código referente aos formulários */
 
+.titulo-form {
+  color: white;
+  font-size: 45px;
+}
+
 .container-cadastrar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -98,8 +118,8 @@ body {
 }
 
 .cor-de-fundo {
-  height: 550px;
-  width: 500px;
+  height: 490px;
+  width: 520px;
   background-color: #17171a;
 }
 
@@ -134,6 +154,9 @@ body {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.drop-down {
-  /* margin-left: 58px; */
+.botao {
+  margin-top: 20px;
+  width: 180px;
+  height: 50px;
+  font-size: 25px !important;
 }

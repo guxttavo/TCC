@@ -44,7 +44,6 @@
     width: 200px;
     height: 150px;
     margin: 15px;
-    /* border: solid 4px; */
 }
 
 .buttons button {
@@ -58,9 +57,7 @@
 .opcoes-form {
     display: flex;
     flex-direction: column;
-    /* border: solid 3px; */
     width: 200px;
-    /* height: 100px; */
 }
 
 .esqueci-minha-senha {

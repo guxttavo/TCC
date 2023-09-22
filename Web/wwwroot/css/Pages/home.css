@@ -3,7 +3,6 @@
 }
 
 #suas-denuncias {
-    font-family: 'Montserrat', sans-serif;
     background-color: #17171a;
     color: white;
     font-size: 40px;
@@ -41,7 +40,6 @@
 .conteudo-denuncia {
     padding-top: 10px;
     padding-left: 20px;
-    /* border: solid 1px red; */
 }
 
 .fechar-denuncia {

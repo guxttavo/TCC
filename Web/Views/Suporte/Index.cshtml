@@ -1,1 +1,30 @@
-<h1>SUPORTEEEEEEEEEEEEEEE</h1>
+<div class="container-geral">
+    <h1 class="titulo-geral ">Contate o suporte</h1>
+</div>
+
+<div class="container-cadastrar">
+    <h1 class="titulo-form">Suporte</h1>
+    <div class="cor-de-fundo">
+        <div class="container mt-5">
+            <form>
+                <div class="row">
+                    <div class="mb-3 col-md-12">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3 col-md-12">
+                        <label for="nome" class="form-label">Assunto</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea">Descrição</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-dark botao">Enviar</button>
+                <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>

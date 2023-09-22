@@ -3,16 +3,6 @@
     overflow-x: hidden;
 }
 
-.graficos-por-bairro {
-    margin: 12px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    background-color: #17171a;
-    padding: 10px;
-    width: 100vw;
-    margin: 0;
-}
-
 .campo-pesquisa {
     width: 247px;
     height: 30px;
@@ -36,7 +26,8 @@
     color: white;
     background-color: #444;
     width: 18vw;
-    height: 92vh;
+    height: 90vh;
+    margin: 0px;
 }
 
 .opcao-bairro {

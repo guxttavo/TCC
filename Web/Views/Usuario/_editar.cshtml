@@ -4,32 +4,83 @@
     Layout = null;
 }
 
-<div class="container-editar">
-    <div class="text-center">
-        <h1 class="display-4">Editar Usuário</h1>
-    </div>
-    <form id="editarUsuario">
-        <div class="form-group">
-            <input asp-for="nome_completo" type="text" class="form-control" placeholder="Nome">
+<div class="container-cadastrar">
+    <h1 class="titulo-form">Editar um Usuário</h1>
+    <div class="cor-de-fundo">
+        @* <div class="cadastrar-usuario">
+        <h1 class="display-4">Cadastrar Usuário</h1>
         </div>
-        <div class="form-group">
-            <input asp-for="apelido" type="text" class="form-control" placeholder="Apelido">
+        <form id="cadastroUsuario" class="pb-3">
+        <div class="my-3">
+        <input asp-for="nome_completo" type="text" class="cadastro-input" placeholder="Nome">
         </div>
-        <div class="form-group">
-            <input asp-for="email" type="email" class="form-control" placeholder="Email">
+        <div class="my-3">
+        <input asp-for="apelido" type="text" class="cadastro-input" placeholder="Apelido">
         </div>
-        <div class="form-group">
-            <select asp-for="perfil" type="text" class="form-control" placeholder="Perfil">
-                <option value="0">Selecione</option>
-                <option value="@Core.Enum.PerfilEnum.Admin">Administrador</option>
-                <option value="@Core.Enum.PerfilEnum.Admin">Padrão</option>
-            </select>
+        <div class="">
+        <input asp-for="email" type="email" class="cadastro-input" placeholder="Email">
         </div>
-        <div class="form-group">
-            <input asp-for="senha" type="text" class="form-control" placeholder="Senha">
+        <div class="">
+        <select asp-for="perfil" class="cadastro-input" placeholder="perfil">
+        <option value="0">Selecione</option>
+        <option value="@Core.Enum.PerfilEnum.Admin">Administrador</option>
+        <option value="@Core.Enum.PerfilEnum.Padrao">Padrão</option>
+        </select>
         </div>
-
-        <button type="button" class="btn btn-primary" onclick="usuario.editarUsuario()">Editar</button>
+        <div class="">
+        <input asp-for="senha" type="text" class="cadastro-input" placeholder="Senha">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="usuario.cadastrarUsuario()">Cadastrar</button>
         <a asp-controller="Usuario" asp-action="Index">Voltar</a>
-    </form>
+        </form> *@
+        <div class="container mt-5">
+            <form>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="cep" name="cep" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="tipoUsuario" class="form-label">Tipo de Usuário</label>
+                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
+                            <option value="padrao">Padrão</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark botao">Cadastrar</button>
+                <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+            </form>
+        </div>
+    </div>
 </div>

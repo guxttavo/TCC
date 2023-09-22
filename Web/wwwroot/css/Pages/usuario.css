@@ -1,9 +1,7 @@
+.cadastro-usuario {
+    margin: 10px
+}
 
-
-.gerenciamento-de-usuarios {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #17171a;
-    color: white;
-    font-size: 40px;
-    padding: 10px;
+.estrutura-table {
+    margin: 10px;
 }
