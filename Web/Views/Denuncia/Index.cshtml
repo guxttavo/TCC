@@ -1,3 +1,43 @@
 <div class="container-geral">
     <h1 class="titulo-geral ">Realize uma Denuncia</h1>
 </div>
+
+<div class="container-cadastrar">
+    <h1 class="titulo-form">Realize uma Denúncia</h1>
+    <div class="cor-de-fundo">
+        <div class="container mt-5">
+            <form>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="nome" class="form-label">Rua</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="dataNascimento" class="form-label">Data</label>
+                        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="tipoUsuario" class="form-label">Tipo de Denuncia</label>
+                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
+                            <option value="padrao">Esgoto</option>
+                            <option value="admin">Eletricidade</option>
+                            <option value="admin">Calçamento</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="tipoUsuario" class="form-label">Bairro</label>
+                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
+                            <option value="padrao">Bancários</option>
+                            <option value="admin">Eletricidade</option>
+                            <option value="admin">Calçamento</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ajuste-botoes">
+                    <button type="submit" class="btn btn-dark botao">Denunciar</button>
+                    <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
