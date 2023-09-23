@@ -6,7 +6,7 @@
 
 <div class="container-cadastrar">
     <h1 class="titulo-form">Cadastro de Usuário</h1>
-    <div class="cor-de-fundo">
+    <div class="cor-de-fundo-cadastrar">
         @* <div class="cadastrar-usuario">
         <h1 class="display-4">Cadastrar Usuário</h1>
         </div>
@@ -78,8 +78,10 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-dark botao">Cadastrar</button>
-                <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+                <div class="ajuste-botoes-cadastro">
+                    <button type="submit" class="btn btn-dark botao">Cadastrar</button>
+                    <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+                </div>
             </form>
         </div>
     </div>

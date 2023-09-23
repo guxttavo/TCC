@@ -19,14 +19,14 @@ body {
   width: 90vw;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-left: 265px;
+  margin-left: 295px;
   background-color: gray;
 }
 
 .barra-lateral {
   position: absolute;
   background-color: #17171a;
-  width: 18vw;
+  width: 20vw;
   height: 100vh;
 }
 
@@ -49,7 +49,6 @@ body {
   padding: 10px;
   margin: 0px;
 }
-
 
 .titulo-principal:hover {
   color: white;

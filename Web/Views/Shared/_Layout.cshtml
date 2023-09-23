@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MapInfra</title>
+    <title>DataInfra</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/_layout.cshtml.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="~/css/Pages/graficos.css" asp-append-version="true" />
+
 </head>
 
 <body>
@@ -55,12 +57,32 @@
             @RenderBody()
         </section>
     </main>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/menu.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+<script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script>
+<script src="~/js/Pages/graficos.js" asp-append-version="true"></script>
+@* <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/menu.js" asp-append-version="true"></script>
+@* <script>
+let el = document.getElementById("graficos")
+let options = {
+chart: {
+type: 'bar'
+},
+series: [
+{
+name: 'População',
+data: [10, 30, 20]
+}
+]
+};
+
+let chart = new ApexCharts(el, options);
+chart.render()
+</script> *@
+@await RenderSectionAsync("Scripts", required: false)
 
 </html>

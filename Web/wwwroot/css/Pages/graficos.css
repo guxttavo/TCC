@@ -3,6 +3,10 @@
     overflow-x: hidden;
 }
 
+.container-geral-graficos{
+    display: flex;
+}
+
 .campo-pesquisa {
     width: 247px;
     height: 30px;
@@ -26,7 +30,7 @@
     color: white;
     background-color: #444;
     width: 18vw;
-    height: 90vh;
+    height: 91.3vh;
     margin: 0px;
 }
 
