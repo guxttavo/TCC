@@ -1,20 +1,20 @@
 * {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
-.container-geral-graficos{
+.container-geral-graficos {
     display: flex;
 }
 
 .campo-pesquisa {
-    width: 247px;
+    width: 240px;
     height: 30px;
-    margin: 15px;
+    margin: 15px 5px 0px 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
     background-color: #ccc;
     transition: border-color 0.2s;
@@ -29,13 +29,14 @@
 .container-bairros {
     color: white;
     background-color: #444;
-    width: 18vw;
-    height: 91.3vh;
+    width: 14vw;
+    height: 90.4vh;
     margin: 0px;
+    overflow-y: scroll;
 }
 
 .opcao-bairro {
-    font-size: 25px;
+    font-size: 20px;
     list-style: none;
     padding: 20px;
 }
@@ -61,3 +62,20 @@
     border-radius: 10px;
 }
 
+.estrutura-graficos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65vw;
+    margin: 10px;
+    padding: 5px;
+}
+
+.estrutura-graficos div {
+    margin: 5px;
+    margin-right: 80px;
+}
+
+.estrutura-graficos h3 {
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 5px;
+}

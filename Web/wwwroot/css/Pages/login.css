@@ -38,6 +38,10 @@
     color: white;
 }
 
+.formulario input{
+    margin: 10px;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;

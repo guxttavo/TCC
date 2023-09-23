@@ -71,16 +71,20 @@
                         <input type="password" class="form-control" id="senha" name="senha" required>
                     </div>
                     <div class="mb-3 col-md-6">
+                        <label for="senha" class="form-label">Confirme sua senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
+                    </div>
+                    @* <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Tipo de Usuário</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
                             <option value="padrao">Padrão</option>
                             <option value="admin">Admin</option>
                         </select>
-                    </div>
+                    </div> *@
                 </div>
                 <div class="ajuste-botoes-cadastro">
                     <button type="submit" class="btn btn-dark botao">Cadastrar</button>
-                    <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+                    <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
                 </div>
             </form>
         </div>
