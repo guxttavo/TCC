@@ -11,16 +11,17 @@
 }
 
 .cor-de-fundo-cadastrar {
-    height: 590px;
-    width: 520px;
+    height: 500px;
+    width: 620px;
     background-color: #17171a;
+    border-radius: 5px;
 }
 
-.ajuste-botoes-cadastro button{
+.ajuste-botoes-cadastro{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    margin-left: 153px;
+    font-size: 20px;
 }

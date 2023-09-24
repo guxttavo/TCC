@@ -29,9 +29,9 @@ namespace Web.Controllers
                 return BadRequest(_notification);
             }
 
-            var usuario = _usuarioRepository.BuscarPorLogin(loginViewModel.Apelido);
+            var usuario = _usuarioRepository.BuscarPorLogin(loginViewModel.Nome);
 
-            if (!loginViewModel.Senha.Equals(usuario.senha) || (!loginViewModel.Apelido.Equals(usuario.apelido)))
+            if (!loginViewModel.Senha.Equals(usuario.Senha) || (!loginViewModel.Nome.Equals(usuario.Nome)))
             {
                 return BadRequest("Login ou senha incorretos!");
             }

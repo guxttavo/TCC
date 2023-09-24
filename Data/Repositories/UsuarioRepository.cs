@@ -17,7 +17,7 @@ namespace Data.Repositories
         }
         public Usuario BuscarPorId(int id)
         {
-            return _dbContext.Usuarios.FirstOrDefault(x => x.id == id);
+            return _dbContext.Usuarios.FirstOrDefault(x => x.Id == id);
         }
         public Usuario CadastrarUsuario(Usuario usuario)
         {
@@ -29,14 +29,17 @@ namespace Data.Repositories
 
         public Usuario EditarUsuario(Usuario usuario)
         {
-            Usuario usuarioDb = BuscarPorId(usuario.id);
+            Usuario usuarioDb = BuscarPorId(usuario.Id);
 
-            usuarioDb.nome_completo = usuario.nome_completo;
-            usuarioDb.apelido = usuario.apelido;
-            usuarioDb.email = usuario.email;
-            usuarioDb.senha = usuario.senha;
-            usuarioDb.perfil = usuario.perfil;
-            usuarioDb.data_cadastro = DateTime.Now;
+            usuarioDb.Nome = usuario.Nome;
+            usuarioDb.Cpf = usuario.Cpf;
+            usuarioDb.DataNascimento = usuario.DataNascimento;
+            usuarioDb.Telefone = usuario.Telefone;
+            usuarioDb.Email = usuario.Email;
+            usuarioDb.Cep = usuario.Cep;
+            usuarioDb.Senha = usuario.Senha;
+            usuarioDb.Perfil = usuario.Perfil;
+            usuarioDb.DataCadastro = DateTime.Now;
 
             _dbContext.Update(usuarioDb);
             _dbContext.SaveChanges();
@@ -58,9 +61,9 @@ namespace Data.Repositories
             return true;
         }
 
-        public Usuario BuscarPorLogin(string apelido)
+        public Usuario BuscarPorLogin(string nome)
         {
-            return _dbContext.Usuarios.FirstOrDefault(x => x.apelido.ToUpper() == apelido.ToUpper());
+            return _dbContext.Usuarios.FirstOrDefault(x => x.Nome.ToUpper() == nome.ToUpper());
         }
     }
 }

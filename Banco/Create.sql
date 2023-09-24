@@ -12,12 +12,15 @@ CREATE TABLE bairro(
 
 CREATE TABLE usuario(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome_completo VARCHAR(100) ,
-    apelido VARCHAR(100) ,
-    email VARCHAR(100) ,
-    senha VARCHAR(100) ,
-    perfil INT ,
-    data_cadastro DATE ,
+    nome VARCHAR(100) NOT NULL,
+    cpf BIGINT NOT NULL,
+    data_nascimento DATE NOT NULL,
+    telefone INT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    cep INT NOT NULL,
+    senha VARCHAR(100) NOT NULL,
+    perfil INT NOT NULL,
+    data_cadastro DATE NOT NULL,
 
     CONSTRAINT pk_usuario PRIMARY KEY(id)
 );

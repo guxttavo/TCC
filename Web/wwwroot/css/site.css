@@ -39,8 +39,17 @@ body {
   font-size: 45px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 20px;
-  color: #0d6efd;
+  margin-left: 25px;
+  color: blue;
+}
+
+.titulo-principal:hover {
+  color: white;
+  font-size: 45px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 25px;
+  color: rgb(5, 5, 164);
 }
 
 .titulo-geral {
@@ -50,15 +59,6 @@ body {
   font-size: 40px;
   padding: 10px;
   margin: 0px;
-}
-
-.titulo-principal:hover {
-  color: white;
-  font-size: 45px;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  margin-left: 20px;
-  color: #0364f5;
 }
 
 .opcoes {
@@ -104,8 +104,12 @@ body {
 /* código referente aos formulários */
 
 .titulo-form {
-  color: white;
   font-size: 45px;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+  background-color: #17171a;
+  border-radius: 15px 15px 15px 15px;
 }
 
 .container-cadastrar {
@@ -114,7 +118,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* margin-top: 10px; */
   color: white;
 }
 
@@ -155,8 +158,8 @@ body {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.botao {
-  margin-top: 90px;
+.botao-cadastrar {
+  /* margin-top: 90px; */
   width: 180px;
   height: 50px;
   font-size: 25px !important;
