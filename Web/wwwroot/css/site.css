@@ -175,12 +175,13 @@ body {
   width: 384px !important;
   height: 50px;
   background-color: gray;
-  margin-top: 280px !important;
+  margin-top: 233px !important;
   color: white;
   font-size: 30px;
   text-decoration: none;
   padding-left: 120px !important;
   padding-top: 5px;
+  cursor: pointer;
 }
 
 .botao-sair span {
