@@ -41,27 +41,23 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Entrar(LoginViewModel loginViewModel)
+        public IActionResult Entrar(Usuario usuario)
         {
-            if (!loginViewModel.IsValid(_notification))
-            {
-                return BadRequest(_notification);
-            }
 
-            var usuario = _usuarioRepository.BuscarPorEmail(loginViewModel.Email);
+            var usuarioBuscado = _usuarioRepository.BuscarPorEmail(usuario.Email);
 
             // if (!loginViewModel.Senha.Cryptograph().Equals(usuario.Senha))
             //     return BadRequest("Email ou senha incorretos!");
-            if (!loginViewModel.Senha.Equals(usuario.Senha) || (!loginViewModel.Email.Equals(usuario.Email)))
+            if (!usuario.Senha.Equals(usuarioBuscado.Senha) || (!usuario.Email.Equals(usuarioBuscado.Email)))
             {
                 return BadRequest("Login ou senha incorretos!");
             }
             else
             {
-                var jwt = TokenService.GenerateToken(usuario, _appSettings.TokenSettings.Chave);
+                var jwt = TokenService.GenerateToken(usuarioBuscado, _appSettings.TokenSettings.Chave);
                 Response.Cookies.Append("DataInfraAuthentication", jwt, new CookieOptions
                 {
-                    Expires = loginViewModel.ManterConectado != default
+                    Expires = usuario.ManterConectado != default
                             ? DateTime.Now.AddDays(30)
                             : DateTime.Now.AddHours(3)
                 }

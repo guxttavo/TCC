@@ -1,4 +1,6 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Core.Enum;
+using Core.Helpers;
 
 namespace Core.Models
 {
@@ -14,7 +16,24 @@ namespace Core.Models
         public string Senha { get; set; }
         public PerfilEnum Perfil { get; set; }
         public DateTime DataCadastro { get; set; }
+        [NotMapped]
+        public bool? ManterConectado { get; set; }
+        [NotMapped]
+        public string? ConfirmarSenha { get; set; }
 
         public IEnumerable<Suporte> Suportes { get; set; }
+
+        public bool IsValid(Notification _notification)
+        {
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Senha))
+                _notification.Add("Apelido e senha são obrigatórios");
+
+            return !_notification.Any();
+        }
+
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha;
+        }
     }
 }
