@@ -15,7 +15,7 @@ CREATE TABLE usuario(
     nome VARCHAR(100) NOT NULL,
     cpf BIGINT NOT NULL,
     data_nascimento DATE NOT NULL,
-    telefone INT NOT NULL,
+    telefone BIGINT NOT NULL,
     email VARCHAR(100) NOT NULL,
     cep INT NOT NULL,
     senha VARCHAR(100) NOT NULL,

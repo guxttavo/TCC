@@ -1,11 +1,2 @@
---TIPO DENUNCIA
-INSERT INTO tipoDenuncia (nome) VALUES ('Assédio');
-INSERT INTO tipoDenuncia (nome) VALUES ('Furto');
-INSERT INTO tipoDenuncia (nome) VALUES ('Roubo');
-INSERT INTO tipoDenuncia (nome) VALUES ('Violência Doméstica');
-INSERT INTO tipoDenuncia (nome) VALUES ('Difamação');
-INSERT INTO tipoDenuncia (nome) VALUES ('Calúnia');
-INSERT INTO tipoDenuncia (nome) VALUES ('Ameaça');
-INSERT INTO tipoDenuncia (nome) VALUES ('Racismo');
-INSERT INTO tipoDenuncia (nome) VALUES ('Incêndio criminoso');
-INSERT INTO tipoDenuncia (nome) VALUES ('Fraude');
+INSERT INTO usuario (nome, cpf, data_nascimento, telefone, email, cep, senha, perfil, data_cadastro)
+VALUES ('a', 12345678901, '2000-01-01', 1234567890, 'a@email.com', 12345, '123', 1, '2023-09-30');

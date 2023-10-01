@@ -11,16 +11,16 @@
             <form id="cadastroUsuario">
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="batata" required>
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" asp-for="Nome" required>
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="Cpf" required>
+                        <label class="form-label">CPF</label>
+                        <input type="text" class="form-control" asp-for="Cpf" required>
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="tipoUsuario" class="form-label">Tipo de Usuário</label>
-                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
+                        <label class="form-label">Tipo de Usuário</label>
+                        <select class="form-select drop-down" asp-for="Perfil" style="width: 100%;">
                             <option value="@Core.Enum.PerfilEnum.Admin">Administrador</option>
                             <option value="@Core.Enum.PerfilEnum.Padrao">Padrão</option>
                         </select>
@@ -28,31 +28,27 @@
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" class="form-control" id="dataNascimento" name="DataNascimento" required>
+                        <label class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" asp-for="DataNascimento" required>
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="int" class="form-control" id="telefone" name="Telefone" required>
+                        <label class="form-label">Telefone</label>
+                        <input type="number" class="form-control" asp-for="Telefone" required>
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" asp-for="Email" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" required>
+                        <label class="form-label">CEP</label>
+                        <input type="text" class="form-control" asp-for="Cep" required>
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" required>
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" asp-for="Senha" required>
                     </div>
-                    @* <div class="mb-3 col-md-4">
-                    <label for="senha" class="form-label">Confirme sua senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha" required>
-                    </div> *@
                 </div>
                 <div class="ajuste-botoes-cadastro">
                     <button type="button" class="btn btn-primary"

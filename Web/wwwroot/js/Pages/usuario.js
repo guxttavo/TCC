@@ -41,7 +41,12 @@ var usuario = (function () {
 
     var cadastrarUsuario = function () {
         var model = $('#cadastroUsuario').serializeObject();
-        console.log(model);
+
+        // var cpflimpo = model.cpf.replace(/[^0-9]/g, '');
+        // var ceplimpo = model.cep.replace(/[^0-9]/g, '');
+
+        // model.cpf = cpflimpo;
+        // model.cep = ceplimpo;
 
         $.post(configs.urls.cadastrarUsuario, model).done(function (html) {
             location.href = configs.urls.viewListar;
