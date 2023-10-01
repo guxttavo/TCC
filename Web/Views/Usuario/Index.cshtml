@@ -30,79 +30,38 @@
                     <th scope="col">Email</th>
                     <th scope="col">CEP</th>
                     <th scope="col">Senha</th>
-                    <th scope="col">Tipo de usuário</th>
+                    <th scope="col">Perfil</th>
                     <th scope="col">Opções</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>João Silva</td>
-                    <td>123.456.789-00</td>
-                    <td>01/01/1990</td>
-                    <td>(123) 456-7890</td>
-                    <td>joao@email.com</td>
-                    <td>12345-678</td>
-                    <td>********</td>
-                    <td>Padrão</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary" onclick="usuario.viewEditar()">Editar</a>
-                            <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>João Silva</td>
-                    <td>123.456.789-00</td>
-                    <td>01/01/1990</td>
-                    <td>(123) 456-7890</td>
-                    <td>joao@email.com</td>
-                    <td>12345-678</td>
-                    <td>********</td>
-                    <td>Adm</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary" onclick="usuario.viewEditar()">Editar</a>
-                            <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>João Silva</td>
-                    <td>123.456.789-00</td>
-                    <td>01/01/1990</td>
-                    <td>(123) 456-7890</td>
-                    <td>joao@email.com</td>
-                    <td>12345-678</td>
-                    <td>********</td>
-                    <td>Adm</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary" onclick="usuario.viewEditar()">Editar</a>
-                            <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>João Silva</td>
-                    <td>123.456.789-00</td>
-                    <td>01/01/1990</td>
-                    <td>(123) 456-7890</td>
-                    <td>joao@email.com</td>
-                    <td>12345-678</td>
-                    <td>********</td>
-                    <td>Adm</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary" onclick="usuario.viewEditar()">Editar</a>
-                            <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
-                        </div>
-                    </td>
-                </tr>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (Usuario usuario in Model)
+                    {
+                        <tr>
+                            <td>@usuario.Id</td>
+                            <td>@usuario.Nome</td>
+                            <td>@usuario.Cpf</td>
+                            <td>@usuario.DataNascimento</td>
+                            <td>@usuario.Telefone</td>
+                            <td>@usuario.Email</td>
+                            <td>@usuario.Cep</td>
+                            <td>@usuario.Senha</td>
+                            <td>@usuario.Perfil</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-primary" onclick="usuario.viewEditar()">Editar</a>
+                                    <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <h1>Nenhum dado encontrado!</h1>
+                }
             </tbody>
         </table>
     </div>

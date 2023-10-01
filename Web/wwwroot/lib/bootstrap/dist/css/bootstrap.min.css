@@ -3182,13 +3182,13 @@ fieldset:disabled .btn {
 .btn-primary {
     color: black;
     background-color: #E1DDDD;
-    border-color: #06c968;
+    border-color: #0b5ed7;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #06c968;
-    border-color: #0aca6a
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
 }
 
 .btn-check:focus+.btn-primary,

@@ -63,7 +63,6 @@ var usuario = (function () {
 
     var editarUsuario = function () {
         var model = $("#editarUsuario").serializeObject();
-        console.log(model);
 
         $.post(configs.urls.editarUsuario, model).done(() => {
             location.href = configs.urls.viewListar;

@@ -21,7 +21,20 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult CadastrarUsuario(Usuario usuario)
         {
-            _usuarioRepository.CadastrarUsuario(usuario);
+            var novoUsuario = new Usuario
+            {
+                Nome = usuario.Nome,
+                Cpf = usuario.Cpf,
+                DataNascimento = usuario.DataNascimento,
+                Telefone = usuario.Telefone,
+                Email = usuario.Email,
+                Cep = usuario.Cep,
+                Senha = usuario.Senha,
+                Perfil = usuario.Perfil,
+                DataCadastro = DateTime.UtcNow
+            };
+
+            _usuarioRepository.CadastrarUsuario(novoUsuario);
             return RedirectToAction("Index");
         }
 

@@ -31,24 +31,22 @@ namespace Data.Repositories
         {
             Usuario usuarioDb = BuscarPorId(usuario.Id);
 
-            usuarioDb.Nome = usuario.Nome;
-            usuarioDb.Cpf = usuario.Cpf;
-            usuarioDb.DataNascimento = usuario.DataNascimento;
-            usuarioDb.Telefone = usuario.Telefone;
-            usuarioDb.Email = usuario.Email;
-            usuarioDb.Cep = usuario.Cep;
-            usuarioDb.Senha = usuario.Senha;
-            usuarioDb.Perfil = usuario.Perfil;
-            usuarioDb.DataCadastro = DateTime.Now;
-
-            _dbContext.Update(usuarioDb);
-            _dbContext.SaveChanges();
+            if (usuarioDb != null)
+            {
+                usuarioDb.Nome = usuario.Nome;
+                usuarioDb.Cpf = usuario.Cpf;
+                usuarioDb.DataNascimento = usuario.DataNascimento;
+                usuarioDb.Telefone = usuario.Telefone;
+                usuarioDb.Email = usuario.Email;
+                usuarioDb.Cep = usuario.Cep;
+                usuarioDb.Senha = usuario.Senha;
+                usuarioDb.Perfil = usuario.Perfil;
+                usuarioDb.DataCadastro = DateTime.Now;
+                _dbContext.Update(usuarioDb);
+                _dbContext.SaveChanges();
+            }
 
             return usuarioDb;
-
-            // _dbContext.Usuarios.Update(usuario);
-            // _dbContext.SaveChanges();
-            // return usuario;
         }
 
         public bool DeletarUsuario(int id)

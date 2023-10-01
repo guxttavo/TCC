@@ -21,8 +21,18 @@ CREATE TABLE usuario(
     senha VARCHAR(100) NOT NULL,
     perfil INT NOT NULL,
     data_cadastro DATE NOT NULL,
-
+        
     CONSTRAINT pk_usuario PRIMARY KEY(id)
+);
+
+CREATE TABLE suporte(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    assunto VARCHAR(300) NOT NULL,
+    descricao VARCHAR(5000) NOT NULL,
+    id_usuario INT NOT NULL,
+
+    CONSTRAINT pk_suporte PRIMARY KEY(id)
+    CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE denuncia(

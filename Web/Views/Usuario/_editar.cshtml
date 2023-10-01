@@ -8,52 +8,53 @@
     <h1 class="titulo-form">Editar um Usuário</h1>
     <div class="cor-de-fundo">
         <div class="container mt-5">
-            <form>
+            <form id="editarUsuario">
                 <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" asp-for="Nome" required>
                     </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" required>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">CPF</label>
+                        <input type="text" class="form-control" asp-for="Cpf" required>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="tel" class="form-control" id="telefone" name="telefone" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" required>
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="tipoUsuario" class="form-label">Tipo de Usuário</label>
-                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            <option value="padrao">Padrão</option>
-                            <option value="admin">Admin</option>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Tipo de Usuário</label>
+                        <select class="form-select drop-down" asp-for="Perfil" style="width: 100%;">
+                            <option value="@Core.Enum.PerfilEnum.Admin">Administrador</option>
+                            <option value="@Core.Enum.PerfilEnum.Padrao">Padrão</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-dark botao">Cadastrar</button>
-                <a asp-controller="Usuario" asp-action="Index">Voltar</a>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" asp-for="DataNascimento" required>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Telefone</label>
+                        <input type="number" class="form-control" asp-for="Telefone" required>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" asp-for="Email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">CEP</label>
+                        <input type="text" class="form-control" asp-for="Cep" required>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" asp-for="Senha" required>
+                    </div>
+                </div>
+                <div class="ajuste-botoes-cadastro">
+                    <button type="button" class="btn btn-primary"
+                        onclick="usuario.editarUsuario()">Cadastrar</button>
+                    <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
+                </div>
             </form>
         </div>
     </div>

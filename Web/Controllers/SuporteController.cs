@@ -1,10 +1,31 @@
+using Core.Interfaces.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Web.Controllers
 {
     public class SuporteController : Controller
     {
+        public ISuporteRepository _suporteRepository;
+
+        public SuporteController(ISuporteRepository suporteRepository)
+        {
+            _suporteRepository = suporteRepository;
+        }
+
         public ActionResult Index() => View();
+
+        [HttpPost]
+        public IActionResult RealizarSuporte(Suporte suporte)
+        {
+            var novoSuporte = new Suporte
+            {
+                Assunto = suporte.Assunto,
+                Descricao = suporte.Descricao
+            };
+
+            _suporteRepository.CadastrarSuporte(novoSuporte);
+            
+            return RedirectToAction("Index");
+        }
     }
 }

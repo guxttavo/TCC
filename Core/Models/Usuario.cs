@@ -14,5 +14,7 @@ namespace Core.Models
         public string Senha { get; set; }
         public PerfilEnum Perfil { get; set; }
         public DateTime DataCadastro { get; set; }
+
+        public IEnumerable<Suporte> Suportes { get; set; }
     }
 }

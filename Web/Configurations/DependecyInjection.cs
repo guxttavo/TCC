@@ -19,6 +19,7 @@ namespace Web.Configurations
             services.AddScoped<Notification>();
             services.AddScoped<CryptographySettings>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<ISuporteRepository, SuporteRepository>();
         }
     }
 }
