@@ -59,9 +59,9 @@ namespace Data.Repositories
             return true;
         }
 
-        public Usuario BuscarPorLogin(string nome)
+        public Usuario BuscarPorEmail(string email)
         {
-            return _dbContext.Usuarios.FirstOrDefault(x => x.Nome.ToUpper() == nome.ToUpper());
+            return _dbContext.Usuarios.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
         }
     }
 }

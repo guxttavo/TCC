@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class SuporteController : Controller
+    public class SuporteController : AuthenticatedController
     {
         public ISuporteRepository _suporteRepository;
 

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var cookie = Context.Request.Cookies["DataInfraAuthentication"];
+}
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -55,7 +58,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a asp-controller="Login" asp-action="Index" class="botao-sair">
+                    <a asp-controller="Login" asp-action="Logout" class="botao-sair">
                         <span class="material-symbols-outlined">
                             logout
                         </span>

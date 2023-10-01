@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class UsuarioController : Controller
+    public class UsuarioController : AuthenticatedController
     {
         private readonly IUsuarioRepository _usuarioRepository;
         public UsuarioController(IUsuarioRepository usuarioRepository)

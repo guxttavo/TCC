@@ -6,7 +6,7 @@ namespace Core.Interfaces.Repositories
     {
         List<Usuario> BuscarTodos();
         Usuario BuscarPorId(int id);
-        Usuario BuscarPorLogin(string apelido);
+        Usuario BuscarPorEmail(string email);
         Usuario CadastrarUsuario(Usuario usuario);
         Usuario EditarUsuario(Usuario usuario);
         bool DeletarUsuario(int id);
