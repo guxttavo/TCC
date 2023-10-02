@@ -1,5 +1,6 @@
 ﻿@{
     var cookie = Context.Request.Cookies["DataInfraAuthentication"];
+    var UsuarioLogado = Web.Configurations.Extensions.CookieExtensions.SerializarToken(cookie);
 }
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +25,7 @@
                 <div class="row barra-lateral">
                     <div>
                         <a class="titulo-principal" asp-controller="Home" asp-action="Index">DataInfra</a>
-                        <h3 class="bem-vindo">Bem vindo, Gustavo Barbosa</h3>
+                        <h3 class="bem-vindo">Bem vindo, @UsuarioLogado.Nome</h3>
                         <ul class="opcoes">
                             <li class="opcoes-lista">
                                 <a asp-controller="Usuario" asp-action="Index" class="opcao-menu">

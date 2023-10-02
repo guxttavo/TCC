@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using Core.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -6,6 +7,8 @@ namespace Web.Controllers
 {
     public class AuthenticatedController : Controller
     {
+        protected Usuario UsuarioLogado { get; set; }
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             base.OnActionExecuting(context);
@@ -38,6 +41,9 @@ namespace Web.Controllers
                 context.Result = new RedirectResult("/login");
                 return;
             }
+
+            UsuarioLogado = Configurations.Extensions.CookieExtensions.SerializarToken(cookie);
+            ViewBag.UsuarioLogado = UsuarioLogado;
         }
 
     }

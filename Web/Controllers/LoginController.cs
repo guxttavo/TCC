@@ -4,7 +4,6 @@ using Core.Helpers;
 using Core.Interfaces.Repositories;
 using Core.Settings;
 using Microsoft.AspNetCore.Mvc;
-using Web.ViewModels.Login;
 
 namespace Web.Controllers
 {
