@@ -1,12 +1,22 @@
-CREATE TABLE tipo_denuncia(
+CREATE TABLE categoria(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    nome VARCHAR(100) NOT  NULL
+
+);
+
+CREATE TABLE subcategoria(
     id INT GENERATED ALWAYS AS IDENTITY,
     nome VARCHAR(30) NOT  NULL,
-    CONSTRAINT pk_tipo_denuncia PRIMARY KEY(id)
+    id_categoria INT NOT NULL,
+
+    CONSTRAINT pk_subcategoria PRIMARY KEY(id),
+    CONSTRAINT fk_categoria FOREIGN KEY(id_categoria) REFERENCES categoria(id)
 );
 
 CREATE TABLE bairro(
     id smallint GENERATED ALWAYS AS IDENTITY,
     nome VARCHAR(100) NOT NULL,
+
 	CONSTRAINT pk_bairro PRIMARY KEY(id)
 );
 
@@ -19,10 +29,25 @@ CREATE TABLE usuario(
     email VARCHAR(100) NOT NULL,
     cep INT NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    perfil INT NOT NULL,
+    admin BOOL NOT NULL,
     data_cadastro DATE NOT NULL,
         
     CONSTRAINT pk_usuario PRIMARY KEY(id)
+);
+
+CREATE TABLE denuncia(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    data DATE NOT NULL,
+    id_usuario INT NOT NULL,
+    id_categoria INT NOT NULL,
+    id_subcategoria INT NOT NULL,
+    id_bairro INT NOT NULL,
+
+    CONSTRAINT pk_denuncia PRIMARY KEY(id),
+    CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id),
+    CONSTRAINT fk_categoria FOREIGN KEY(id_categoria) REFERENCES categoria(id),
+    CONSTRAINT fk_subcategoria FOREIGN KEY(id_subcategoria) REFERENCES subcategoria(id),
+    CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
 );
 
 CREATE TABLE suporte(
@@ -35,15 +60,9 @@ CREATE TABLE suporte(
     CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE denuncia(
-    id INT GENERATED ALWAYS AS IDENTITY,
-    data_denuncia DATE NOT NULL,
-    cep CHAR(8) NOT NULL,
-    descricao VARCHAR(1000) NOT NULL,
-    id_usuario INT NOT NULL,
-    id_tipo_denuncia INT NOT NULL,
-    id_bairro INT NOT NULL,
-    CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario),
-    CONSTRAINT fk_tipo_denuncia FOREIGN KEY(id_tipo_denuncia) REFERENCES tipo_denuncia(id_tipo_denuncia),
-    CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id_bairro)
-);
+
+-- CREATE TABLE urgencia(
+--     id smallint GENERATED ALWAYS AS IDENTITY,
+--     nome VARCHAR(100) NOT NULL,
+-- 	CONSTRAINT pk_urgencia PRIMARY KEY(id)
+-- );
