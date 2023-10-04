@@ -1,12 +1,13 @@
 CREATE TABLE categoria(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(100) NOT  NULL
+    nome VARCHAR(200) NOT  NULL,
 
+    CONSTRAINT pk_categoria PRIMARY KEY(id)
 );
 
 CREATE TABLE subcategoria(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(30) NOT  NULL,
+    nome VARCHAR(200) NOT  NULL,
     id_categoria INT NOT NULL,
 
     CONSTRAINT pk_subcategoria PRIMARY KEY(id),
@@ -15,20 +16,20 @@ CREATE TABLE subcategoria(
 
 CREATE TABLE bairro(
     id smallint GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(200) NOT NULL,
 
 	CONSTRAINT pk_bairro PRIMARY KEY(id)
 );
 
 CREATE TABLE usuario(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(200) NOT NULL,
     cpf BIGINT NOT NULL,
     data_nascimento DATE NOT NULL,
     telefone BIGINT NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(200) NOT NULL,
     cep INT NOT NULL,
-    senha VARCHAR(100) NOT NULL,
+    senha VARCHAR(200) NOT NULL,
     admin BOOL NOT NULL,
     data_cadastro DATE NOT NULL,
         
@@ -45,7 +46,7 @@ CREATE TABLE denuncia(
 
     CONSTRAINT pk_denuncia PRIMARY KEY(id),
     CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id),
-    CONSTRAINT fk_categoria FOREIGN KEY(id_categoria) REFERENCES categoria(id),
+    CONSTRAINT fk_categoria_denuncia FOREIGN KEY(id_categoria) REFERENCES categoria(id),
     CONSTRAINT fk_subcategoria FOREIGN KEY(id_subcategoria) REFERENCES subcategoria(id),
     CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
 );
@@ -56,13 +57,13 @@ CREATE TABLE suporte(
     descricao VARCHAR(5000) NOT NULL,
     id_usuario INT NOT NULL,
 
-    CONSTRAINT pk_suporte PRIMARY KEY(id)
+    CONSTRAINT pk_suporte PRIMARY KEY(id),
     CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id)
 );
 
 
 -- CREATE TABLE urgencia(
 --     id smallint GENERATED ALWAYS AS IDENTITY,
---     nome VARCHAR(100) NOT NULL,
+--     nome VARCHAR(200) NOT NULL,
 -- 	CONSTRAINT pk_urgencia PRIMARY KEY(id)
 -- );

@@ -1,3 +1,9 @@
+ALTER SEQUENCE categoria_id_seq RESTART;
+ALTER SEQUENCE subcategoria_id_seq RESTART;
+ALTER SEQUENCE usuario_id_seq RESTART;
+ALTER SEQUENCE bairro_id_seq RESTART;
+ALTER SEQUENCE suporte_id_seq RESTART;
+
 INSERT INTO categoria(nome)
                          VALUES('Iluminação Pública'),
                                ('Saneamento Básico'),
@@ -5,7 +11,7 @@ INSERT INTO categoria(nome)
                                ('Gestão de Resíduos'),
                                ('Espaços Públicos');
 
-INSERT INTO subcategoria(nome)
+INSERT INTO subcategoria(nome, id_categoria)
                          VALUES('Postes e/ou Afiação Danificados', 1),
                                ('Quedas de Energia', 1),
                                ('Infraestrutura Antiga', 1),
@@ -13,14 +19,14 @@ INSERT INTO subcategoria(nome)
                                ('Esgoto a Céu Aberto', 2),
                                ('Coleta de Lixo Ineficiente', 2),
                                ('Ausência de Calçamentos', 3),
-                               ('Ausência/Poucas Paradas', 3)
+                               ('Ausência/Poucas Paradas', 3),
                                ('Acúmulo de Lixo', 4),
                                ('Falta de Praças', 5),
-                               ('Ausência de Ciclovias e/ou Faixas para Padestres', 5);                            
+                               ('Ausência de Ciclovias e/ou Faixas para Padestres', 5);
 
-INSERT INTO usuario (nome, cpf, data_nascimento, telefone, email, cep, senha, perfil, data_cadastro)
-                    VALUES ('Admin', 12345678901, '2000-01-01', 1234567890, 'admin@gmail.com', 12345, '123', 1, '2023-09-30'),
-                           ('Padrao', 12345678901, '2000-01-01', 1234567890, 'padrao@gmail.com', 12345, '123', 2, '2023-09-30');
+INSERT INTO usuario (nome, cpf, data_nascimento, telefone, email, cep, senha, admin, data_cadastro)
+                    VALUES ('Admin', 12345678901, '2000-01-01', 1234567890, 'admin@gmail.com', 12345, '123', true, '2023-09-30'),
+                           ('Padrao', 12345678901, '2000-01-01', 1234567890, 'padrao@gmail.com', 12345, '123', false, '2023-09-30');
 
 INSERT INTO bairro(nome)
                    VALUES('Mangabeira'),
@@ -39,11 +45,19 @@ INSERT INTO bairro(nome)
                          ('Bairro das Indústrias'),
                          ('Castelo Branco');
 
-
-INSERT INTO suporte (assunto, descricao, id_usuario)
-VALUES
-    ('Problema com o software', 'Estou enfrentando um problema ao usar o software XPTO. Ele trava sempre que tento realizar uma ação específica.', 3);
-
-
--- INSERT INTO urgencia(nome)
---                      VALUES('');
+-- Iluminação Pública                            
+--   -Postes e/ou Afiação Danificados
+--   -Quedas de Energia
+--   -Infraestrutura Antiga
+-- Saneamento Básico
+--   -Fornecimento de Água
+--   -Esgoto a Céu Aberto
+--   -Coleta de Lixo Ineficiente
+-- Mobilidade Urbana  
+--   -Ausência de Calçamentos
+--   -Ausência/Poucas Paradas
+-- Gestão de Resíduos
+--   -Acúmulo de Lixo
+-- Espaços Públicos
+--   -Falta de Praças
+--   -Ausência de Ciclovias e/ou Faixas para Padestres      

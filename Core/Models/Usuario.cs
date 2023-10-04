@@ -14,7 +14,7 @@ namespace Core.Models
         public string Email { get; set; }
         public int Cep { get; set; }
         public string Senha { get; set; }
-        public PerfilEnum Perfil { get; set; }
+        public bool Admin { get; set; }
         public DateTime DataCadastro { get; set; }
         [NotMapped]
         public bool? ManterConectado { get; set; }
