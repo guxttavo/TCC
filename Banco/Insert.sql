@@ -43,7 +43,11 @@ INSERT INTO bairro(nome)
                          ('Bessa'),
                          ('Cabo Branco'),
                          ('Bairro das Indústrias'),
-                         ('Castelo Branco');
+                         ('Castelo Branco'),
+                         ('Mandacaru'),
+                         ('Jaguaribe'),
+                         ('Centro'),
+                         ('Alto do Matheus');
 
 -- Iluminação Pública                            
 --   -Postes e/ou Afiação Danificados

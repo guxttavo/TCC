@@ -10,6 +10,7 @@ CREATE TABLE subcategoria(
     nome VARCHAR(200) NOT  NULL,
     id_categoria INT NOT NULL,
 
+
     CONSTRAINT pk_subcategoria PRIMARY KEY(id),
     CONSTRAINT fk_categoria FOREIGN KEY(id_categoria) REFERENCES categoria(id)
 );
@@ -39,6 +40,7 @@ CREATE TABLE usuario(
 CREATE TABLE denuncia(
     id INT GENERATED ALWAYS AS IDENTITY,
     data DATE NOT NULL,
+    descricao VARCHAR(2000),
     id_usuario INT NOT NULL,
     id_categoria INT NOT NULL,
     id_subcategoria INT NOT NULL,

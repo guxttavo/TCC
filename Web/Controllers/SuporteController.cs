@@ -5,12 +5,12 @@ namespace Web.Controllers
 {
     public class SuporteController : AuthenticatedController
     {
-        public ISuporteRepository _suporteRepository;
+        // public ISuporteRepository _suporteRepository;
 
-        public SuporteController(ISuporteRepository suporteRepository)
-        {
-            _suporteRepository = suporteRepository;
-        }
+        // public SuporteController(ISuporteRepository suporteRepository)
+        // {
+        //     _suporteRepository = suporteRepository;
+        // }
 
         public ActionResult Index() => View();
 
@@ -23,7 +23,7 @@ namespace Web.Controllers
                 Descricao = suporte.Descricao
             };
 
-            _suporteRepository.CadastrarSuporte(novoSuporte);
+            // _suporteRepository.CadastrarSuporte(novoSuporte);
             
             return RedirectToAction("Index");
         }

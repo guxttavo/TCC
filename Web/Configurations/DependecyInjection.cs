@@ -1,5 +1,7 @@
 using System.Text;
 using Core.Interfaces.Repositories;
+using Core.Interfaces.Services;
+using Core.Services;
 using Core.Settings;
 using Data;
 using Data.Repositories;
@@ -46,7 +48,9 @@ namespace Web.Configurations
             services.AddScoped<CryptographySettings>();
 
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<ISuporteRepository, SuporteRepository>();
+            services.AddScoped<IDenunciaRepository, DenunciaRepository>();
+            services.AddScoped<IDenunciaService, DenunciaService>();
+            // services.AddScoped<ISuporteRepository, SuporteRepository>();
         }
     }
 }

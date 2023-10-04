@@ -4,6 +4,7 @@ namespace Core.Models
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
+        public string Descricao { get; set; }
         public int IdUsuario { get; set; }
         public int IdCategoria { get; set; }
         public int IdSubcategoria { get; set; }

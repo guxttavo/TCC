@@ -3,7 +3,7 @@ using Core.Models;
 
 namespace Data.Repositories
 {
-    public class SuporteRepository : ISuporteRepository
+    public class SuporteRepository 
     {
         private readonly ApplicationDbContext _dbContext;
 
@@ -14,8 +14,8 @@ namespace Data.Repositories
 
         public Suporte CadastrarSuporte(Suporte suporte)
         {
-            _dbContext.Suporte.Add(suporte);
-            _dbContext.SaveChanges();
+            // _dbContext.Suporte.Add(suporte);
+            // _dbContext.SaveChanges();
 
             return suporte;
         }

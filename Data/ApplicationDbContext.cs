@@ -11,6 +11,9 @@ namespace Data
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Suporte> Suporte { get; set; }
+        public DbSet<Suporte> Suportes { get; set; }
+        public DbSet<Bairro> Bairros { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Subcategoria> Subcategorias { get; set; }
     }
 }
