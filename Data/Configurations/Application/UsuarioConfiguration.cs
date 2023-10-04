@@ -24,6 +24,7 @@ namespace Data.Configurations.Application
             builder.Property(x => x.DataCadastro).HasColumnName("data_cadastro");
 
             // builder.HasMany(x => x.Suportes).WithOne(x => x.Usuario);
+            builder.HasMany(x => x.Denuncias).WithOne(x => x.Usuario);
         }
     }
 }

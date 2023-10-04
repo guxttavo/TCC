@@ -22,6 +22,7 @@ namespace Core.Models
         public string? ConfirmarSenha { get; set; }
 
         public IEnumerable<Suporte> Suportes { get; set; }
+        public IEnumerable<Denuncia> Denuncias { get; set; }
 
         public bool IsValid(Notification _notification)
         {
