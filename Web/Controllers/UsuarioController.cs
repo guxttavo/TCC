@@ -30,7 +30,7 @@ namespace Web.Controllers
                 Email = usuario.Email,
                 Cep = usuario.Cep,
                 Senha = usuario.Senha,
-                Perfil = usuario.Perfil,
+                Admin = usuario.Admin,
                 DataCadastro = DateTime.UtcNow
             };
 

@@ -40,7 +40,7 @@ namespace Data.Repositories
                 usuarioDb.Email = usuario.Email;
                 usuarioDb.Cep = usuario.Cep;
                 usuarioDb.Senha = usuario.Senha;
-                usuarioDb.Perfil = usuario.Perfil;
+                usuarioDb.Admin = usuario.Admin;
                 usuarioDb.DataCadastro = DateTime.Now;
                 _dbContext.Update(usuarioDb);
                 _dbContext.SaveChanges();
