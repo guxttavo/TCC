@@ -14,8 +14,8 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            ViewBag.BuscarBairros = await _denunciaService.BuscarBairros();
-            ViewBag.BuscarSubcategorias = await _denunciaService.BuscarSubcategorias();
+            await _denunciaService.BuscarCategoriaseSubcategorias();
+            // ViewBag.BuscarSubcategorias = await _denunciaService.BuscarSubcategorias();
             return View();
         }
     }

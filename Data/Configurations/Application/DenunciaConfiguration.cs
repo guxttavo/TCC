@@ -22,7 +22,6 @@ namespace Data.Configurations.Application
 
             builder.HasOne(x => x.Usuario).WithMany(x => x.Denuncias).HasForeignKey("id_usuario");
             builder.HasOne(x => x.Categoria).WithMany(x => x.Denuncias).HasForeignKey("id_categoria");
-            builder.HasOne(x => x.Subcategoria).WithMany(x => x.Denuncias).HasForeignKey("id_subcategoria");
             builder.HasOne(x => x.Bairro).WithMany(x => x.Denuncias).HasForeignKey("id_bairro");
         }
     }

@@ -1,18 +1,15 @@
 ALTER SEQUENCE categoria_id_seq RESTART;
-ALTER SEQUENCE subcategoria_id_seq RESTART;
 ALTER SEQUENCE usuario_id_seq RESTART;
 ALTER SEQUENCE bairro_id_seq RESTART;
 ALTER SEQUENCE suporte_id_seq RESTART;
 
-INSERT INTO categoria(nome)
-                         VALUES('Iluminação Pública'),
-                               ('Saneamento Básico'),
-                               ('Mobilidade Urbana'),
-                               ('Gestão de Resíduos'),
-                               ('Espaços Públicos');
-
-INSERT INTO subcategoria(nome, id_categoria)
-                         VALUES('Postes e/ou Afiação Danificados', 1),
+INSERT INTO categoria(nome, id_categoria_pai)
+                         VALUES('Iluminação Pública', NULL),
+                               ('Saneamento Básico', NULL),
+                               ('Mobilidade Urbana', NULL),
+                               ('Gestão de Resíduos', NULL),
+                               ('Espaços Públicos', NULL),
+                               ('Postes e/ou Afiação Danificados', 1),
                                ('Quedas de Energia', 1),
                                ('Infraestrutura Antiga', 1),
                                ('Fornecimento de Água', 2),

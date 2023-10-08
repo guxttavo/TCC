@@ -15,7 +15,6 @@ namespace Data.Configurations.Application
             builder.Property(x => x.Id).ValueGeneratedOnAdd().HasColumnName("id");
             builder.Property(x => x.Nome).HasColumnName("nome");
 
-            builder.HasMany(x => x.Subcategorias).WithOne(x => x.Categoria);
         }
     }
 }

@@ -19,7 +19,8 @@ namespace Core.Services
 
         public Task<List<Categoria>> BuscarCategoriaseSubcategorias()
         {
-            throw new NotImplementedException();
+            return _denunciaRepository.BuscarCategoriaseSubcategorias();
+
         }
 
         // public Task<List<Categoria>> BuscarCategorias()
@@ -28,9 +29,9 @@ namespace Core.Services
 
         // }
 
-        public Task<List<Subcategoria>> BuscarSubcategorias()
-        {
-            return _denunciaRepository.BuscarSubcategorias();
-        }
+        // public Task<List<Subcategoria>> BuscarSubcategorias()
+        // {
+        //     return _denunciaRepository.BuscarSubcategorias();
+        // }
     }
 }

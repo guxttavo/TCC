@@ -6,6 +6,5 @@ namespace Core.Interfaces.Repositories
     {
         Task<List<Bairro>> BuscarBairros();
         Task<List<Categoria>> BuscarCategoriaseSubcategorias();
-        Task<List<Subcategoria>> BuscarSubcategorias();
     }
 }

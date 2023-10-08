@@ -14,6 +14,5 @@ namespace Data
         public DbSet<Suporte> Suportes { get; set; }
         public DbSet<Bairro> Bairros { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Subcategoria> Subcategorias { get; set; }
     }
 }

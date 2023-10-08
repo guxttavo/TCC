@@ -12,7 +12,6 @@ namespace Core.Models
 
         public Usuario Usuario { get; set; }
         public Categoria Categoria { get; set; }
-        public Subcategoria Subcategoria { get; set; }
         public Bairro Bairro { get; set; }
     }
 }

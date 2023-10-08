@@ -1,18 +1,9 @@
 CREATE TABLE categoria(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(200) NOT  NULL,
+    nome VARCHAR(200) NOT NULL,
+    id_categoria_pai INT, 
 
     CONSTRAINT pk_categoria PRIMARY KEY(id)
-);
-
-CREATE TABLE subcategoria(
-    id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(200) NOT  NULL,
-    id_categoria INT NOT NULL,
-
-
-    CONSTRAINT pk_subcategoria PRIMARY KEY(id),
-    CONSTRAINT fk_categoria FOREIGN KEY(id_categoria) REFERENCES categoria(id)
 );
 
 CREATE TABLE bairro(
@@ -43,13 +34,11 @@ CREATE TABLE denuncia(
     descricao VARCHAR(2000),
     id_usuario INT NOT NULL,
     id_categoria INT NOT NULL,
-    id_subcategoria INT NOT NULL,
     id_bairro INT NOT NULL,
 
     CONSTRAINT pk_denuncia PRIMARY KEY(id),
     CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id),
     CONSTRAINT fk_categoria_denuncia FOREIGN KEY(id_categoria) REFERENCES categoria(id),
-    CONSTRAINT fk_subcategoria FOREIGN KEY(id_subcategoria) REFERENCES subcategoria(id),
     CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
 );
 

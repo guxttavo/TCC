@@ -6,7 +6,7 @@ namespace Core.Interfaces.Services
     {
         Task<List<Bairro>> BuscarBairros();
         Task<List<Categoria>> BuscarCategoriaseSubcategorias();
-        Task<List<Subcategoria>> BuscarSubcategorias();
+        // Task<List<Subcategoria>> BuscarSubcategorias();
         
     }
 }

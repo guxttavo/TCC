@@ -1,9 +1,9 @@
 @model List<Denuncia>
 
 @{
-    var bairros = ViewBag.BuscarBairros;
+    @* var bairros = ViewBag.BuscarBairros;
     var categorias = ViewBag.BuscarCategorias;
-    var subcategorias = ViewBag.BuscarSubcategorias;
+    var subcategorias = ViewBag.BuscarSubcategorias; *@
 }
 
 <head>
@@ -27,28 +27,25 @@
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @foreach (var bairro in bairros)
-                            {
-                                <option value="@bairro.Id">@bairro.Nome</option>
-                            }
+                                <option value="">Nome</option>
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @foreach (var categoria in categorias)
+                            @* @foreach (var categoria in categorias)
                             {
                                 <option value="@categoria.Id">@categoria.Nome</option>
-                            }
+                            } *@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @foreach (var subcategoria in subcategorias)
+                            @* @foreach (var subcategoria in subcategorias)
                             {
                                 <option value="@subcategoria.Id">@subcategoria.Nome</option>
-                            }
+                            } *@
                         </select>
                     </div>
                     <div class="form-group">
