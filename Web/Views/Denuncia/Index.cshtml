@@ -1,9 +1,8 @@
-@model List<Denuncia>
+@model List<Categoria>
 
 @{
-    @* var bairros = ViewBag.BuscarBairros;
     var categorias = ViewBag.BuscarCategorias;
-    var subcategorias = ViewBag.BuscarSubcategorias; *@
+    var subcategorias = ViewBag.BuscarSubcategorias;
 }
 
 <head>
@@ -27,25 +26,31 @@
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                                <option value="">Nome</option>
+                            <option value="">Nome</option>
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @* @foreach (var categoria in categorias)
+                            @if (@ViewBag.BuscarCategorias != null)
                             {
-                                <option value="@categoria.Id">@categoria.Nome</option>
-                            } *@
+                                @foreach (var categoria in categorias)
+                                {
+                                    <option value="@categoria.Id">@categoria.Nome</option>
+                                }
+                            }
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
                         <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @* @foreach (var subcategoria in subcategorias)
+                            @if (@ViewBag.BuscarSubcategorias != null)
                             {
-                                <option value="@subcategoria.Id">@subcategoria.Nome</option>
-                            } *@
+                                @foreach (var subcategoria in subcategorias)
+                                {
+                                    <option value="">@subcategoria.Nome</option>
+                                }
+                            }
                         </select>
                     </div>
                     <div class="form-group">
@@ -61,3 +66,8 @@
         </div>
     </div>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/iziToast/dist/js/iziToast.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/Pages/denuncia.js"></script>

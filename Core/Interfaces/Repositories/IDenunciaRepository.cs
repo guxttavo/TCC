@@ -5,6 +5,7 @@ namespace Core.Interfaces.Repositories
     public interface IDenunciaRepository
     {
         Task<List<Bairro>> BuscarBairros();
-        Task<List<Categoria>> BuscarCategoriaseSubcategorias();
+        Task<IEnumerable<Categoria>> BuscarCategorias();
+        Task<IEnumerable<Categoria>> BuscarSubcategorias();
     }
 }

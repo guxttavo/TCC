@@ -14,6 +14,7 @@ namespace Data.Configurations.Application
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd().HasColumnName("id");
             builder.Property(x => x.Nome).HasColumnName("nome");
+            builder.Property(x => x.IdCategoriaPai).HasColumnName("id_categoria_pai");
 
         }
     }

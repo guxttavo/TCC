@@ -23,32 +23,18 @@ namespace Data.Repositories
             }).ToListAsync();
         }
 
-        public async Task<List<Categoria>> BuscarCategoriaseSubcategorias()
+        public async Task<IEnumerable<Categoria>> BuscarCategorias()
         {
-            // var categorias = _dbContext.Categorias.Select(categoria => new Categoria
-            // {
-            //     Id = categoria.Id,
-            //     Nome = categoria.Nome,
-            //     Subcategorias = categoria.Subcategorias
-            //              .Where(subcategoria => subcategoria.IdCategoria == categoria.Id)
-            //              .Select(subcategoria => new Subcategoria
-            //              {
-            //                  Id = subcategoria.Id,
-            //                  Nome = subcategoria.Nome,
-            //                  IdCategoria = categoria.Id
-            //              })
-            // })
-            // .ToList();
+            return await _dbContext.Categorias
+                                   .Where(x => x.IdCategoriaPai == null)
+                                   .ToListAsync();
+        }
 
-            // return categorias;
-            var categorias = _dbContext.Categorias.Select(x => new Categoria
-            {
-                Id = x.Id,
-                Nome = x.Nome
-            })
-            .ToList();
-
-            return categorias;
+        public async Task<IEnumerable<Categoria>> BuscarSubcategorias()
+        {
+            return await _dbContext.Categorias
+                                   .Where(x => x.IdCategoriaPai != null)
+                                   .ToListAsync();
         }
     }
 }
