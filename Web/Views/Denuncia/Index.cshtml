@@ -35,11 +35,12 @@ var subcategorias = ViewBag.BuscarSubcategorias;
                             style="width: 100%;">
                             @if (Model != null && Model.Any())
                             {
-                                @foreach (Categoria categoria in Model)
+                                @foreach (var categoria in Model)
                                 {
-
-                                    <option>@categoria.Nome</option>
-
+                                    @if (categoria.IdCategoriaPai == null)
+                                    {
+                                        <option>@categoria.Nome</option>
+                                    }
                                 }
                             }
                             else
@@ -54,11 +55,12 @@ var subcategorias = ViewBag.BuscarSubcategorias;
                             style="width: 100%;">
                             @if (Model != null && Model.Any())
                             {
-                                @foreach (Categoria categoria in Model)
+                                @foreach (var subcategoria in Model)
                                 {
-
-                                    <option>@categoria.Nome</option>
-
+                                    @if (subcategoria.IdCategoriaPai != null)
+                                    {
+                                        <option>@subcategoria.Nome</option>
+                                    }
                                 }
                             }
                             else

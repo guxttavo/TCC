@@ -26,7 +26,6 @@ namespace Data.Repositories
         public async Task<IEnumerable<Categoria>> BuscarCategorias()
         {
             return await _dbContext.Categorias
-                                   .Where(x => x.IdCategoriaPai == null)
                                    .ToListAsync();
         }
 
