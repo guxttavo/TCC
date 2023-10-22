@@ -1,9 +1,9 @@
 @model List<Categoria>
 
-@{
-    var categorias = ViewBag.BuscarCategorias;
-    var subcategorias = ViewBag.BuscarSubcategorias;
-}
+@* @{
+var categorias = ViewBag.BuscarCategorias;
+var subcategorias = ViewBag.BuscarSubcategorias;
+} *@
 
 <head>
     <link rel="stylesheet" href="~/css/Pages/denuncia.css" asp-append-version="true" />
@@ -31,25 +31,39 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
-                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @if (@ViewBag.BuscarCategorias != null)
+                        <select id="categorias" class="form-select drop-down" id="tipoUsuario" name="tipoUsuario"
+                            style="width: 100%;">
+                            @if (Model != null && Model.Any())
                             {
-                                @foreach (var categoria in categorias)
+                                @foreach (Categoria categoria in Model)
                                 {
-                                    <option value="@categoria.Id">@categoria.Nome</option>
+
+                                    <option>@categoria.Nome</option>
+
                                 }
+                            }
+                            else
+                            {
+                                <h1>Nenhum dado encontrado!</h1>
                             }
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
-                        <select class="form-select drop-down" id="tipoUsuario" name="tipoUsuario" style="width: 100%;">
-                            @if (@ViewBag.BuscarSubcategorias != null)
+                        <select id="subcategorias" class="form-select drop-down" id="tipoUsuario" name="tipoUsuario"
+                            style="width: 100%;">
+                            @if (Model != null && Model.Any())
                             {
-                                @foreach (var subcategoria in subcategorias)
+                                @foreach (Categoria categoria in Model)
                                 {
-                                    <option value="">@subcategoria.Nome</option>
+
+                                    <option>@categoria.Nome</option>
+
                                 }
+                            }
+                            else
+                            {
+                                <h1>Nenhum dado encontrado!</h1>
                             }
                         </select>
                     </div>

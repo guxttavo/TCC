@@ -33,7 +33,7 @@ namespace Data.Repositories
         public async Task<IEnumerable<Categoria>> BuscarSubcategorias()
         {
             return await _dbContext.Categorias
-                                   .Where(x => x.IdCategoriaPai != null)
+                                   .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
                                    .ToListAsync();
         }
     }

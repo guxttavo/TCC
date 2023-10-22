@@ -14,10 +14,11 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            ViewBag.BuscarCategorias = await _denunciaService.BuscarCategorias();
-            ViewBag.BuscarSubcategorias = await _denunciaService.BuscarSubcategorias();
-             
-            return View();
+            IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
+            // ViewBag.BuscarCategorias = await _denunciaService.BuscarCategorias();
+            // ViewBag.BuscarSubcategorias = await _denunciaService.BuscarSubcategorias();
+
+            return View("Index", categorias);
         }
     }
 }
