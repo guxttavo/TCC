@@ -39,7 +39,7 @@ var subcategorias = ViewBag.BuscarSubcategorias;
                                 {
                                     @if (categoria.IdCategoriaPai == null)
                                     {
-                                        <option>@categoria.Nome</option>
+                                        <option value="@categoria.Id">@categoria.Nome</option>
                                     }
                                 }
                             }
@@ -59,7 +59,7 @@ var subcategorias = ViewBag.BuscarSubcategorias;
                                 {
                                     @if (subcategoria.IdCategoriaPai != null)
                                     {
-                                        <option>@subcategoria.Nome</option>
+                                        <option id="macaco" value="@subcategoria.IdCategoriaPai">@subcategoria.Nome</option>
                                     }
                                 }
                             }
@@ -86,4 +86,4 @@ var subcategorias = ViewBag.BuscarSubcategorias;
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/iziToast/dist/js/iziToast.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/js/Pages/denuncia.js"></script>
+<script src="~/js/Pages/denuncia.js" asp-append-version="true"></script>
