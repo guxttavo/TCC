@@ -1,14 +1,21 @@
 var denuncia = (function () {
     var configs = {
         urls: {
-            realizarSuporte: '',
-            viewHome: ''
+            cadastrarDenuncia: ''
         },
     };
 
     var init = function ($configs) {
         configs = $configs;
     };
+
+    var cadastrarDenuncia = function () {
+        var model = $('#cadastrarDenuncia').serializeObject();
+
+        console.log(model);
+        // $.post(configs.urls.cadastrarDenuncia, model).done(function () {
+        // });
+    }
 
     $("#categorias").on('change', function () {
         var idCategoria = $(this).val();
@@ -50,5 +57,6 @@ var denuncia = (function () {
 
     return {
         init: init,
+        cadastrarDenuncia: cadastrarDenuncia
     }
 })()

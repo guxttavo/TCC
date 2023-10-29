@@ -9,3 +9,14 @@
     font-size: 25px !important;
     margin-bottom: 15px;
 }
+
+.jooj{
+    display: flex;
+    flex-direction: column;
+    resize: none;
+    height: 150px;
+    margin-bottom: -100px;
+}
+
+textarea{
+}
