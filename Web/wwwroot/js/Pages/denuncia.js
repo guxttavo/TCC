@@ -1,7 +1,8 @@
 var denuncia = (function () {
     var configs = {
         urls: {
-            cadastrarDenuncia: ''
+            cadastrarDenuncia: '',
+            viewGraficos: ''
         },
     };
 
@@ -11,6 +12,27 @@ var denuncia = (function () {
 
     var cadastrarDenuncia = function () {
         var model = $('#cadastrarDenuncia').serializeObject();
+
+        var chartData = {
+            chart: {
+                type: 'bar',
+            },
+            series: [{
+                name: 'Dados do Formulário',
+                data: [model.data, model.Bairro, model.categoria, model.subcategoria],
+            }],
+            xaxis: {
+                categories: ['Data', 'Bairro', 'Categoria', 'Subcategoria'],
+            }
+        };
+
+        $.get(configs.urls.viewGraficos).done(function () {
+            location.href = configs.urls.viewGraficos;
+            var chartElement = document.querySelector("#graficos");
+            var chart = new ApexCharts(chartElement, chartData);
+            
+            chart.render();
+        })
 
         console.log(model);
         // $.post(configs.urls.cadastrarDenuncia, model).done(function () {
@@ -25,8 +47,6 @@ var denuncia = (function () {
         // $("#subcategorias").empty();
 
         $("#subcategorias option").hide();
-
-        // Mostra apenas as subcategorias relevantes para a categoria selecionada
         $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
 
         $("#subcategorias option").each(function () {

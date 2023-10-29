@@ -20,11 +20,11 @@
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label>Data</label>
-                        <input type="date" name="Data" class="form-control" required>
+                        <input type="date" class="form-control" name="data" required>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
-                        <select class="form-select drop-down" id="tipoUsuario" name="bairro">
+                        <select class="form-select drop-down" name="Bairro">
                             @foreach (var bairro in bairros)
                             {
                                 <option>@bairro.Nome</option>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="jooj form-group">
                         <label class="descricao">Descrição</label>
-                        <textarea rows="3" name="Descricao"></textarea>
+                        <textarea rows="3" name="descricao"></textarea>
                     </div>
                 </div>
                 <div class="ajuste-botoes">
@@ -84,8 +84,8 @@
     </div>
 </div>
 
+<script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/iziToast/dist/js/iziToast.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/js/Pages/denuncia.js" asp-append-version="true"></script>
 
@@ -93,6 +93,7 @@
     denuncia.init({
         urls: {
             cadastrarDenuncia: '@Url.Action("CadastrarDenuncia", "Denuncia")',
+            viewGraficos: '@Url.Action("Index", "Grafico")',
         }
     });
 </script>

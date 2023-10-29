@@ -21,5 +21,6 @@ namespace Web.Controllers
 
             return View("Index", categorias);
         }
+     
     }
 }

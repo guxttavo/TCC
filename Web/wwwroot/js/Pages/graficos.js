@@ -15,7 +15,7 @@ var options = {
 }
 
 var chart = new ApexCharts(grafico1, options);
-chart.render()
+// chart.render()
 
 let grafico2 = document.getElementById("graficos2")
 var options = {
@@ -34,7 +34,7 @@ var options = {
 }
 
 var chart = new ApexCharts(grafico2, options);
-chart.render()
+// chart.render()
 
 
 let grafico3 = document.getElementById("graficos3")
@@ -54,7 +54,7 @@ var options = {
 }
 
 var chart = new ApexCharts(grafico3, options);
-chart.render()
+// chart.render()
 
 
 let grafico4 = document.getElementById("graficos4")
@@ -74,4 +74,4 @@ var options = {
 }
 
 var chart = new ApexCharts(grafico4, options);
-chart.render()
+// chart.render()
