@@ -17,6 +17,11 @@ var denuncia = (function () {
         var subCategorias = [];
         // $("#subcategorias").empty();
 
+        $("#subcategorias option").hide();
+
+        // Mostra apenas as subcategorias relevantes para a categoria selecionada
+        $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
+
         $("#subcategorias option").each(function () {
             var id = $(this).val();
             var nome = $(this).text();
@@ -38,8 +43,9 @@ var denuncia = (function () {
     });
 
     $(document).ready(function () {
-        $("#subcategorias").empty();
-
+        // $("#subcategorias option").each(function () {
+        //     $(this).empty();
+        // })
     });
 
     return {
