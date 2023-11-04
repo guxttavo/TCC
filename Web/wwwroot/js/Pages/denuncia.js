@@ -12,31 +12,28 @@ var denuncia = (function () {
 
     var cadastrarDenuncia = function () {
         var model = $('#cadastrarDenuncia').serializeObject();
+        
+        // var model ={
+        //     data: $('#cadastrarDenuncia input[name="data"]').val(),
+        //     bairro: $('#cadastrarDenuncia select[name="Bairro"]').val(),
+        //     categoria: $('#categorias option:selected').data('nome'),
+        //     subcategoria: $('#subcategorias option:selected').data('nome'),
+        //     descricao: $('#cadastrarDenuncia textarea[name="descricao"]').val()
+        // }
 
-        var chartData = {
-            chart: {
-                type: 'bar',
-            },
-            series: [{
-                name: 'Dados do Formulário',
-                data: [model.data, model.Bairro, model.categoria, model.subcategoria],
-            }],
-            xaxis: {
-                categories: ['Data', 'Bairro', 'Categoria', 'Subcategoria'],
-            }
-        };
-
-        $.get(configs.urls.viewGraficos).done(function () {
-            location.href = configs.urls.viewGraficos;
-            var chartElement = document.querySelector("#graficos");
-            var chart = new ApexCharts(chartElement, chartData);
+        // model.serializeObject();
+        
+        // $.get(configs.urls.viewGraficos).done(function () {
+        //     location.href = configs.urls.viewGraficos;
+        //     var chartElement = document.querySelector("#graficos");
+        //     var chart = new ApexCharts(chartElement, chartData);
             
-            chart.render();
-        })
-
+        //     chart.render();
+        // })
+        
+        $.post(configs.urls.cadastrarDenuncia, model).done(function () {
+        });
         console.log(model);
-        // $.post(configs.urls.cadastrarDenuncia, model).done(function () {
-        // });
     }
 
     $("#categorias").on('change', function () {

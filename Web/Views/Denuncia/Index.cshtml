@@ -34,14 +34,14 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
-                        <select id="categorias" class="form-select drop-down" name="categoria">
+                        <select id="categorias" class="form-select drop-down" name="IdCategoria">
                             @if (Model != null && Model.Any())
                             {
                                 @foreach (var categoria in Model)
                                 {
                                     @if (categoria.IdCategoriaPai == null)
                                     {
-                                        <option value="@categoria.Id">@categoria.Nome</option>
+                                        <option data-nome="@categoria.Nome" value="@categoria.Id">@categoria.Nome</option>
                                     }
                                 }
                             }
@@ -60,7 +60,8 @@
                                 {
                                     @if (subcategoria.IdCategoriaPai != null)
                                     {
-                                        <option id="macaco" value="@subcategoria.IdCategoriaPai">@subcategoria.Nome</option>
+                                        <option id="macaco" data-nome="@subcategoria.Nome" value="@subcategoria.IdCategoriaPai" name="">
+                                            @subcategoria.Nome</option>
                                     }
                                 }
                             }
@@ -76,7 +77,8 @@
                     </div>
                 </div>
                 <div class="ajuste-botoes">
-                    <button type="submit" class="btn btn-dark botao-denunciar" onclick="denuncia.cadastrarDenuncia()">Denunciar</button>
+                    <button type="submit" class="btn btn-dark botao-denunciar"
+                        onclick="denuncia.cadastrarDenuncia()">Denunciar</button>
                 </div>
                 <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
             </form>

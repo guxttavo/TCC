@@ -26,15 +26,9 @@ namespace Core.Services
             return _denunciaRepository.BuscarSubcategorias();
         }
 
-        // public Task<List<Categoria>> BuscarCategorias()
-        // {
-        //     return _denunciaRepository.BuscarCategorias();
-
-        // }
-
-        // public Task<List<Subcategoria>> BuscarSubcategorias()
-        // {
-        //     return _denunciaRepository.BuscarSubcategorias();
-        // }
+        public Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
+        {
+            return _denunciaRepository.CadastrarDenuncia(denuncia);
+        }
     }
 }

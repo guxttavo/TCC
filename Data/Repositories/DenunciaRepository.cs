@@ -35,5 +35,13 @@ namespace Data.Repositories
                                    .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
                                    .ToListAsync();
         }
+
+        public async Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
+        {
+            _dbContext.Add(denuncia);
+            _dbContext.SaveChangesAsync();
+
+            return denuncia;
+        }
     }
 }

@@ -15,12 +15,16 @@ namespace Web.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
-            // ViewBag.BuscarCategorias = await _denunciaService.BuscarCategorias();
-            // ViewBag.BuscarSubcategorias = await _denunciaService.BuscarSubcategorias();
             ViewBag.BuscarBairros = await _denunciaService.BuscarBairros();
 
             return View("Index", categorias);
         }
-     
+
+        public async Task<IActionResult> CadastrarDenuncia(Denuncia denuncia)
+        {
+            _denunciaService.CadastrarDenuncia(denuncia);
+            return RedirectToAction("");
+        }
+
     }
 }
