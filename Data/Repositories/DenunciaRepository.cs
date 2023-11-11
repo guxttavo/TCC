@@ -38,10 +38,8 @@ namespace Data.Repositories
 
         public async Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
         {
-            _dbContext.Add(denuncia);
-            _dbContext.SaveChangesAsync();
-
-            return denuncia;
+            // return await _dbContext.Denuncias.AddAsync
+            return null;
         }
     }
 }

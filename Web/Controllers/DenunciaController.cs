@@ -22,9 +22,19 @@ namespace Web.Controllers
 
         public async Task<IActionResult> CadastrarDenuncia(Denuncia denuncia)
         {
-            _denunciaService.CadastrarDenuncia(denuncia);
-            return RedirectToAction("");
-        }
+            // var idCategoriaPai = _denunciaService.BuscarSubcategorias();
+            // return RedirectToAction("");
+            await _denunciaService.CadastrarDenuncia(new Denuncia
+            {
+                Id = denuncia.Id,
+                Data = denuncia.Data,
+                Descricao = denuncia.Descricao,
+                IdUsuario = denuncia.IdUsuario,
+                IdCategoria = denuncia.IdCategoria,
+                IdBairro = denuncia.IdBairro,
+            });
 
+            return null;
+        }
     }
 }
