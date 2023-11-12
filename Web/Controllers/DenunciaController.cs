@@ -22,7 +22,17 @@ namespace Web.Controllers
 
         public async Task<IActionResult> CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
         {
-            await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
+            // await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
+            Denuncia denuncia = new Denuncia
+            {
+                IdCategoria = idSubcategoria,
+                IdBairro = idBairro,
+                Data = data,
+                Descricao = descricao,
+                IdUsuario = idUsuario
+            };
+
+            await _denunciaService.CadastrarDenuncia(denuncia);
 
             return RedirectToAction("Index");
         }

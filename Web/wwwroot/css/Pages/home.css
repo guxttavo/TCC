@@ -23,19 +23,21 @@
 .opcoes-denuncia {
     display: flex;
     margin-bottom: 5px;
+    width: 910px;
 }
 
 .opcoes-denuncia h3 {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 15px;
+    border: solid 1px black;
 }
 
 .descricao {
     width: 60%;
     height: 70px;
-    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.187);
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .conteudo-denuncia {
@@ -65,5 +67,4 @@
 
 .ajuste {
     display: flex;
-    flex-direction: column;
 }

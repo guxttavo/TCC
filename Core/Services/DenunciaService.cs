@@ -27,18 +27,18 @@ namespace Core.Services
             return _denunciaRepository.BuscarSubcategorias();
         }
 
-        public async Task CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
+        public async Task CadastrarDenuncia(Denuncia denuncia)
         {
-            Denuncia denuncia = new Denuncia
+            Denuncia novaDenuncia = new Denuncia
             {
-                IdCategoria = idSubcategoria,
-                IdUsuario = idUsuario,
-                IdBairro = idBairro,
-                Data = data.Date.ToUniversalTime(),
-                Descricao = descricao
+                IdCategoria = denuncia.IdCategoria,
+                IdUsuario = denuncia.IdUsuario,
+                IdBairro = denuncia.IdBairro,
+                Data = denuncia.Data.ToUniversalTime(),
+                Descricao = denuncia.Descricao
             };
 
-            await _denunciaRepository.CadastrarDenuncia(denuncia);
+            await _denunciaRepository.CadastrarDenuncia(novaDenuncia);
         }
 
         // public Task<Denuncia> BuscarDadosGraficos()
@@ -51,5 +51,7 @@ namespace Core.Services
         {
             return _denunciaRepository.BuscarDenuncias();
         }
+
+
     }
 }
