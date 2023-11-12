@@ -62,12 +62,12 @@ namespace Data.Repositories
         //                            .FirstOrDefaultAsync();
         // }
 
-        // public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
-        // {
-        //     return await _dbContext.Denuncias
-        //                            .Include(x => x.Bairro)
-        //                            .Include(x => x.Categoria)
-        //                            .ToListAsync();
-        // }
+        public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
+        {
+            return await _dbContext.Denuncias
+                                   .Include(x => x.Bairro)
+                                   .Include(x => x.Categoria)
+                                   .ToListAsync();
+        }
     }
 }

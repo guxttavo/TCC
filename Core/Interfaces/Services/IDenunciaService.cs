@@ -9,6 +9,6 @@ namespace Core.Interfaces.Services
         Task<IEnumerable<Categoria>> BuscarSubcategorias();
         Task CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1);
         Task<IEnumerable<Denuncia>> BuscarDenuncias();
-        Task<Denuncia> BuscarDadosGraficos();
+        // Task<Denuncia> BuscarDadosGraficos();
     }
 }

@@ -41,11 +41,11 @@ namespace Core.Services
             await _denunciaRepository.CadastrarDenuncia(denuncia);
         }
 
-        public Task<Denuncia> BuscarDadosGraficos()
-        {
-            return _denunciaRepository.BuscarDadosGraficos();
+        // public Task<Denuncia> BuscarDadosGraficos()
+        // {
+        //     return _denunciaRepository.BuscarDadosGraficos();
 
-        }
+        // }
 
         public Task<IEnumerable<Denuncia>> BuscarDenuncias()
         {

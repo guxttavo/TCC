@@ -24,7 +24,7 @@ namespace Web.Controllers
         {
             await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
 
-            return Ok();
+            return RedirectToAction("Index");
         }
     }
 }
