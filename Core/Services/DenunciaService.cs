@@ -26,9 +26,18 @@ namespace Core.Services
             return _denunciaRepository.BuscarSubcategorias();
         }
 
-        public Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
+        public async Task CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
         {
-            return _denunciaRepository.CadastrarDenuncia(denuncia);
+            Denuncia denuncia = new Denuncia
+            {
+                IdCategoria = idSubcategoria,
+                IdUsuario = idUsuario,
+                IdBairro = idBairro,
+                Data = data.Date.ToUniversalTime(),
+                Descricao = descricao
+            };
+
+            await _denunciaRepository.CadastrarDenuncia(denuncia);
         }
     }
 }

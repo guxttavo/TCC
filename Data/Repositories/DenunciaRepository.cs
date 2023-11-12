@@ -1,5 +1,6 @@
 using Core.Interfaces.Repositories;
 using Core.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
@@ -19,29 +20,28 @@ namespace Data.Repositories
             .AsSingleQuery()
             .Select(x => new Bairro
             {
+                Id = x.Id,
                 Nome = x.Nome
             }).ToListAsync();
         }
 
         public async Task<IEnumerable<Categoria>> BuscarCategorias()
-        {
-            return await _dbContext.Categorias
-                                   .ToListAsync();
+        {   
+            var categorias = await _dbContext.Categorias.ToListAsync();
+            return categorias;
         }
 
         public async Task<IEnumerable<Categoria>> BuscarSubcategorias()
         {
             return await _dbContext.Categorias
-                                   .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
-                                   .ToListAsync();
+                .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
+                .ToListAsync();
         }
 
-        public async Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
+        public async Task CadastrarDenuncia(Denuncia denuncia)
         {
-            _dbContext.Add(denuncia);
-            _dbContext.SaveChangesAsync();
-
-            return denuncia;
+            await _dbContext.AddAsync(denuncia);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

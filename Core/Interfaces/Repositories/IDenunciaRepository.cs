@@ -7,6 +7,6 @@ namespace Core.Interfaces.Repositories
         Task<List<Bairro>> BuscarBairros();
         Task<IEnumerable<Categoria>> BuscarCategorias();
         Task<IEnumerable<Categoria>> BuscarSubcategorias();
-        Task<Denuncia> CadastrarDenuncia(Denuncia denuncia);
+        Task CadastrarDenuncia(Denuncia denuncia);
     }
 }

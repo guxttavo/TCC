@@ -24,10 +24,10 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
-                        <select class="form-select drop-down" name="Bairro">
+                        <select id="bairros" class="form-select drop-down" name="Bairro">
                             @foreach (var bairro in bairros)
                             {
-                                <option>@bairro.Nome</option>
+                                <option value="@bairro.Id">@bairro.Nome</option>
 
                             }
                         </select>
@@ -60,7 +60,7 @@
                                 {
                                     @if (subcategoria.IdCategoriaPai != null)
                                     {
-                                        <option id="macaco" data-nome="@subcategoria.Nome" value="@subcategoria.IdCategoriaPai" name="">
+                                        <option data-nome="@subcategoria.Nome" value="@subcategoria.Id" name="">
                                             @subcategoria.Nome</option>
                                     }
                                 }
