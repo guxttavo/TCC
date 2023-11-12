@@ -1,5 +1,6 @@
 using Core.Interfaces.Repositories;
 using Core.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
@@ -19,46 +20,47 @@ namespace Data.Repositories
             .AsSingleQuery()
             .Select(x => new Bairro
             {
+                Id = x.Id,
                 Nome = x.Nome
             }).ToListAsync();
         }
 
         public async Task<IEnumerable<Categoria>> BuscarCategorias()
-        {
-            return await _dbContext.Categorias
-                                   .ToListAsync();
+        {   
+            var categorias = await _dbContext.Categorias.ToListAsync();
+            return categorias;
         }
 
         public async Task<IEnumerable<Categoria>> BuscarSubcategorias()
         {
             return await _dbContext.Categorias
-                                   .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
-                                   .ToListAsync();
+                .Where(x => x.IdCategoriaPai != null && x.Id == x.IdCategoriaPai)
+                .ToListAsync();
         }
 
-        public async Task<Denuncia> BuscarDadosGraficos()
+        public async Task CadastrarDenuncia(Denuncia denuncia)
         {
-            return await _dbContext.Denuncias
-                                   .Select(x => new Denuncia
-                                   {
-                                       Data = x.Data,
-                                       Bairro = new Bairro
-                                       {
-                                           Nome = x.Bairro.Nome
-                                       },
-                                       Categoria = new Categoria
-                                       {
-                                           Nome = x.Categoria.Nome
-                                       }
-                                   })
-                                   .FirstOrDefaultAsync();
+            await _dbContext.AddAsync(denuncia);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<Denuncia> CadastrarDenuncia(Denuncia denuncia)
-        {
-            // return await _dbContext.Denuncias.AddAsync
-            return null;
-        }
+        // public async Task<Denuncia> BuscarDadosGraficos()
+        // {
+        //     return await _dbContext.Denuncias
+        //                            .Select(x => new Denuncia
+        //                            {
+        //                                Data = x.Data,
+        //                                Bairro = new Bairro
+        //                                {
+        //                                    Nome = x.Bairro.Nome
+        //                                },
+        //                                Categoria = new Categoria
+        //                                {
+        //                                    Nome = x.Categoria.Nome
+        //                                }
+        //                            })
+        //                            .FirstOrDefaultAsync();
+        // }
 
         public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
         {

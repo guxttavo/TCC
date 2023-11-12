@@ -1,7 +1,7 @@
 @model List<Categoria>
 
 @{
-    @* var bairros = ViewBag.BuscarBairros; *@
+    var bairros = ViewBag.BuscarBairros;
 }
 
 <head>
@@ -24,12 +24,12 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
-                        <select class="form-select drop-down jooj" name="Bairro">
-                            @* @foreach (var bairro in bairros)
+                        <select id="bairros" class="form-select drop-down" name="Bairro">
+                            @foreach (var bairro in bairros)
                             {
-                                <option>@bairro.Nome</option>
+                                <option value="@bairro.Id">@bairro.Nome</option>
 
-                            } *@
+                            }
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
@@ -60,7 +60,7 @@
                                 {
                                     @if (subcategoria.IdCategoriaPai != null)
                                     {
-                                        <option id="macaco" data-nome="@subcategoria.Nome" value="@subcategoria.IdCategoriaPai" name="">
+                                        <option data-nome="@subcategoria.Nome" value="@subcategoria.Id" name="">
                                             @subcategoria.Nome</option>
                                     }
                                 }
@@ -73,7 +73,7 @@
                     </div>
                     <div class="jooj form-group">
                         <label class="descricao">Descrição</label>
-                        <textarea rows="3" name="Descricao"></textarea>
+                        <textarea rows="3" id="cadastrarDenuncia" name="Descricao"></textarea>
                     </div>
                 </div>
                 <div class="ajuste-botoes">

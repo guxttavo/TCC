@@ -11,30 +11,17 @@ var denuncia = (function () {
     };
 
     var cadastrarDenuncia = function () {
-        var model = $('#cadastrarDenuncia').serializeObject();
-        
-        // var model ={
-        //     data: $('#cadastrarDenuncia input[name="data"]').val(),
-        //     bairro: $('#cadastrarDenuncia select[name="Bairro"]').val(),
-        //     categoria: $('#categorias option:selected').data('nome'),
-        //     subcategoria: $('#subcategorias option:selected').data('nome'),
-        //     descricao: $('#cadastrarDenuncia textarea[name="descricao"]').val()
-        // }
-
-        // model.serializeObject();
-        
-        // $.get(configs.urls.viewGraficos).done(function () {
-        //     location.href = configs.urls.viewGraficos;
-        //     var chartElement = document.querySelector("#graficos");
-        //     var chart = new ApexCharts(chartElement, chartData);
-            
-        //     chart.render();
-        // })
-        
-        $.post(configs.urls.cadastrarDenuncia, model).done(function () {
+        var model = {
+            idCategoria: $('#categorias').val(),
+            idSubcategoria: $('#subcategorias').val(),
+            idBairro: $('#bairros').val(),
+            data: $('#cadastrarDenuncia input[name="data"]').val(),
+            descricao: $('#cadastrarDenuncia textarea[name="Descricao"]').val()
+        };
+            $.post(configs.urls.cadastrarDenuncia, model).done(() => {
+                window.location.href = '/Home/Index';
         });
-        console.log(model);
-    }
+    };
 
     $("#categorias").on('change', function () {
         var idCategoria = $(this).val();

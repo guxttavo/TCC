@@ -20,21 +20,11 @@ namespace Web.Controllers
             return View("Index", categorias);
         }
 
-        public async Task<IActionResult> CadastrarDenuncia(Denuncia denuncia)
+        public async Task<IActionResult> CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
         {
-            // var idCategoriaPai = _denunciaService.BuscarSubcategorias();
-            // return RedirectToAction("");
-            await _denunciaService.CadastrarDenuncia(new Denuncia
-            {
-                Id = denuncia.Id,
-                Data = denuncia.Data,
-                Descricao = denuncia.Descricao,
-                IdUsuario = denuncia.IdUsuario,
-                IdCategoria = denuncia.IdCategoria,
-                IdBairro = denuncia.IdBairro,
-            });
+            await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
 
-            return null;
+            return RedirectToAction("Index");
         }
     }
 }

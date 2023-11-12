@@ -17,13 +17,13 @@ namespace Web.Controllers
             return View();
         }
 
-        public async Task<IActionResult> BuscarDadosGraficos()
-        {
-            var dadosGraficos = await _denunciaService.BuscarDadosGraficos();
+        // public async Task<IActionResult> BuscarDadosGraficos()
+        // {
+        //     var dadosGraficos = await _denunciaService.BuscarDadosGraficos();
 
 
-            return View("", dadosGraficos);
-        }
+        //     return View("", dadosGraficos);
+        // }
 
     }
 }
