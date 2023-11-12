@@ -37,5 +37,10 @@ namespace Core.Services
             return _denunciaRepository.BuscarDadosGraficos();
 
         }
+
+        public Task<IEnumerable<Denuncia>> BuscarDenuncias()
+        {
+            return _denunciaRepository.BuscarDenuncias();
+        }
     }
 }

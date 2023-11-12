@@ -1,7 +1,7 @@
 @model List<Categoria>
 
 @{
-    var bairros = ViewBag.BuscarBairros;
+    @* var bairros = ViewBag.BuscarBairros; *@
 }
 
 <head>
@@ -25,11 +25,11 @@
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
                         <select class="form-select drop-down jooj" name="Bairro">
-                            @foreach (var bairro in bairros)
+                            @* @foreach (var bairro in bairros)
                             {
                                 <option>@bairro.Nome</option>
 
-                            }
+                            } *@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">

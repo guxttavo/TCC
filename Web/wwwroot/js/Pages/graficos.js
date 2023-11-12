@@ -10,36 +10,30 @@ var graficos = (function () {
     };
 
     $(document).ready(function () {
-        $.get(configs.urls.buscarDados).done(function () {
-        })
+        var dados = $.get(configs.urls.buscarDados);
     });
 
-    // var buscarDados = function () {
-    //     $.get(configs.urls.buscarDados)
-    // }
+    const ctx = document.getElementById('grafico');
 
-    // $(document).ready(function () {
-    //     $.get(configs.urls.buscarDados)
-    // });
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
-    // let grafico1 = document.getElementById("graficos")
-    // var options = {
-    //     chart: {
-    //         type: 'bar',
-    //         height: '260px',
-    //         width: '322px',
-    //         margin: '100px'
-    //     },
-    //     series: [
-    //         {
-    //             name: 'População',
-    //             data: [10, 30, 20]
-    //         }
-    //     ]
-    // }
-
-    // var chart = new ApexCharts(grafico1, options);
-    // chart.render()
 
     return {
         init: init,
