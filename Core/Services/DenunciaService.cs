@@ -32,6 +32,7 @@ namespace Core.Services
             Denuncia novaDenuncia = new Denuncia
             {
                 IdCategoria = denuncia.IdCategoria,
+                IdSubcategoria = denuncia.IdSubcategoria,
                 IdUsuario = denuncia.IdUsuario,
                 IdBairro = denuncia.IdBairro,
                 Data = denuncia.Data.ToUniversalTime(),
@@ -41,17 +42,14 @@ namespace Core.Services
             await _denunciaRepository.CadastrarDenuncia(novaDenuncia);
         }
 
-        // public Task<Denuncia> BuscarDadosGraficos()
-        // {
-        //     return _denunciaRepository.BuscarDadosGraficos();
-
-        // }
-
         public Task<IEnumerable<Denuncia>> BuscarDenuncias()
         {
             return _denunciaRepository.BuscarDenuncias();
         }
 
-
+        public bool FecharDenuncia(int id)
+        {
+            return _denunciaRepository.FecharDenuncia(id);
+        }
     }
 }

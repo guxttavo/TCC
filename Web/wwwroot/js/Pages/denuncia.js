@@ -2,7 +2,8 @@ var denuncia = (function () {
     var configs = {
         urls: {
             cadastrarDenuncia: '',
-            viewGraficos: ''
+            viewGraficos: '',
+            fecharDenuncia: ''
         },
     };
 
@@ -18,49 +19,50 @@ var denuncia = (function () {
             data: $('#cadastrarDenuncia input[name="data"]').val(),
             descricao: $('#cadastrarDenuncia textarea[name="Descricao"]').val()
         };
-            $.post(configs.urls.cadastrarDenuncia, model).done(() => {
-                window.location.href = '/Home/Index';
+        $.post(configs.urls.cadastrarDenuncia, model).done(() => {
+            window.location.href = '/Home/Index';
         });
     };
 
-    $("#categorias").on('change', function () {
-        var idCategoria = $(this).val();
-        var idCategoriaPai = $("#subcategorias").val();
-        // var Subcategorias = $("#subcategorias");
-        var subCategorias = [];
-        // $("#subcategorias").empty();
+    var fecharDenuncia = function (id) {
+        var model = { Id: id };
 
-        $("#subcategorias option").hide();
-        $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
-
-        $("#subcategorias option").each(function () {
-            var id = $(this).val();
-            var nome = $(this).text();
-            subCategorias.push({
-                id: id,
-                nome: nome
-            });
-
+        $.post(configs.urls.fecharDenuncia, model).done(() => {
+            window.location.href = '/Home/Index';
         })
+    }
 
-        $.each(subCategorias, function () {
-            if (idCategoria == this.id) {
-                $("#subcategorias").append('<option value="' + this.id + '">' + this.nome + '</option>');
-            } else {
+    // $("#categorias").on('change', function () {
+    //     var idCategoria = $(this).val();
+    //     var idCategoriaPai = $("#subcategorias").val();
+    //     var subCategorias = [];
 
-            }
+    //     $("#subcategorias option").hide();
+    //     $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
 
-        })
-    });
+    //     $("#subcategorias option").each(function () {
+    //         var id = $(this).val();
+    //         var nome = $(this).text();
+    //         subCategorias.push({
+    //             id: id,
+    //             nome: nome
+    //         });
 
-    $(document).ready(function () {
-        // $("#subcategorias option").each(function () {
-        //     $(this).empty();
-        // })
-    });
+    //     })
+
+    //     $.each(subCategorias, function () {
+    //         if (idCategoria == this.id) {
+    //             $("#subcategorias").append('<option value="' + this.id + '">' + this.nome + '</option>');
+    //         } else {
+
+    //         }
+
+    //     })
+    // });
 
     return {
         init: init,
-        cadastrarDenuncia: cadastrarDenuncia
+        cadastrarDenuncia: cadastrarDenuncia,
+        fecharDenuncia: fecharDenuncia
     }
 })()

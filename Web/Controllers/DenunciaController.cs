@@ -20,12 +20,13 @@ namespace Web.Controllers
             return View("Index", categorias);
         }
 
-        public async Task<IActionResult> CadastrarDenuncia(int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
+        public async Task<IActionResult> CadastrarDenuncia(int idCategoria, int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
         {
             // await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
             Denuncia denuncia = new Denuncia
             {
-                IdCategoria = idSubcategoria,
+                IdCategoria = idCategoria,
+                IdSubcategoria = idSubcategoria,
                 IdBairro = idBairro,
                 Data = data,
                 Descricao = descricao,
@@ -34,6 +35,13 @@ namespace Web.Controllers
 
             await _denunciaService.CadastrarDenuncia(denuncia);
 
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult FecharDenuncia(int id)
+        {
+            _denunciaService.FecharDenuncia(id);
             return RedirectToAction("Index");
         }
     }

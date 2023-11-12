@@ -26,7 +26,7 @@ namespace Data.Repositories
         }
 
         public async Task<IEnumerable<Categoria>> BuscarCategorias()
-        {   
+        {
             var categorias = await _dbContext.Categorias.ToListAsync();
             return categorias;
         }
@@ -42,6 +42,29 @@ namespace Data.Repositories
         {
             await _dbContext.AddAsync(denuncia);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public Denuncia BuscarDenuncia(int id)
+        {
+            return _dbContext.Denuncias.FirstOrDefault(x => x.Id == id);
+        }
+
+        public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
+        {
+            return await _dbContext.Denuncias
+                                   .Include(x => x.Bairro)
+                                   .Include(x => x.Categoria)
+                                   .ToListAsync();
+        }
+
+        public bool FecharDenuncia(int id)
+        {
+            Denuncia denuncia = BuscarDenuncia(id);
+
+            _dbContext.Denuncias.Remove(denuncia);
+            _dbContext.SaveChangesAsync();
+
+            return true;
         }
 
         // public async Task<Denuncia> BuscarDadosGraficos()
@@ -62,12 +85,5 @@ namespace Data.Repositories
         //                            .FirstOrDefaultAsync();
         // }
 
-        public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
-        {
-            return await _dbContext.Denuncias
-                                   .Include(x => x.Bairro)
-                                   .Include(x => x.Categoria)
-                                   .ToListAsync();
-        }
     }
 }

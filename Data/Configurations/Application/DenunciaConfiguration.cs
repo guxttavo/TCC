@@ -17,10 +17,12 @@ namespace Data.Configurations.Application
             builder.Property(x => x.Descricao).HasColumnName("descricao");
             builder.Property(x => x.IdUsuario).HasColumnName("id_usuario");
             builder.Property(x => x.IdCategoria).HasColumnName("id_categoria");
+            builder.Property(x => x.IdSubcategoria).HasColumnName("id_subcategoria");
             builder.Property(x => x.IdBairro).HasColumnName("id_bairro");
 
             builder.HasOne(x => x.Usuario).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdUsuario);
             builder.HasOne(x => x.Categoria).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdCategoria);
+            builder.HasOne(x => x.Categoria).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdSubcategoria);
             builder.HasOne(x => x.Bairro).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdBairro);
         }
     }

@@ -17,8 +17,8 @@
                     <h3>Nº: @denuncia.Id</h3>
                     <h3>Data: @denuncia.Data.Date</h3>
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
-                    <h3>Categoria: @denuncia.Categoria.Nome</h3>
-                    @if (@denuncia.Categoria.IdCategoriaPai != null)
+                    @* <h3>Categoria: @denuncia.Categoria.Nome</h3> *@
+                    @if (@denuncia.Categoria.IdCategoriaPai == null)
                     {
                         <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
                     }
@@ -28,12 +28,12 @@
                         @denuncia.Descricao
                     </text-area>
                     <div class="botoes-denuncia">
-                        <button class="fechar-denuncia" onclick="home.fecharDenuncia()">
+                        <a class="fechar-denuncia" onclick="denuncia.fecharDenuncia(@denuncia.Id)">
                             Fechar Denuncia
-                        </button>
-                        <button class="editar-denuncia">
+                        </a>
+                        <a class="editar-denuncia" onclick="denuncia.editarDenuncia()">
                             Editar Denuncia
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -43,13 +43,14 @@
 
 <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/js/Pages/home.js" asp-append-version="true"></script>
+<script src="~/js/Pages/denuncia.js" asp-append-version="true"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 <script>
-    home.init({
+    denuncia.init({
         urls: {
+            fecharDenuncia:'@Url.Action("FecharDenuncia","denuncia")'
         }
     });
 </script>

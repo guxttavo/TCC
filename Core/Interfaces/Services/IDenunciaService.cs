@@ -10,5 +10,6 @@ namespace Core.Interfaces.Services
         Task CadastrarDenuncia(Denuncia denuncia);
         Task<IEnumerable<Denuncia>> BuscarDenuncias();
         // Task<Denuncia> BuscarDadosGraficos();
+        bool FecharDenuncia(int id);
     }
 }
