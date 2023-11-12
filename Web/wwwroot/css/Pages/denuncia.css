@@ -3,7 +3,7 @@
 }
 
 .botao-denunciar {
-    margin-top: 90px;
+    margin-top: 60px;
     width: 180px;
     height: 50px;
     font-size: 25px !important;
@@ -14,9 +14,11 @@
     display: flex;
     flex-direction: column;
     resize: none;
-    height: 150px;
-    margin-bottom: -100px;
+    /* height: 150px; */
+    /* margin-bottom: -100px; */
+    margin-top: -10px;
 }
 
 textarea{
+    margin-bottom: -20px;
 }

@@ -1,4 +1,5 @@
-﻿<header>
+﻿@model IEnumerable<Denuncia>
+<header>
     <link rel="stylesheet" href="~/css/Pages/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/iziToast/dist/css/iziToast.min.css" />
@@ -7,22 +8,34 @@
 <section class="container-geral">
     <h1 class="titulo-geral">Suas Denúncias: </h1>
 
-    <div class="container-denuncia">
-        <div class="conteudo-denuncia">
-            <div class="opcoes-denuncia">
-                <h3>Número</h3>
-                <h3>Nome</h3>
-                <h3>Tipo</h3>
-                <h3>Bairro</h3>
-            </div>
-            <div class="ajuste">
-                <text-area class="descricao">
-                    Descrição da denuncia
-                </text-area>
-                <a class="fechar-denuncia">
-                    Fechar Denuncia
-                </a>
+    @foreach (Denuncia denuncia in Model)
+    {
+        <div class="container-denuncia">
+            <div class="conteudo-denuncia">
+                <div class="opcoes-denuncia">
+                    <h3>Nº : @denuncia.Id</h3>
+                    <h3>Data: @denuncia.Data</h3>
+                    <h3>Bairro: @denuncia.Bairro.Nome</h3>
+                    <h3>Categoria: @denuncia.Categoria.Nome</h3>
+                    @if (@denuncia.Categoria.IdCategoriaPai != null)
+                    {
+                        <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
+                    }
+                </div>
+                <div class="ajuste">
+                    <text-area class="descricao">
+                        @denuncia.Descricao
+                    </text-area>
+                    <div class="botoes-denuncia">
+                        <a class="fechar-denuncia">
+                            Fechar Denuncia
+                        </a>
+                        <a class="editar-denuncia">
+                            Editar Denuncia
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    }
 </section>

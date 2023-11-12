@@ -8,5 +8,7 @@ namespace Core.Interfaces.Repositories
         Task<IEnumerable<Categoria>> BuscarCategorias();
         Task<IEnumerable<Categoria>> BuscarSubcategorias();
         Task CadastrarDenuncia(Denuncia denuncia);
+        // Task<Denuncia> BuscarDadosGraficos();
+        // Task<IEnumerable<Denuncia>> BuscarDenuncias();
     }
 }

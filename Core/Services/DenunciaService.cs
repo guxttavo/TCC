@@ -21,6 +21,7 @@ namespace Core.Services
         {
             return _denunciaRepository.BuscarCategorias();
         }
+
         public Task<IEnumerable<Categoria>> BuscarSubcategorias()
         {
             return _denunciaRepository.BuscarSubcategorias();
@@ -38,6 +39,17 @@ namespace Core.Services
             };
 
             await _denunciaRepository.CadastrarDenuncia(denuncia);
+        }
+
+        public Task<Denuncia> BuscarDadosGraficos()
+        {
+            return _denunciaRepository.BuscarDadosGraficos();
+
+        }
+
+        public Task<IEnumerable<Denuncia>> BuscarDenuncias()
+        {
+            return _denunciaRepository.BuscarDenuncias();
         }
     }
 }

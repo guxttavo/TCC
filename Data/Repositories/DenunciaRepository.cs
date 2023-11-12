@@ -43,5 +43,31 @@ namespace Data.Repositories
             await _dbContext.AddAsync(denuncia);
             await _dbContext.SaveChangesAsync();
         }
+
+        // public async Task<Denuncia> BuscarDadosGraficos()
+        // {
+        //     return await _dbContext.Denuncias
+        //                            .Select(x => new Denuncia
+        //                            {
+        //                                Data = x.Data,
+        //                                Bairro = new Bairro
+        //                                {
+        //                                    Nome = x.Bairro.Nome
+        //                                },
+        //                                Categoria = new Categoria
+        //                                {
+        //                                    Nome = x.Categoria.Nome
+        //                                }
+        //                            })
+        //                            .FirstOrDefaultAsync();
+        // }
+
+        // public async Task<IEnumerable<Denuncia>> BuscarDenuncias()
+        // {
+        //     return await _dbContext.Denuncias
+        //                            .Include(x => x.Bairro)
+        //                            .Include(x => x.Categoria)
+        //                            .ToListAsync();
+        // }
     }
 }

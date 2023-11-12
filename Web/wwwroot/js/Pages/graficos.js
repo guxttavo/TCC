@@ -1,77 +1,42 @@
-let grafico1 = document.getElementById("graficos")
-var options = {
-    chart: {
+var graficos = (function () {
+    var configs = {
+        urls: {
+            buscarDados: ''
+        },
+    };
+
+    var init = function ($configs) {
+        configs = $configs;
+    };
+
+    $(document).ready(function () {
+        var dados = $.get(configs.urls.buscarDados);
+    });
+
+    const ctx = document.getElementById('grafico');
+
+    new Chart(ctx, {
         type: 'bar',
-        height: '260px',
-        width: '322px',
-        margin: '100px'
-    },
-    series: [
-        {
-            name: 'População',
-            data: [10, 30, 20]
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-    ]
-}
-
-var chart = new ApexCharts(grafico1, options);
-// chart.render()
-
-let grafico2 = document.getElementById("graficos2")
-var options = {
-    chart: {
-        type: 'bar',
-        height: '260px',
-        width: '322px',
-        margin: '100px'
-    },
-    series: [
-        {
-            name: 'População',
-            data: [10, 30, 20]
-        }
-    ]
-}
-
-var chart = new ApexCharts(grafico2, options);
-// chart.render()
+    });
 
 
-let grafico3 = document.getElementById("graficos3")
-var options = {
-    chart: {
-        type: 'bar',
-        height: '260px',
-        width: '322px',
-        margin: '100px'
-    },
-    series: [
-        {
-            name: 'População',
-            data: [10, 30, 20]
-        }
-    ]
-}
+    return {
+        init: init,
+    }
+})()
 
-var chart = new ApexCharts(grafico3, options);
-// chart.render()
-
-
-let grafico4 = document.getElementById("graficos4")
-var options = {
-    chart: {
-        type: 'bar',
-        height: '260px',
-        width: '322px',
-        margin: '100px'
-    },
-    series: [
-        {
-            name: 'População',
-            data: [10, 30, 20]
-        }
-    ]
-}
-
-var chart = new ApexCharts(grafico4, options);
-// chart.render()

@@ -27,6 +27,7 @@
 
 .opcoes-denuncia h3 {
     margin-right: 10px;
+    font-size: 20px;
 }
 
 .descricao {
@@ -46,6 +47,16 @@
     width: 150px;
     text-decoration: none;
     background-color: red;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+.editar-denuncia {
+    width: 150px;
+    text-decoration: none;
+    background-color: rgb(154, 154, 7);
     cursor: pointer;
     padding: 5px;
     border-radius: 10px;

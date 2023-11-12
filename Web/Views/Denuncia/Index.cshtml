@@ -29,7 +29,7 @@
                             {
                                 <option value="@bairro.Id">@bairro.Nome</option>
 
-                            }
+                            } *@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
-                        <select id="subcategorias" class="form-select drop-down" name="subcategoria">
+                        <select id="subcategorias" class="form-select drop-down" name="IdCategoriaPai">
                             @if (Model != null && Model.Any())
                             {
                                 @foreach (var subcategoria in Model)
@@ -73,7 +73,7 @@
                     </div>
                     <div class="jooj form-group">
                         <label class="descricao">Descrição</label>
-                        <textarea rows="3" name="descricao"></textarea>
+                        <textarea rows="3" name="Descricao"></textarea>
                     </div>
                 </div>
                 <div class="ajuste-botoes">

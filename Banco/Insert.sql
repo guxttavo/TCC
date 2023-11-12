@@ -46,6 +46,9 @@ INSERT INTO bairro(nome)
                          ('Centro'),
                          ('Alto do Matheus');
 
+INSERT INTO denuncia (data, descricao, id_usuario, id_categoria, id_bairro)
+VALUES ('2023-11-11', 'Descrição da denúncia 1', 1, 2, 3);                         
+
 -- Iluminação Pública                            
 --   -Postes e/ou Afiação Danificados
 --   -Quedas de Energia
