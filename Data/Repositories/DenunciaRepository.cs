@@ -45,11 +45,11 @@ namespace Data.Repositories
                                        Bairro = new Bairro
                                        {
                                            Nome = x.Bairro.Nome
+                                       },
+                                       Categoria = new Categoria
+                                       {
+                                           Nome = x.Categoria.Nome
                                        }
-                                       //    Categoria = new Categoria
-                                       //    {
-                                       //        Nome = x.Categoria.Nome
-                                       //    }
                                    })
                                    .FirstOrDefaultAsync();
         }

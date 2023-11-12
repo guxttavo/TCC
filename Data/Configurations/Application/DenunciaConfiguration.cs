@@ -19,9 +19,9 @@ namespace Data.Configurations.Application
             builder.Property(x => x.IdCategoria).HasColumnName("id_categoria");
             builder.Property(x => x.IdBairro).HasColumnName("id_bairro");
 
-            builder.HasOne(x => x.Usuario).WithMany(x => x.Denuncias).HasForeignKey("id_usuario");
-            builder.HasOne(x => x.Categoria).WithMany(x => x.Denuncias).HasForeignKey("id_categoria");
-            builder.HasOne(x => x.Bairro).WithMany(x => x.Denuncias).HasForeignKey("id_bairro");
+            builder.HasOne(x => x.Usuario).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdUsuario);
+            builder.HasOne(x => x.Categoria).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdCategoria);
+            builder.HasOne(x => x.Bairro).WithMany(x => x.Denuncias).HasForeignKey(x => x.IdBairro);
         }
     }
 }
