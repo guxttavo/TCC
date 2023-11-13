@@ -20,14 +20,20 @@ var login = (function () {
         });
     };
 
-    var esconderLogin = function () {
+    var mostrarCadastrar = function () {
         $(".formulario").hide();
         $(".container-criar-conta").show();
+    }
+
+    var mostrarEsqueciMinhaSenha = function () {
+        $(".formulario").hide();
+        $(".container-esqueci-minha-senha").show();
     }
 
     return {
         init: init,
         logar: logar,
-        esconderLogin: esconderLogin
+        mostrarCadastrar: mostrarCadastrar,
+        mostrarEsqueciMinhaSenha: mostrarEsqueciMinhaSenha
     }
 })()

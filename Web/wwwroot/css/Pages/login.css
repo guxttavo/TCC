@@ -51,6 +51,23 @@
     color: white;
 }
 
+.formulario-esqueci-minha-senha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 510px;
+    padding: 20px;
+    padding-bottom: 100px;
+    width: 510px;
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.jooj{
+    text-align: center;
+}
+
 .nome{
     margin-right: 260px;
 }

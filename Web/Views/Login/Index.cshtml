@@ -26,11 +26,12 @@
                 </div>
                 <div class="form-group form-check opcoes-form">
                     <input type="checkbox" class="form-check-input" id="remember">
-                    <a class="esqueci-minha-senha" href="">Esqueci minha senha</a>
+                    <a class="esqueci-minha-senha" onclick="login.mostrarEsqueciMinhaSenha()">Esqueci minha senha</a>
                 </div>
                 <div class="buttons">
                     <button type="button" class="btn btn-primary" onclick="login.logar()">Entrar</button>
-                    <button type="submit" class="btn btn-primary" onclick="login.esconderLogin()">Criar Conta</button>
+                    <button type="submit" class="btn btn-primary" onclick="login.mostrarCadastrar()">Criar
+                        Conta</button>
                 </div>
             </form>
             <div class="container-criar-conta" style="display:none">
@@ -80,7 +81,21 @@
                         <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
                     </div>
                 </form>
-
+            </div>
+            <div class="container-esqueci-minha-senha" style="display:none">
+                <form class="formulario-esqueci-minha-senha">
+                    <h1 class="jooj">Digite seu email de acesso</h1>
+                    <div class="row">
+                        <div class="mb-1 col-md-12 nome">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="ajuste-botoes-cadastro">
+                        <button type="button" class="btn btn-primary">Enviar</button>
+                        <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
+                    </div>
+                </form>
             </div>
         </div>
 
