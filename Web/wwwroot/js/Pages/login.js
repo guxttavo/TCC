@@ -20,8 +20,14 @@ var login = (function () {
         });
     };
 
+    var esconderLogin = function () {
+        $(".formulario").hide();
+        $(".container-criar-conta").show();
+    }
+
     return {
         init: init,
-        logar: logar
+        logar: logar,
+        esconderLogin: esconderLogin
     }
 })()

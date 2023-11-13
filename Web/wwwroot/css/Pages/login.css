@@ -32,12 +32,32 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 450px;
-    width: 450px;
+    height: 510px;
+    width: 510px;
     background-color: var(--cor-primaria);
     color: white;
 }
 
+.formulario-cadastrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 510px;
+    padding: 20px;
+    padding-bottom: 100px;
+    width: 510px;
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.nome{
+    margin-right: 260px;
+}
+
+.alinhamento{
+    margin-right: 18px;
+}
 .formulario input{
     margin: 10px;
 }
