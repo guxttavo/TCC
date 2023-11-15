@@ -31,7 +31,6 @@ namespace Web.Controllers
             Denuncia denuncia = new Denuncia
             {
                 IdCategoria = idCategoria,
-                IdSubcategoria = idSubcategoria,
                 IdBairro = idBairro,
                 Data = data,
                 Descricao = descricao,

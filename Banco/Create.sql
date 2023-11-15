@@ -42,21 +42,21 @@ CREATE TABLE denuncia(
     CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
 );
 
-CREATE TABLE denuncia(
-    id INT GENERATED ALWAYS AS IDENTITY,
-    data DATE NOT NULL,
-    descricao VARCHAR(2000),
-    id_usuario INT NOT NULL,
-    id_bairro INT NOT NULL,
-    id_categoria INT NOT NULL,
-    id_subcategoria INT NOT NULL,
+-- CREATE TABLE denuncia(
+--     id INT GENERATED ALWAYS AS IDENTITY,
+--     data DATE NOT NULL,
+--     descricao VARCHAR(2000),
+--     id_usuario INT NOT NULL,
+--     id_bairro INT NOT NULL,
+--     id_categoria INT NOT NULL,
+--     id_subcategoria INT NOT NULL,
 
-    CONSTRAINT pk_denuncia PRIMARY KEY(id),
-    CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id),
-    CONSTRAINT fk_categoria_denuncia FOREIGN KEY(id_categoria) REFERENCES categoria(id),
-    CONSTRAINT fk_subcategoria_denuncia FOREIGN KEY(id_subcategoria) REFERENCES categoria(id),
-    CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
-);
+--     CONSTRAINT pk_denuncia PRIMARY KEY(id),
+--     CONSTRAINT fk_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id),
+--     CONSTRAINT fk_categoria_denuncia FOREIGN KEY(id_categoria) REFERENCES categoria(id),
+--     CONSTRAINT fk_subcategoria_denuncia FOREIGN KEY(id_subcategoria) REFERENCES categoria(id),
+--     CONSTRAINT fk_bairro FOREIGN KEY(id_bairro) REFERENCES bairro(id)
+-- );
 
 CREATE TABLE suporte(
     id INT GENERATED ALWAYS AS IDENTITY,

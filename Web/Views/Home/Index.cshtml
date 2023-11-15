@@ -17,11 +17,11 @@
                     <h3>Nº: @denuncia.Id</h3>
                     <h3>Data: @denuncia.Data.Date</h3>
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
-                    @* <h3>Categoria: @denuncia.Categoria.Nome</h3> *@
-                    @if (@denuncia.Categoria.IdCategoriaPai == null)
+                    <h3>Categoria: @denuncia.Categoria.Nome</h3>
+                    @* @if (@denuncia.Categoria.IdCategoriaPai == null)
                     {
                         <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
-                    }
+                    } *@
                 </div>
                 <div class="ajuste">
                     <text-area class="descricao">

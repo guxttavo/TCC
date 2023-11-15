@@ -32,7 +32,6 @@ namespace Core.Services
             Denuncia novaDenuncia = new Denuncia
             {
                 IdCategoria = denuncia.IdCategoria,
-                IdSubcategoria = denuncia.IdSubcategoria,
                 IdUsuario = denuncia.IdUsuario,
                 IdBairro = denuncia.IdBairro,
                 Data = denuncia.Data.ToUniversalTime(),
