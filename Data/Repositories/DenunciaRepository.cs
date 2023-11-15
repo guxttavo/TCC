@@ -67,7 +67,7 @@ namespace Data.Repositories
             return true;
         }
 
-        public async Task<Denuncia> BuscarDadosGraficos()
+        public async Task<IEnumerable<Denuncia>> BuscarDadosGraficos()
         {
             return await _dbContext.Denuncias
                                    .Select(x => new Denuncia
@@ -82,8 +82,22 @@ namespace Data.Repositories
                                            Nome = x.Categoria.Nome
                                        }
                                    })
-                                   .FirstOrDefaultAsync();
+                                   .ToListAsync();
         }
 
+        public async Task<IEnumerable<Bairro>> BuscarDenunciasPorBairro()
+        {
+            var bairrosComDenuncias = await _dbContext.Bairros
+                                            .Include(bairro => bairro.Denuncias) // Garante que as denúncias sejam carregadas
+                                            .Select(bairro => new Bairro
+                                            {
+                                                Id = bairro.Id,
+                                                Nome = bairro.Nome,
+                                                Denuncias = bairro.Denuncias // Atribui as denúncias ao objeto Bairro
+                                            })
+                                            .ToListAsync();
+            var jooj = "string";
+            return null;
+        }
     }
 }

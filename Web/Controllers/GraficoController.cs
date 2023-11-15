@@ -15,18 +15,18 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
+            // ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
 
             return View();
         }
 
-        // public async Task<IActionResult> BuscarDadosGraficos()
-        // {
-        //     var dadosGraficos = await _denunciaService.BuscarDadosGraficos();
+        public async Task<IActionResult> BuscarDadosGraficos()
+        {
+            var dadosGraficos = await _denunciaRepository.BuscarDenunciasPorBairro();
 
 
-        //     return View("", dadosGraficos);
-        // }
+            return Ok(dadosGraficos);
+        }
 
     }
 }

@@ -1,7 +1,6 @@
 @model Denuncia
 @{
-    var dadosGraficos = ViewBag.BuscarDadosGraficos;
-    var dadosGraficosJson = Json.Serialize(dadosGraficos);
+    var dadosGraficos = ViewBag.BuscarDenunciasPorBairro;
     var batata = "teste";
 }
 
@@ -37,16 +36,12 @@
         </div>
     </div>
     <div class="estrutura-graficos">
-        <div id="dados" data-com-raw="@Html.Raw(dadosGraficosJson)">
-            @* <canvas id="grafico"></canvas> *@
-        </div>
-        <div id="dados" data-sem-raw="@dadosGraficosJson">
-            @* <canvas id="grafico"></canvas> *@
-        </div>
-        @* <div id="graficos2"><h3>Bairro X Tipo</h3></div> *@
-        @* <div id="graficos3"><h3>Status X Tipo</h3></div> *@
-        @* <div id="graficos4"><h3>Status X Bairro</h3></div> *@
+        <canvas id="acquisitions"></canvas>
     </div>
+    @* <div id="graficos2"><h3>Bairro X Tipo</h3></div> *@
+    @* <div id="graficos3"><h3>Status X Tipo</h3></div> *@
+    @* <div id="graficos4"><h3>Status X Bairro</h3></div> *@
+</div>
 </div>
 @* <script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script> *@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -60,7 +55,7 @@
 <script>
     graficos.init({
         urls: {
-            buscarDados: '@Url.Action("BuscarDadosGraficos", "Grafico")'
+            buscarDados: '@Url.Action("BuscarDenunciasPorBairro", "Grafico")'
         }
     });
 

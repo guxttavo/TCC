@@ -19,8 +19,8 @@ namespace Web.Controllers
         {
             IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
             ViewBag.BuscarBairros = await _denunciaService.BuscarBairros();
-            ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
-            var jooj = await _denunciaRepository.BuscarDadosGraficos();
+            // ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
+            // var jooj = await _denunciaRepository.BuscarDadosGraficos();
 
             return View("Index", categorias);
         }

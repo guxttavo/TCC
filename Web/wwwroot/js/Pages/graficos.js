@@ -7,37 +7,47 @@ var graficos = (function () {
 
     var init = function ($configs) {
         configs = $configs;
+        $.get(configs.urls.buscarDados).done(function (data) {
+            console.log(data);
+            var bairros = [];
+            var categorias = [];
+
+            data.forEach(function (data) {
+                bairros.push(data.bairro.nome);
+            })
+
+            data.forEach(function (data) {
+                categorias.push(data.categoria.nome);
+            })
+
+            const dataa = [
+                { year: 2010, count: 10 },
+                { year: 2011, count: 20 },
+                { year: 2012, count: 15 },
+                { year: 2013, count: 25 },
+                { year: 2014, count: 22 },
+                { year: 2015, count: 30 },
+                { year: 2016, count: 28 },
+              ];
+            
+              new Chart(
+                document.getElementById('acquisitions'),
+                {
+                  type: 'bar',
+                  data: {
+                    labels: bairros.map(row => row.nome),
+                    datasets: [
+                      {
+                        label: 'Denuncias por Bairro',
+                        data: data.map(row => row.count)
+                      }
+                    ]
+                  }
+                }
+              );
+        })
     };
-
-    $(document).ready(function () {
-        var dados = $.get(configs.urls.buscarDados);
-    });
-
-    var valor01 = $('#dados').data('com-raw');
-    var valor02 = $('#dados').data('sem-raw');
-    console.log("data-com-raw: " + valor01);
-    console.log("data-sem-raw: " + valor02);
-
-    // new Chart(ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    //         datasets: [{
-    //             label: '# of Votes',
-    //             data: [12, 19, 3, 5, 2, 3],
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
-
-
+    
     return {
         init: init,
     }
