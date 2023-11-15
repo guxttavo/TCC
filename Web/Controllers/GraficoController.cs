@@ -1,3 +1,4 @@
+using Core.Interfaces.Repositories;
 using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -5,15 +6,17 @@ namespace Web.Controllers
 {
     public class GraficoController : AuthenticatedController
     {
-        private readonly IDenunciaService _denunciaService;
+        private readonly IDenunciaRepository _denunciaRepository;
 
-        public GraficoController(IDenunciaService denunciaService)
+        public GraficoController(IDenunciaRepository denunciaRepository)
         {
-            _denunciaService = denunciaService;
+            _denunciaRepository = denunciaRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
+
             return View();
         }
 

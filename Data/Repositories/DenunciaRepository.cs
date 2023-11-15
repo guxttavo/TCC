@@ -67,23 +67,23 @@ namespace Data.Repositories
             return true;
         }
 
-        // public async Task<Denuncia> BuscarDadosGraficos()
-        // {
-        //     return await _dbContext.Denuncias
-        //                            .Select(x => new Denuncia
-        //                            {
-        //                                Data = x.Data,
-        //                                Bairro = new Bairro
-        //                                {
-        //                                    Nome = x.Bairro.Nome
-        //                                },
-        //                                Categoria = new Categoria
-        //                                {
-        //                                    Nome = x.Categoria.Nome
-        //                                }
-        //                            })
-        //                            .FirstOrDefaultAsync();
-        // }
+        public async Task<Denuncia> BuscarDadosGraficos()
+        {
+            return await _dbContext.Denuncias
+                                   .Select(x => new Denuncia
+                                   {
+                                       Data = x.Data,
+                                       Bairro = new Bairro
+                                       {
+                                           Nome = x.Bairro.Nome
+                                       },
+                                       Categoria = new Categoria
+                                       {
+                                           Nome = x.Categoria.Nome
+                                       }
+                                   })
+                                   .FirstOrDefaultAsync();
+        }
 
     }
 }

@@ -13,26 +13,29 @@ var graficos = (function () {
         var dados = $.get(configs.urls.buscarDados);
     });
 
-    const ctx = document.getElementById('grafico');
+    var valor01 = $('#dados').data('com-raw');
+    var valor02 = $('#dados').data('sem-raw');
+    console.log("data-com-raw: " + valor01);
+    console.log("data-sem-raw: " + valor02);
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    // new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
 
 
     return {

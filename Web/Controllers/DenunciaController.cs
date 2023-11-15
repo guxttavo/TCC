@@ -1,3 +1,4 @@
+using Core.Interfaces.Repositories;
 using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,16 +7,20 @@ namespace Web.Controllers
     public class DenunciaController : AuthenticatedController
     {
         private readonly IDenunciaService _denunciaService;
+        private readonly IDenunciaRepository _denunciaRepository;
 
-        public DenunciaController(IDenunciaService denunciaService)
+        public DenunciaController(IDenunciaService denunciaService, IDenunciaRepository denunciaRepository)
         {
             _denunciaService = denunciaService;
+            _denunciaRepository = denunciaRepository;
         }
 
         public async Task<IActionResult> Index()
         {
             IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
             ViewBag.BuscarBairros = await _denunciaService.BuscarBairros();
+            ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
+            var jooj = await _denunciaRepository.BuscarDadosGraficos();
 
             return View("Index", categorias);
         }

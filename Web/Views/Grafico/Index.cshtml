@@ -1,3 +1,10 @@
+@model Denuncia
+@{
+    var dadosGraficos = ViewBag.BuscarDadosGraficos;
+    var dadosGraficosJson = Json.Serialize(dadosGraficos);
+    var batata = "teste";
+}
+
 <header>
 </header>
 <h1 class="titulo-geral">Gráficos por bairro</h1>
@@ -30,8 +37,11 @@
         </div>
     </div>
     <div class="estrutura-graficos">
-        <div>
-            <canvas id="grafico"></canvas>
+        <div id="dados" data-com-raw="@Html.Raw(dadosGraficosJson)">
+            @* <canvas id="grafico"></canvas> *@
+        </div>
+        <div id="dados" data-sem-raw="@dadosGraficosJson">
+            @* <canvas id="grafico"></canvas> *@
         </div>
         @* <div id="graficos2"><h3>Bairro X Tipo</h3></div> *@
         @* <div id="graficos3"><h3>Status X Tipo</h3></div> *@
@@ -53,4 +63,5 @@
             buscarDados: '@Url.Action("BuscarDadosGraficos", "Grafico")'
         }
     });
+
 </script>
