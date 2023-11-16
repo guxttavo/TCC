@@ -20,7 +20,7 @@ namespace Web.Controllers
             return View();
         }
 
-        public async Task<IActionResult> BuscarDadosGraficos()
+        public async Task<IActionResult> BuscarDenunciasPorBairro()
         {
             var dadosGraficos = await _denunciaRepository.BuscarDenunciasPorBairro();
 
