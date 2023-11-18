@@ -67,7 +67,7 @@ namespace Data.Repositories
             return true;
         }
 
-        public async Task<IEnumerable<Denuncia>> BuscarDadosGraficos()
+        public async Task<IEnumerable<Denuncia>> BuscarCategoriasPorBairro()
         {
             return await _dbContext.Denuncias
                                    .Select(x => new Denuncia
@@ -85,19 +85,34 @@ namespace Data.Repositories
                                    .ToListAsync();
         }
 
-        public async Task<IEnumerable<Bairro>> BuscarDenunciasPorBairro()
+        public async Task<IEnumerable<Bairro>> QtdDenunciaPorBairro()
         {
-            var bairrosComDenuncias = await _dbContext.Bairros
+            var bairros = await _dbContext.Bairros
                                   .ToListAsync();
 
-            foreach (var bairro in bairrosComDenuncias)
+            foreach (var bairro in bairros)
             {
                 bairro.Denuncias = await _dbContext.Denuncias
-                                            .Where(d => d.IdBairro == bairro.Id)
+                                            .Where(x => x.IdBairro == bairro.Id)
                                             .ToListAsync();
             }
 
-            return bairrosComDenuncias;
+            return bairros;
+        }
+
+        public async Task<IEnumerable<Categoria>> QtdDenunciaPorCategoria()
+        {
+            var categorias = await _dbContext.Categorias
+                                  .ToListAsync();
+
+            foreach (var categoria in categorias)
+            {
+                categoria.Denuncias = await _dbContext.Denuncias
+                                            .Where(x => x.IdCategoria == categoria.Id)
+                                            .ToListAsync();
+            }
+
+            return categorias;
         }
     }
 }

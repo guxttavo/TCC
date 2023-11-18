@@ -1,50 +1,48 @@
 @model Denuncia
-@{
-    var dadosGraficos = ViewBag.BuscarDenunciasPorBairro;
-    var batata = "teste";
-}
-
 <header>
 </header>
 <h1 class="titulo-geral">Gráficos por bairro</h1>
 <div class="container-geral-graficos">
-    <div class="container-bairros">
-        <div class="barra-pesquisa">
-            <input type="text" class="campo-pesquisa" placeholder="Pesquise um bairro">
-        </div>
-        <div class="opcoes-bairro">
-            <ul class="opcao-bairro">
-                <li>Mangabeira</li>
-                <li>Valentina</li>
-                <li>Bancários</li>
-                <li>Jardim Cidade Universitária</li>
-                <li>Cristo</li>
-                <li>Manaíra</li>
-                <li>Crus das Armas</li>
-                <li>Brisamar</li>
-                <li>Altiplano</li>
-                <li>Geisel</li>
-                <li>José Américo</li>
-                <li>Altiplano</li>
-                <li>Miramar</li>
-                <li>Bessa</li>
-                <li>Cabo Branco</li>
-                <li>Bairro das Indústrias</li>
-                <li>Cristo</li>
-                <li>Castelo Branco</li>
-            </ul>
-        </div>
+    @* <div class="container-bairros">
+    <div class="barra-pesquisa">
+    <input type="text" class="campo-pesquisa" placeholder="Pesquise um bairro">
     </div>
+    <div class="opcoes-bairro">
+    <ul class="opcao-bairro">
+    <li>Mangabeira</li>
+    <li>Valentina</li>
+    <li>Bancários</li>
+    <li>Jardim Cidade Universitária</li>
+    <li>Cristo</li>
+    <li>Manaíra</li>
+    <li>Crus das Armas</li>
+    <li>Brisamar</li>
+    <li>Altiplano</li>
+    <li>Geisel</li>
+    <li>José Américo</li>
+    <li>Altiplano</li>
+    <li>Miramar</li>
+    <li>Bessa</li>
+    <li>Cabo Branco</li>
+    <li>Bairro das Indústrias</li>
+    <li>Cristo</li>
+    <li>Castelo Branco</li>
+    </ul>
+    </div>
+    </div> *@
     <div class="estrutura-graficos">
-        <canvas id="acquisitions"></canvas>
+        @* <canvas id="acquisitions"></canvas> *@
+        <div id="graficos">
+            <h3>Bairro X Tipo</h3>
+        </div>
+        <div id="graficos2">
+            <h3>Status X Tipo</h3>
+        </div>
     </div>
-    @* <div id="graficos2"><h3>Bairro X Tipo</h3></div> *@
-    @* <div id="graficos3"><h3>Status X Tipo</h3></div> *@
     @* <div id="graficos4"><h3>Status X Bairro</h3></div> *@
 </div>
 </div>
 @* <script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script> *@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/js/Pages/graficos.js" asp-append-version="true"></script>
@@ -55,7 +53,8 @@
 <script>
     graficos.init({
         urls: {
-            buscarDados: '@Url.Action("BuscarDenunciasPorBairro", "Grafico")'
+            buscarDados: '@Url.Action("QtdDenunciaPorBairro", "Grafico")',
+            buscarCategoriaPorBairro: '@Url.Action("BuscarCategoriasPorBairro", "Grafico")',
         }
     });
 
