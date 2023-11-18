@@ -1,3 +1,4 @@
+using Core.Dto;
 using Core.Interfaces.Repositories;
 using Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -67,7 +68,7 @@ namespace Data.Repositories
             return true;
         }
 
-        public async Task<IEnumerable<Denuncia>> BuscarCategoriasPorBairro()
+        public async Task<IEnumerable<Denuncia>> QtdDenunciasPorBairro()
         {
             return await _dbContext.Denuncias
                                    .Select(x => new Denuncia
@@ -102,17 +103,26 @@ namespace Data.Repositories
 
         public async Task<IEnumerable<Categoria>> QtdDenunciaPorCategoria()
         {
-            var categorias = await _dbContext.Categorias
+            // var categorias = await _dbContext.Categorias
+            //                       .ToListAsync();
+
+            // foreach (var categoria in categorias)
+            // {
+            //     categoria.Denuncias = await _dbContext.Denuncias
+            //                                 .Where(x => x.IdCategoria == categoria.Id)
+            //                                 .ToListAsync();
+            // }
+
+            // return categorias;
+            return null;
+        }
+
+        public async Task<IEnumerable<Denuncia>> QtdDenunciasPorCategoriaPorBairro()
+        {
+            return await _dbContext.Denuncias
+                                  .Include(x => x.Bairro)
+                                  .Include(x => x.Categoria)
                                   .ToListAsync();
-
-            foreach (var categoria in categorias)
-            {
-                categoria.Denuncias = await _dbContext.Denuncias
-                                            .Where(x => x.IdCategoria == categoria.Id)
-                                            .ToListAsync();
-            }
-
-            return categorias;
         }
     }
 }

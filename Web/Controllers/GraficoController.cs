@@ -1,3 +1,6 @@
+using System.Security.Cryptography.Xml;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Core.Interfaces.Repositories;
 using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +18,7 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // ViewBag.BuscarDadosGraficos = await _denunciaRepository.BuscarDadosGraficos();
+            // ViewBag.QtdDenunciasPorBairroGraficos = await _denunciaRepository.QtdDenunciasPorBairroGraficos();
 
             return View();
         }
@@ -24,15 +27,27 @@ namespace Web.Controllers
         {
             var dadosGraficos = await _denunciaRepository.QtdDenunciaPorBairro();
 
-
             return Ok(dadosGraficos);
         }
-        public async Task<IActionResult> BuscarCategoriasPorBairro()
+        public async Task<IActionResult> QtdDenunciasPorBairro()
         {
             var dadosCategoriasPorBairro = await _denunciaRepository.QtdDenunciaPorCategoria();
 
 
             return Ok(dadosCategoriasPorBairro);
+        }
+        public async Task<IActionResult> QtdDenunciasPorCategoriaPorBairro()
+        {
+            var dadosQtdDenunciaCategoriaBairro = await _denunciaRepository.QtdDenunciasPorCategoriaPorBairro();
+
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+
+            var json = JsonSerializer.Serialize(dadosQtdDenunciaCategoriaBairro, options);
+
+            return Ok(dadosQtdDenunciaCategoriaBairro);
         }
 
     }

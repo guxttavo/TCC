@@ -16,6 +16,7 @@ namespace Data.Configurations.Application
             builder.Property(x => x.Nome).HasColumnName("nome");
             builder.Property(x => x.IdCategoriaPai).HasColumnName("id_categoria_pai");
 
+            builder.HasMany(x => x.Denuncias).WithOne(x => x.Categoria);
         }
     }
 }

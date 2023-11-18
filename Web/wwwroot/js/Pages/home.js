@@ -1,7 +1,7 @@
 var home = (function () {
     var configs = {
         urls: {
-            buscarDados: ''
+            QtdDenunciasPorBairro: ''
         },
     };
 

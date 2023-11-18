@@ -1,8 +1,9 @@
 var graficos = (function () {
   var configs = {
     urls: {
-      buscarDados: '',
-      buscarCategoriaPorBairro: ''
+      QtdDenunciasPorBairro: '',
+      QtdDenunciasPorCategoria: '',
+      QtdDenunciasPorCategoriaPorBairro: ''
     },
   };
 
@@ -10,25 +11,21 @@ var graficos = (function () {
     configs = $configs;
 
     // QTD DENUNCIA x CATEGORIA
-    $.get(configs.urls.buscarCategoriaPorBairro).done(function (data) {
-      console.log(data);
-
+    $.get(configs.urls.QtdDenunciasPorCategoria).done(function (data) {
       var categorias = [];
-      data.forEach(function (data) {
-        categorias.push(data.nome);
-      });
+      // data.forEach(function (data) {
+      //   categorias.push(data.nome);
+      // });
 
-      console.log(data);
-      var denuncias = [];
-      data.forEach(function (data) {
-        denuncias.push(data.denuncias);
-      })
+      // var denuncias = [];
+      // data.forEach(function (data) {
+      //   denuncias.push(data.denuncias);
+      // })
 
-      var qtdDenuncias = [];
-      denuncias.forEach(function (subArray) {
-        qtdDenuncias.push(subArray.length)
-      });
-      // console.log(categorias);
+      // var qtdDenuncias = [];
+      // denuncias.forEach(function (subArray) {
+      //   qtdDenuncias.push(subArray.length)
+      // });
 
       var mock = ['1', '2', '1']
       // new Chart(
@@ -50,7 +47,7 @@ var graficos = (function () {
     })
 
     // QTD DENUNCIA x BAIRRO
-    $.get(configs.urls.buscarDados).done(function (data) {
+    $.get(configs.urls.QtdDenunciasPorBairro).done(function (data) {
       var bairros = [];
       data.forEach(function (data) {
         bairros.push(data.nome);
@@ -82,7 +79,6 @@ var graficos = (function () {
       //   }
       // );
 
-
       var options = {
         series: [{
           data: qtdDenuncias
@@ -94,7 +90,7 @@ var graficos = (function () {
         },
         plotOptions: {
           bar: {
-            columnWidth: '55%',
+            columnWidth: '65%',
             distributed: true,
           }
         },
@@ -121,7 +117,13 @@ var graficos = (function () {
     })
 
     // QTD DENUNCIA x CATEGORIA x BAIRRO
-    $.get(configs.urls.buscarCategoriaPorBairro).done(function (data) {
+    $.get(configs.urls.QtdDenunciasPorCategoriaPorBairro).done(function (data) {
+      console.log(data);
+      
+      var bairros = [];
+      data.forEach(function (data) {
+        bairros.push(data.nome);
+      });
 
       var options = {
         series: [{
@@ -136,7 +138,8 @@ var graficos = (function () {
         }],
         chart: {
           type: 'bar',
-          height: 350
+          height: 650,
+          width: 840,
         },
         plotOptions: {
           bar: {
@@ -154,7 +157,7 @@ var graficos = (function () {
           colors: ['transparent']
         },
         xaxis: {
-          categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+          categories: bairros,
         },
         yaxis: {
           title: {

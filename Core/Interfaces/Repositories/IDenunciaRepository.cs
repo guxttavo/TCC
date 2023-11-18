@@ -10,6 +10,7 @@ namespace Core.Interfaces.Repositories
         Task CadastrarDenuncia(Denuncia denuncia);
         Task<IEnumerable<Bairro>> QtdDenunciaPorBairro();
         Task<IEnumerable<Categoria>> QtdDenunciaPorCategoria();
+        Task<IEnumerable<Denuncia>> QtdDenunciasPorCategoriaPorBairro();
         Task<IEnumerable<Denuncia>> BuscarDenuncias();
         bool FecharDenuncia(int id);
     }
