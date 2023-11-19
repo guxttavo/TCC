@@ -38,14 +38,7 @@ namespace Web.Controllers
         }
         public async Task<IActionResult> QtdDenunciasPorCategoriaPorBairro()
         {
-            var dadosQtdDenunciaCategoriaBairro = await _denunciaRepository.QtdDenunciasPorCategoriaPorBairro();
-
-            var options = new JsonSerializerOptions
-            {
-                ReferenceHandler = ReferenceHandler.Preserve
-            };
-
-            var json = JsonSerializer.Serialize(dadosQtdDenunciaCategoriaBairro, options);
+            var dadosQtdDenunciaCategoriaBairro = await _denunciaRepository.QtdDenunciasPorCategoriaPorBairro();          
 
             return Ok(dadosQtdDenunciaCategoriaBairro);
         }

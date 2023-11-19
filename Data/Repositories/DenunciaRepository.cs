@@ -117,12 +117,30 @@ namespace Data.Repositories
             return null;
         }
 
-        public async Task<IEnumerable<Denuncia>> QtdDenunciasPorCategoriaPorBairro()
+        public async Task<IEnumerable<Bairro>> QtdDenunciasPorCategoriaPorBairro()
         {
-            return await _dbContext.Denuncias
-                                  .Include(x => x.Bairro)
-                                  .Include(x => x.Categoria)
-                                  .ToListAsync();
+            return await _dbContext.Bairros
+                                    .Select(bairro => new Bairro
+                                    {
+                                        Nome = bairro.Nome,
+                                        Denuncias = bairro.Denuncias.Select(denuncia => new Denuncia
+                                        {
+                                            Data = denuncia.Data,
+                                            Categoria = new Categoria
+                                            {
+                                                Nome = denuncia.Categoria.Nome
+                                            }
+                                        })
+                                    })
+                                    .ToListAsync();
+
         }
+        // public async Task<IEnumerable<Denuncia>> QtdDenunciasPorCategoriaPorBairro()
+        // {
+        //     return await _dbContext.Denuncias
+        //                           .Include(x => x.Bairro)
+        //                           .Include(x => x.Categoria)
+        //                           .ToListAsync();
+        // }
     }
 }
