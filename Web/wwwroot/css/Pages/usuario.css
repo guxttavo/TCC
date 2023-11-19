@@ -17,11 +17,15 @@
     border-radius: 5px;
 }
 
-.ajuste-botoes-cadastro{
+.ajuste-botoes-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
     font-size: 20px;
+}
+
+.nome-cadastro {
+    margin-right: 190px;
 }

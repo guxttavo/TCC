@@ -3,9 +3,10 @@
     overflow-x: hidden;
 }
 
+/* 
 .container-geral-graficos {
     display: flex;
-}
+} */
 
 .campo-pesquisa {
     width: 240px;
@@ -78,4 +79,21 @@
 .estrutura-graficos h3 {
     background-color: rgba(255, 255, 255, 0.253);
     border-radius: 5px;
+}
+
+.titulo-grafico {
+    background-color: rgba(179, 176, 176, 0.632);
+    margin: 25px 0px 20px 0px;
+    padding-left: 30px;
+    text-align: center;
+}
+
+#qtdDenuncia-bairro {
+    display: flex;
+    justify-content: center;
+}
+
+#qtdDenuncia-categoria {
+    display: flex;
+    justify-content: center;
 }

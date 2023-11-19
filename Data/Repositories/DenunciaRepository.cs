@@ -103,18 +103,17 @@ namespace Data.Repositories
 
         public async Task<IEnumerable<Categoria>> QtdDenunciaPorCategoria()
         {
-            // var categorias = await _dbContext.Categorias
-            //                       .ToListAsync();
+            var categorias = await _dbContext.Categorias
+                                  .ToListAsync();
 
-            // foreach (var categoria in categorias)
-            // {
-            //     categoria.Denuncias = await _dbContext.Denuncias
-            //                                 .Where(x => x.IdCategoria == categoria.Id)
-            //                                 .ToListAsync();
-            // }
+            foreach (var categoria in categorias)
+            {
+                categoria.Denuncias = await _dbContext.Denuncias
+                                            .Where(x => x.IdCategoria == categoria.Id)
+                                            .ToListAsync();
+            }
 
-            // return categorias;
-            return null;
+            return categorias;
         }
 
         public async Task<IEnumerable<Bairro>> QtdDenunciasPorCategoriaPorBairro()
@@ -126,6 +125,7 @@ namespace Data.Repositories
                                         Denuncias = bairro.Denuncias.Select(denuncia => new Denuncia
                                         {
                                             Data = denuncia.Data,
+                                            IdBairro = denuncia.IdBairro,
                                             Categoria = new Categoria
                                             {
                                                 Nome = denuncia.Categoria.Nome

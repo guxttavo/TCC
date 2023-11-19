@@ -20,7 +20,7 @@ var denuncia = (function () {
             descricao: $('#cadastrarDenuncia textarea[name="Descricao"]').val()
         };
         $.post(configs.urls.cadastrarDenuncia, model).done(() => {
-            window.location.href = '/Home/Index';
+            window.location.href = '/Grafico/Index';
         });
     };
 

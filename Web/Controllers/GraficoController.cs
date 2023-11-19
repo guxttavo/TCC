@@ -29,10 +29,9 @@ namespace Web.Controllers
 
             return Ok(dadosGraficos);
         }
-        public async Task<IActionResult> QtdDenunciasPorBairro()
+        public async Task<IActionResult> QtdDenunciasPorCategoria()
         {
             var dadosCategoriasPorBairro = await _denunciaRepository.QtdDenunciaPorCategoria();
-
 
             return Ok(dadosCategoriasPorBairro);
         }

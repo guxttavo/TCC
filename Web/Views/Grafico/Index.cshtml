@@ -3,27 +3,14 @@
 </header>
 <h1 class="titulo-geral">Gráficos por bairro</h1>
 <div class="container-geral-graficos">
-    @* <div class="container-bairros">
-    <div class="barra-pesquisa">
-    <input type="text" class="campo-pesquisa" placeholder="Pesquise um bairro">
-    </div>
-    <div class="opcoes-bairro">
-    <ul class="opcao-bairro">
-    <li>Mangabeira</li>
-    </ul>
-    </div>
-    </div> *@
-    <div class="estrutura-graficos">
-        <div id="graficos">
-            <h3>Quantidade de Denuncias X Categoria X Bairro</h3>
-        </div>
-        <div id="graficos">
-            <h3>Bairro X Tipo</h3>
-        </div>
-        <div id="graficos2">
-            <h3>Quantidade Denúncias X Bairro</h3>
-        </div>
-    </div>
+    <h3 class="titulo-grafico">Quantidade Denúncias X Bairro</h3>
+    <div id="qtdDenuncia-bairro"></div>
+
+    <h3 class="titulo-grafico">Quantidade Denúncias X Categoria</h3>
+    <div id="qtdDenuncia-categoria"></div>
+
+    <h3 class="titulo-grafico">Quantidade de Denúncias X Categoria X Bairro</h3>
+    <div id="qtdDenuncia-categoria-bairro"></div>
 </div>
 </div>
 @* <script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script> *@
@@ -38,7 +25,7 @@
     graficos.init({
         urls: {
             QtdDenunciasPorBairro: '@Url.Action("QtdDenunciaPorBairro", "Grafico")',
-            QtdDenunciasPorCategoria: '@Url.Action("QtdDenunciasPorBairro", "Grafico")',
+            QtdDenunciasPorCategoria: '@Url.Action("QtdDenunciasPorCategoria", "Grafico")',
             QtdDenunciasPorCategoriaPorBairro: '@Url.Action("QtdDenunciasPorCategoriaPorBairro", "Grafico")',
         }
     });
