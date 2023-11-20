@@ -64,18 +64,19 @@
     color: white;
 }
 
-.jooj{
+.jooj {
     text-align: center;
 }
 
-.nome{
+.nome {
     margin-right: 260px;
 }
 
-.alinhamento{
+.alinhamento {
     margin-right: 18px;
 }
-.formulario input{
+
+.formulario input {
     margin: 10px;
 }
 
@@ -106,5 +107,14 @@
 }
 
 .esqueci-minha-senha:hover {
-    color: #39e991;
+    color: #2580fd;
+    cursor: pointer;
+}
+
+.ajuste-btn-enviar-email {
+    margin-top: 20px;
+}
+
+.ajuste-btn-enviar-email button {
+    margin-right: 10px;
 }
