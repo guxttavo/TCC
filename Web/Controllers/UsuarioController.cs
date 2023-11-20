@@ -25,7 +25,7 @@ namespace Web.Controllers
             {
                 Nome = usuario.Nome,
                 Cpf = usuario.Cpf,
-                DataNascimento = usuario.DataNascimento,
+                DataNascimento = usuario.DataNascimento.ToUniversalTime(),
                 Telefone = usuario.Telefone,
                 Email = usuario.Email,
                 Cep = usuario.Cep,

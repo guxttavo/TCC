@@ -27,6 +27,7 @@ var graficos = (function () {
         qtdDenuncias.push(subArray.length)
       });
 
+      var colors = ['#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', '#138de9', 'transparent'];
       // bairrosBrabos = ["Mangabeira", "Valentina", "Bancários", "Cristo", "Manaíra", "Cruz das Armas", "Brisamar", "Altiplano", "Geisel", "José Américo", "Miramar", "Bessa", "Cabo Branco", "Bairro Das Industrias", "Castelo Branco", "Mandacaru", "Jaguaribe", "Centro", "Alto do Matheus"]
       var dados = {
         series: [{
@@ -37,6 +38,7 @@ var graficos = (function () {
           width: 750,
           type: 'bar'
         },
+        colors: colors,
         plotOptions: {
           bar: {
             columnWidth: '65%',
@@ -76,8 +78,11 @@ var graficos = (function () {
       console.log(data);
       var denuncias = [];
       data.forEach(function (data) {
-        denuncias.push(data.denuncias);
+        if (data.idCategoriaPai == null) {
+          denuncias.push(data.denuncias);
+        }
       })
+      console.log(denuncias);
 
       var qtdDenuncias = [];
       denuncias.forEach(function (subArray) {
@@ -91,18 +96,19 @@ var graficos = (function () {
         }
       });
 
-
-      var jooj = [11, 25, 40, 22, 22, 23, 11, 22, 33, 30];
+      var colors = ['#26dfec', '#13d493', '#eba928', '#ec4e65', '#7862c4', 'transparent'];
       var jooj2 = ["Iluminação Pública", "Saneamento Básico", "Mobilidade Urbana", "Gestão de Resíduos", "Espaços Públicos"]
       var dados = {
         series: [{
           data: qtdDenuncias
+          // data: jooj
         }],
         chart: {
           height: 550,
           width: 450,
           type: 'bar'
         },
+        colors: colors,
         plotOptions: {
           bar: {
             columnWidth: '75%',
@@ -111,7 +117,6 @@ var graficos = (function () {
             dataLabels: {
               position: "left",
               offsetX: 100, // Ajuste o valor de deslocamento para a direita
-
             }
           }
         },
@@ -166,27 +171,11 @@ var graficos = (function () {
         elementoAtual.forEach(function (item) {
           if (item.categoria.nome == "Iluminação Pública" && item.idBairro == 1) {
             denunciasPorIluminacaoPublica.push(item.categoria);
-          } else {
-
           }
         });
-        // console.log(index);
-        // console.log(array);
       });
 
-      // var batata = [];
-      // denunciasPorBairro.forEach(function (data) {
-      //   batata.push(data.nome.length);
-      // })
-      // console.log(batata);
-
-      // console.log("data: ");
-      // console.log(data);
-      // console.log("denuncias: ");
-      // console.log(denuncias);
-      // console.log("denunciasPorBairro: ");
-      // console.log(denunciasPorIluminacaoPublica);
-
+      var colors = ['#138de9', '#26dfec', '#13d493', '#eba928', '#ec4e65', '#7862c4', 'transparent'];
       var options = {
         series: [
           {
@@ -219,11 +208,13 @@ var graficos = (function () {
           height: 500,
           width: 1200
         },
+        colors: colors,
         plotOptions: {
           bar: {
             horizontal: false,
             columnWidth: '85%',
-            endingShape: 'rounded'
+            endingShape: 'rounded',
+            // colors: colors
           },
         },
         dataLabels: {
