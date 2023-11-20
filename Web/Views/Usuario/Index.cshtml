@@ -51,8 +51,10 @@
                             <td>@usuario.Admin</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a class="btn btn-primary" onclick="usuario.viewEditar(@usuario.Id)">Editar</a>
-                                    <a class="btn btn-danger" onclick="usuario.excluir()">Apagar</a>
+                                    <a role="button" class="btn btn-primary"
+                                        onclick="usuario.viewEditar(@usuario.Id)">Editar</a>
+                                    <a class="btn btn-danger" onclick="usuario.excluir(@usuario.Id)">Apagar</a>
+
                                 </div>
                             </td>
                         </tr>

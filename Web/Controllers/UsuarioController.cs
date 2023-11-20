@@ -50,6 +50,12 @@ namespace Web.Controllers
             var usuarioSelecionado = _usuarioRepository.BuscarPorId(id);
             return View("_editar", usuarioSelecionado);
         }
+        
+        [HttpGet]
+        public IActionResult ViewApagarConfirmacao()
+        {
+            return View("_apagarConfirmacao");
+        }
 
         [HttpPost]
         public IActionResult EditarUsuario(Usuario usuario)
@@ -61,7 +67,7 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult DeletarUsuario(int id)
         {
-            _usuarioRepository.DeletarUsuario(id);
+            _usuarioRepository.DeletarUsuario(id); 
             return RedirectToAction("Index");
         }
     }

@@ -35,7 +35,7 @@ namespace Data.Repositories
             {
                 usuarioDb.Nome = usuario.Nome;
                 usuarioDb.Cpf = usuario.Cpf;
-                usuarioDb.DataNascimento = usuario.DataNascimento;
+                usuarioDb.DataNascimento = usuario.DataNascimento.ToUniversalTime();
                 usuarioDb.Telefone = usuario.Telefone;
                 usuarioDb.Email = usuario.Email;
                 usuarioDb.Cep = usuario.Cep;
