@@ -65,7 +65,7 @@ var graficos = (function () {
               fontSize: '15px'
             }
           },
-          max: 50,
+          max: 100,
         },
       };
 
