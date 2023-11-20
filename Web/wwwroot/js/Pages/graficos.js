@@ -140,7 +140,7 @@ var graficos = (function () {
               fontSize: '15px'
             }
           },
-          max: 100,
+          max: 150,
         },
       };
 
@@ -184,23 +184,23 @@ var graficos = (function () {
           },
           {
             name: 'Iluminação Pública',
-            data: [3, 25, 40, 22, 22, 23, 11, 22, 33, 30]
+            data: [5, 10, 12, 5, 4, 3, 4, 2, 3, 6, 2, 12, 23, 6, 7, 11]
           },
           {
             name: 'Saneamento Básico',
-            data: [5, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [13, 3, 8, 6, 4, 3, 6, 4, 7, 4, 2, 13, 15, 7, 6, 11]
           },
           {
             name: 'Mobilidade Urbana',
-            data: [1, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [3, 3, 3, 8, 3, 2, 5, 5, 15, 3, 3, 5, 4, 10, 4, 3]
           },
           {
             name: 'Gestão de Resíduos',
-            data: [35, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [3, 2, 2, 5, 5, 2, 5, 3, 5, 3, 1, 7, 9, 6, 5, 1]
           },
           {
             name: 'Espaços Públicos',
-            data: [35, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [2, 2, 5, 7, 5, 1, 2, 2, 10, 1, 2, 3, 12, 10, 5, 1]
           }
         ],
         chart: {
@@ -241,7 +241,7 @@ var graficos = (function () {
             }
           },
           min: 0,
-          max: 100,
+          max: 70,
           labels: {
             style: {
               fontSize: '15px'
