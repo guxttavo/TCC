@@ -140,7 +140,7 @@ var graficos = (function () {
               fontSize: '15px'
             }
           },
-          max: 50,
+          max: 100,
         },
       };
 
@@ -241,7 +241,7 @@ var graficos = (function () {
             }
           },
           min: 0,
-          max: 50,
+          max: 100,
           labels: {
             style: {
               fontSize: '15px'
