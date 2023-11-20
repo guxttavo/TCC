@@ -56,6 +56,19 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (5, 1, 1, '2023-11-14', 'Descrição da denúncia 14'),
 (3, 1, 1, '2023-11-14', 'Descrição da denúncia 15'),
 (2, 1, 1, '2023-11-14', 'Descrição da denúncia 16'),
+(4, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(5, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(4, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(4, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(1, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(3, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(3, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(3, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(4, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(2, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(2, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(2, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
+(2, 1, 1, '2023-11-14', 'Descrição da denúncia 17'),
 (2, 1, 1, '2023-11-14', 'Descrição da denúncia 17');
 
 -- Valentina
@@ -71,6 +84,14 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (4, 1, 2, '2023-11-14', 'Descrição da denúncia 14'),
 (3, 1, 2, '2023-11-14', 'Descrição da denúncia 15'),
 (1, 1, 2, '2023-11-14', 'Descrição da denúncia 16'),
+(3, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(4, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(5, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(1, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(3, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(4, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(2, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
+(1, 1, 2, '2023-11-14', 'Descrição da denúncia 17'),                   
 (1, 1, 2, '2023-11-14', 'Descrição da denúncia 17');                   
 
 -- Bancários
@@ -120,7 +141,31 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),                
 (3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),                
 (2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),                
-(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17');                
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(5, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(4, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(5, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(4, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(4, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(4, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(5, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(1, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(2, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(1, 1, 4, '2023-11-14', 'Descrição da denúncia 17'),               
+(3, 1, 4, '2023-11-14', 'Descrição da denúncia 17');               
 
 -- Manaíra
 INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALUES 
@@ -152,7 +197,13 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (2, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
 (1, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
 (1, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
-(1, 1, 6, '2023-11-14', 'Descrição da denúncia 17');                
+(3, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(5, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(3, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(2, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(3, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(1, 1, 6, '2023-11-14', 'Descrição da denúncia 17'),                
+(4, 1, 6, '2023-11-14', 'Descrição da denúncia 17');                
 
 -- Brisamar
 INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALUES 
@@ -163,7 +214,21 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (3, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),         
 (2, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),          
 (1, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),          
-(1, 1, 7, '2023-11-14', 'Descrição da denúncia 17');          
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(4, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(4, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(3, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(2, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(1, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(4, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(5, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(3, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(2, 1, 7, '2023-11-14', 'Descrição da denúncia 17'),       
+(1, 1, 7, '2023-11-14', 'Descrição da denúncia 17');    
 
 -- Altiplano
 INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALUES 
@@ -245,13 +310,28 @@ INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALU
 (3, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),          
 (4, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),          
 (5, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),          
-(5, 1, 10, '2023-11-14', 'Descrição da denúncia 17');  
+(5, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(5, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(2, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(2, 1, 10, '2023-11-14', 'Descrição da denúncia 17'),  
+(1, 1, 10, '2023-11-14', 'Descrição da denúncia 17');  
 
 -- Miramar
 INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALUES 
 (4, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),          
 (4, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),          
-(4, 1, 11, '2023-11-14', 'Descrição da denúncia 17');  
+(4, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(3, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(1, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(4, 1, 11, '2023-11-14', 'Descrição da denúncia 17'),  
+(4, 1, 11, '2023-11-14', 'Descrição da denúncia 17');
 
 -- Bessa
 INSERT INTO Denuncia (id_categoria, id_usuario, id_bairro, Data, Descricao) VALUES 

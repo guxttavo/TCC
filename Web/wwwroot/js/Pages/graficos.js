@@ -184,15 +184,15 @@ var graficos = (function () {
           },
           {
             name: 'Iluminação Pública',
-            data: [11, 25, 40, 22, 22, 23, 11, 22, 33, 30]
+            data: [3, 25, 40, 22, 22, 23, 11, 22, 33, 30]
           },
           {
             name: 'Saneamento Básico',
-            data: [35, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [5, 41, 36, 26, 33, 48, 34, 34, 11]
           },
           {
             name: 'Mobilidade Urbana',
-            data: [35, 41, 36, 26, 33, 48, 34, 34, 11]
+            data: [1, 41, 36, 26, 33, 48, 34, 34, 11]
           },
           {
             name: 'Gestão de Resíduos',
