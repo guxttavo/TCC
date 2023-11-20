@@ -140,6 +140,12 @@ var graficos = (function () {
               fontSize: '15px'
             }
           },
+          title: {
+            text: "Quantidade de Denúncias",
+            style: {
+              fontSize: '16px'
+            }
+          },
           max: 150,
         },
       };
