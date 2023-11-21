@@ -23,7 +23,7 @@ CREATE TABLE usuario(
     cep INT NOT NULL,
     senha VARCHAR(200) NOT NULL,
     admin BOOL NOT NULL,
-    data_cadastro DATE NOT NULL,
+    data_cadastro DATE,
         
     CONSTRAINT pk_usuario PRIMARY KEY(id)
 );

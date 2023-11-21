@@ -33,20 +33,21 @@ namespace Data.Repositories
 
             if (usuarioDb != null)
             {
-                usuarioDb.Nome = usuario.Nome;
-                usuarioDb.Cpf = usuario.Cpf;
-                usuarioDb.DataNascimento = usuario.DataNascimento.ToUniversalTime();
-                usuarioDb.Telefone = usuario.Telefone;
-                usuarioDb.Email = usuario.Email;
-                usuarioDb.Cep = usuario.Cep;
-                usuarioDb.Senha = usuario.Senha;
-                usuarioDb.Admin = usuario.Admin;
-                usuarioDb.DataCadastro = DateTime.Now;
-                _dbContext.Update(usuarioDb);
+                usuario.Nome = usuario.Nome;
+                usuario.Cpf = usuario.Cpf;
+                usuario.DataNascimento = usuario.DataNascimento.ToUniversalTime();
+                usuario.Telefone = usuario.Telefone;
+                usuario.Email = usuario.Email;
+                usuario.Cep = usuario.Cep;
+                usuario.Senha = usuario.Senha;
+                usuario.Admin = usuario.Admin;
+                usuario.DataCadastro = DateTime.UtcNow;
+                _dbContext.Update(usuario);
                 _dbContext.SaveChanges();
             }
 
-            return usuarioDb;
+            // return usuario;
+            return usuario;
         }
 
         public bool DeletarUsuario(int id)
