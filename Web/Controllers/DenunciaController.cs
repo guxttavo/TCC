@@ -44,21 +44,21 @@ namespace Web.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult FecharDenuncia(int id)
-        {
-            _denunciaService.FecharDenuncia(id);
-            return RedirectToAction("Index");
-        }
+        // [HttpPost]
+        // public IActionResult FecharDenuncia(int id)
+        // {
+        //     _denunciaService.FecharDenuncia(id);
+        //     return RedirectToAction("Index");
+        // }
 
-        [HttpGet]
-        public IActionResult ViewEditarDenuncia(int id)
-        {
-            var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
-            ViewBag.BuscarBairros = _denunciaRepository.BuscarBairros();
+        // [HttpGet]
+        // public IActionResult ViewEditarDenuncia(int id)
+        // {
+        //     var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
+        //     ViewBag.BuscarBairros = _denunciaRepository.BuscarBairros();
 
-            return View("_editar", denunciaSelecionada);
-        }
+        //     return View("_editar", denunciaSelecionada);
+        // }
 
         [HttpPost]
         public IActionResult EditarDenuncia(Denuncia denuncia)

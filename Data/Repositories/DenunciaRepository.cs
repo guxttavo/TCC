@@ -15,15 +15,18 @@ namespace Data.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<List<Bairro>> BuscarBairros()
+        public async Task<IEnumerable<Bairro>> BuscarBairros()
         {
-            return _dbContext.Bairros
-            .AsSingleQuery()
-            .Select(x => new Bairro
-            {
-                Id = x.Id,
-                Nome = x.Nome
-            }).ToListAsync();
+            // return _dbContext.Bairros
+            // .AsSingleQuery()
+            // .Select(x => new Bairro
+            // {
+            //     Id = x.Id,
+            //     Nome = x.Nome
+            // }).ToListAsync();
+            var bairros = await _dbContext.Bairros.ToListAsync();
+
+            return bairros;
         }
 
         public async Task<IEnumerable<Categoria>> BuscarCategorias()

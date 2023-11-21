@@ -1,7 +1,9 @@
-@* @model List<Categoria> *@
+@model List<Categoria>
 
 @{
     var bairros = ViewBag.BuscarBairros;
+    var categorias = ViewBag.BuscarCategorias;
+    var jooj = "string";
 }
 
 <div class="container-geral">
@@ -10,7 +12,7 @@
 
 <div class="container-cadastrar">
     <h1 class="titulo-form">Editar uma Denúncia</h1>
-    <div class="cor-de-fundo">
+    <div class="cor-de-fundo" style="border-radius:5px">
         <div class="container mt-5">
             <form id="cadastrarDenuncia">
                 <div class="row">
@@ -31,40 +33,27 @@
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
                         <select id="categorias" class="form-select drop-down" name="IdCategoria">
-                            @if (Model != null && Model.Any())
+                            @foreach (var categoria in categorias)
                             {
-                                @foreach (var categoria in Model)
+                                @if (categoria.IdCategoriaPai == null)
                                 {
-                                    @if (categoria.IdCategoriaPai == null)
-                                    {
-                                        <option data-nome="@categoria.Nome" value="@categoria.Id">@categoria.Nome</option>
-                                    }
+                                    <option data-nome="@categoria.Nome" value="@categoria.Id">@categoria.Nome</option>
                                 }
-                            }
-                            else
-                            {
-                                <h1>Nenhum dado encontrado!</h1>
                             }
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
                         <select id="subcategorias" class="form-select drop-down" name="IdCategoriaPai">
-                            @if (Model != null && Model.Any())
+                            @foreach (var subcategoria in categorias)
                             {
-                                @foreach (var subcategoria in Model)
+                                @if (subcategoria.IdCategoriaPai != null)
                                 {
-                                    @if (subcategoria.IdCategoriaPai != null)
-                                    {
-                                        <option data-nome="@subcategoria.Nome" value="@subcategoria.Id" name="">
-                                            @subcategoria.Nome</option>
-                                    }
+                                    <option data-nome="@subcategoria.Nome" value="@subcategoria.Id" name="">
+                                        @subcategoria.Nome</option>
                                 }
                             }
-                            else
-                            {
-                                <h1>Nenhum dado encontrado!</h1>
-                            }
+
                         </select>
                     </div>
                     <div class="jooj form-group">

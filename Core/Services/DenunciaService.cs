@@ -12,10 +12,10 @@ namespace Core.Services
         {
             _denunciaRepository = denunciaRepository;
         }
-        public Task<List<Bairro>> BuscarBairros()
-        {
-            return _denunciaRepository.BuscarBairros();
-        }
+        // public Task<List<Bairro>> BuscarBairros()
+        // {
+        //     return _denunciaRepository.BuscarBairros();
+        // }
 
         public Task<IEnumerable<Categoria>> BuscarCategorias()
         {

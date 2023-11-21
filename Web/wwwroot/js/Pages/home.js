@@ -1,7 +1,8 @@
 var home = (function () {
     var configs = {
         urls: {
-            QtdDenunciasPorBairro: ''
+            viewEditarDenuncia: '',
+            fecharDenuncia: '',
         },
     };
 
@@ -9,8 +10,24 @@ var home = (function () {
         configs = $configs;
     };
 
+    var fecharDenuncia = function (id) {
+        var model = { Id: id };
+
+        $.post(configs.urls.fecharDenuncia, model).done(() => {
+            window.location.href = '/Home/Index';
+        })
+    }
+
+    var viewEditar = function () {
+        $.get(configs.urls.viewEditarDenuncia).done(function () {
+            location.href = configs.urls.viewEditarDenuncia;
+        })
+    };
+
     return {
         init: init,
+        fecharDenuncia: fecharDenuncia,
+        viewEditar: viewEditar
     }
 })()
 
