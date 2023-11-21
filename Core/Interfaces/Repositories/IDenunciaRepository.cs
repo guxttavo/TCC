@@ -6,6 +6,7 @@ namespace Core.Interfaces.Repositories
     {
         Task<List<Bairro>> BuscarBairros();
         Task<IEnumerable<Categoria>> BuscarCategorias();
+        Denuncia BuscarDenuncia(int id);
         Task<IEnumerable<Categoria>> BuscarSubcategorias();
         Task CadastrarDenuncia(Denuncia denuncia);
         Task<IEnumerable<Bairro>> QtdDenunciaPorBairro();
@@ -13,5 +14,7 @@ namespace Core.Interfaces.Repositories
         Task<IEnumerable<Bairro>> QtdDenunciasPorCategoriaPorBairro();
         Task<IEnumerable<Denuncia>> BuscarDenuncias();
         bool FecharDenuncia(int id);
+        Denuncia EditarDenuncia(Denuncia denuncia);
+
     }
 }

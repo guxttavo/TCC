@@ -18,9 +18,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
-            ViewBag.BuscarBairros = await _denunciaService.BuscarBairros();
-            // ViewBag.QtdDenunciasPorBairroGraficos = await _denunciaRepository.QtdDenunciasPorBairroGraficos();
-            // var jooj = await _denunciaRepository.QtdDenunciasPorBairroGraficos();
+            ViewBag.BuscarBairros = await _denunciaRepository.BuscarBairros();
 
             return View("Index", categorias);
         }
@@ -54,9 +52,19 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult ViewEditarDenuncia()
+        public IActionResult ViewEditarDenuncia(int id)
         {
-            return View("_editar");
+            var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
+            ViewBag.BuscarBairros = _denunciaRepository.BuscarBairros();
+
+            return View("_editar", denunciaSelecionada);
+        }
+
+        [HttpPost]
+        public IActionResult EditarDenuncia(Denuncia denuncia)
+        {
+            _denunciaRepository.EditarDenuncia(denuncia);
+            return RedirectToAction("Index");
         }
     }
 }

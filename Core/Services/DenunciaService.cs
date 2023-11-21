@@ -55,6 +55,9 @@ namespace Core.Services
             return _denunciaRepository.FecharDenuncia(id);
         }
 
-
+        public Task<IEnumerable<Denuncia>> BuscarDenunciaPorId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

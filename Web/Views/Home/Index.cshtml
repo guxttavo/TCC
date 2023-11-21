@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<Denuncia>
 
+@{
+    var bairros = ViewBag.BuscarBairros;
+}
+
 <header>
     <link rel="stylesheet" href="~/css/Pages/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -31,7 +35,7 @@
                         <a class="fechar-denuncia" onclick="denuncia.fecharDenuncia(@denuncia.Id)">
                             Fechar Denuncia
                         </a>
-                        <a class="editar-denuncia" onclick="denuncia.viewEditar()">
+                        <a class="editar-denuncia" onclick="denuncia.viewEditar(@denuncia.Id)">
                             Editar Denuncia
                         </a>
                     </div>
@@ -50,8 +54,8 @@
 <script>
     denuncia.init({
         urls: {
-            fecharDenuncia:'@Url.Action("FecharDenuncia","denuncia")',
-            viewEditarDenuncia:'@Url.Action("ViewEditarDenuncia","denuncia")'
+            fecharDenuncia: '@Url.Action("FecharDenuncia", "denuncia")',
+            viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "denuncia")'
         }
     });
 </script>

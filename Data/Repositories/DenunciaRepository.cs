@@ -135,12 +135,24 @@ namespace Data.Repositories
                                     .ToListAsync();
 
         }
-        // public async Task<IEnumerable<Denuncia>> QtdDenunciasPorCategoriaPorBairro()
-        // {
-        //     return await _dbContext.Denuncias
-        //                           .Include(x => x.Bairro)
-        //                           .Include(x => x.Categoria)
-        //                           .ToListAsync();
-        // }
+
+        public Denuncia EditarDenuncia(Denuncia denuncia)
+        {
+            Denuncia denunciaDb = BuscarDenuncia(denuncia.Id);
+
+            if (denunciaDb != null)
+            {
+                denuncia.IdCategoria = denuncia.IdCategoria;
+                denuncia.IdBairro = denuncia.IdBairro;
+                denuncia.Data = denuncia.Data.ToUniversalTime();
+                denuncia.Descricao = denuncia.Descricao;
+
+                _dbContext.Update(denuncia);
+                _dbContext.SaveChanges();
+            }
+
+            return denuncia;
+        }
+
     }
 }

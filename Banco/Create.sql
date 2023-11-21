@@ -1,6 +1,6 @@
 CREATE TABLE categoria(
     id INT GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR(200) NOT NULL,
+    nome VARCHAR(200),
     id_categoria_pai INT, 
 
     CONSTRAINT pk_categoria PRIMARY KEY(id)
