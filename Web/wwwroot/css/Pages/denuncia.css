@@ -1,4 +1,4 @@
-*{
+* {
     overflow: hidden;
 }
 
@@ -10,7 +10,7 @@
     margin-bottom: 15px;
 }
 
-.jooj{
+.jooj {
     display: flex;
     flex-direction: column;
     resize: none;
@@ -19,6 +19,14 @@
     margin-top: -10px;
 }
 
-textarea{
+textarea {
     margin-bottom: -20px;
+}
+
+.cacete {
+    margin-top: -6px;
+}
+
+.cacete02 {
+    margin-top: 2px;
 }

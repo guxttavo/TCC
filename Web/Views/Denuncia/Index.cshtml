@@ -18,11 +18,11 @@
         <div class="container mt-5">
             <form id="cadastrarDenuncia">
                 <div class="row">
-                    <div class="mb-3 col-md-6">
+                    <div class="mb-3 col-md-6 cacete02">
                         <label>Data</label>
                         <input type="date" class="form-control" name="data" required>
                     </div>
-                    <div class="mb-3 col-md-6">
+                    <div class="mb-3 col-md-6 cacete">
                         <label for="tipoUsuario" class="form-label">Bairro</label>
                         <select id="bairros" class="form-select drop-down" name="Bairro">
                             @foreach (var bairro in bairros)
@@ -60,7 +60,7 @@
                                 {
                                     @if (subcategoria.IdCategoriaPai != null)
                                     {
-                                        <option data-nome="@subcategoria.Nome" value="@subcategoria.Id" name="">
+                                        <option data-nome="@subcategoria.Nome" value="@subcategoria.IdCategoriaPai" name="">
                                             @subcategoria.Nome</option>
                                     }
                                 }

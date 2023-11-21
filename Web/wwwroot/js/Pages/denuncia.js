@@ -32,33 +32,37 @@ var denuncia = (function () {
         })
     }
 
-    // $("#categorias").on('change', function () {
-    //     var idCategoria = $(this).val();
-    //     var idCategoriaPai = $("#subcategorias").val();
-    //     var subCategorias = [];
+    $("#categorias").on('change', function () {
+        // armazena o id da categoria atual
+        var idCategoria = $(this).val();
+        // armazena o id da da subcategoria atual
+        var idCategoriaPai = $("#subcategorias").val();
 
-    //     $("#subcategorias option").hide();
-    //     $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
+        // $("#subcategorias option").hide();
+        // $("#subcategorias option[data-categoria='" + idCategoria + "']").show();
 
-    //     $("#subcategorias option").each(function () {
-    //         var id = $(this).val();
-    //         var nome = $(this).text();
-    //         subCategorias.push({
-    //             id: id,
-    //             nome: nome
-    //         });
+        $("#subcategorias option").each(function () {
+            if (idCategoria == idCategoriaPai) {
+                console.log("teste");
+            }
+            // var id = $(this).val();
+            // var nome = $(this).text();
+            // idSubCategorias.push({
+            //     id: id,
+            //     nome: nome
+            // });
+        })
 
-    //     })
+        // console.log(idCategoriaPai);
 
-    //     $.each(subCategorias, function () {
-    //         if (idCategoria == this.id) {
-    //             $("#subcategorias").append('<option value="' + this.id + '">' + this.nome + '</option>');
-    //         } else {
+        // $.each(subCategorias, function () {
+        //     if (idSubCategorias == this.id) {
+        //         $("#subcategorias").append('<option value="' + this.id + '">' + this.nome + '</option>');
+        //     } else {
 
-    //         }
-
-    //     })
-    // });
+        //     }
+        // })
+    });
 
     return {
         init: init,
