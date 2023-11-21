@@ -3,7 +3,8 @@ var denuncia = (function () {
         urls: {
             cadastrarDenuncia: '',
             viewGraficos: '',
-            fecharDenuncia: ''
+            fecharDenuncia: '',
+            viewEditarDenuncia: ''
         },
     };
 
@@ -22,6 +23,7 @@ var denuncia = (function () {
         $.post(configs.urls.cadastrarDenuncia, model).done(() => {
             window.location.href = '/Grafico/Index';
         });
+        console.log(model);
     };
 
     var fecharDenuncia = function (id) {
@@ -31,6 +33,12 @@ var denuncia = (function () {
             window.location.href = '/Home/Index';
         })
     }
+
+    var viewEditar = function () {
+        $.get(configs.urls.viewEditarDenuncia).done(function () {
+            location.href = configs.urls.viewEditarDenuncia;
+        })
+    };
 
     $("#categorias").on('change', function () {
         // armazena o id da categoria atual
@@ -67,6 +75,7 @@ var denuncia = (function () {
     return {
         init: init,
         cadastrarDenuncia: cadastrarDenuncia,
-        fecharDenuncia: fecharDenuncia
+        fecharDenuncia: fecharDenuncia,
+        viewEditar: viewEditar
     }
 })()

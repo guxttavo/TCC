@@ -18,10 +18,10 @@
                     <h3>Data: @denuncia.Data.Date</h3>
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
                     <h3>Categoria: @denuncia.Categoria.Nome</h3>
-                    @* @if (@denuncia.Categoria.IdCategoriaPai == null)
+                    @if (@denuncia.Categoria.IdCategoriaPai != null)
                     {
                         <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
-                    } *@
+                    }
                 </div>
                 <div class="ajuste">
                     <text-area class="descricao">
@@ -31,7 +31,7 @@
                         <a class="fechar-denuncia" onclick="denuncia.fecharDenuncia(@denuncia.Id)">
                             Fechar Denuncia
                         </a>
-                        <a class="editar-denuncia" onclick="denuncia.editarDenuncia()">
+                        <a class="editar-denuncia" onclick="denuncia.viewEditar()">
                             Editar Denuncia
                         </a>
                     </div>
@@ -50,7 +50,8 @@
 <script>
     denuncia.init({
         urls: {
-            fecharDenuncia:'@Url.Action("FecharDenuncia","denuncia")'
+            fecharDenuncia:'@Url.Action("FecharDenuncia","denuncia")',
+            viewEditarDenuncia:'@Url.Action("ViewEditarDenuncia","denuncia")'
         }
     });
 </script>

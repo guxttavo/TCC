@@ -31,6 +31,10 @@ namespace Web.Controllers
             Denuncia denuncia = new Denuncia
             {
                 IdCategoria = idCategoria,
+                Categoria = new Categoria
+                {
+                    IdCategoriaPai = idSubcategoria
+                },
                 IdBairro = idBairro,
                 Data = data,
                 Descricao = descricao,
@@ -47,6 +51,12 @@ namespace Web.Controllers
         {
             _denunciaService.FecharDenuncia(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ViewEditarDenuncia()
+        {
+            return View("_editar");
         }
     }
 }

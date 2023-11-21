@@ -1,16 +1,8 @@
-@model List<Categoria>
+@* @model List<Categoria>
 
 @{
     var bairros = ViewBag.BuscarBairros;
 }
-
-<head>
-    <link rel="stylesheet" href="~/css/Pages/denuncia.css" asp-append-version="true" />
-</head>
-
-<div class="container-geral">
-    <h1 class="titulo-geral ">Realize uma Denuncia</h1>
-</div>
 
 <div class="container-cadastrar">
     <h1 class="titulo-form">Realize uma Denúncia</h1>
@@ -84,18 +76,6 @@
             </form>
         </div>
     </div>
-</div>
+</div> *@
 
-<script src="~/lib/apexcharts/apexcharts.min.js" asp-append-version="true"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/js/Pages/denuncia.js" asp-append-version="true"></script>
-
-<script>
-    denuncia.init({
-        urls: {
-            cadastrarDenuncia: '@Url.Action("CadastrarDenuncia", "Denuncia")',
-            viewGraficos: '@Url.Action("Index", "Grafico")',
-        }
-    });
-</script>
+<h1>jOOj</h1>

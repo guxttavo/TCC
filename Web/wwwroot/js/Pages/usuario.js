@@ -32,7 +32,7 @@ var usuario = (function () {
             $(".container-editar").show();
         })
     };
-""
+
     var viewListar = function () {
         $.get(configs.urls.viewListar).done(function (html) {
             location.href = configs.urls.viewListar;

@@ -34,6 +34,10 @@ namespace Core.Services
                 IdCategoria = denuncia.IdCategoria,
                 IdUsuario = denuncia.IdUsuario,
                 IdBairro = denuncia.IdBairro,
+                Categoria = new Categoria
+                {
+                    IdCategoriaPai = denuncia.Categoria.IdCategoriaPai
+                },
                 Data = denuncia.Data.ToUniversalTime(),
                 Descricao = denuncia.Descricao
             };
@@ -51,6 +55,6 @@ namespace Core.Services
             return _denunciaRepository.FecharDenuncia(id);
         }
 
-    
+
     }
 }
