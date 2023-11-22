@@ -3,7 +3,8 @@ var home = (function () {
         urls: {
             viewEditarDenuncia: '',
             fecharDenuncia: '',
-            viewHome: ''
+            viewHome: '',
+            editarDenuncia: ''
         },
     };
 
@@ -30,8 +31,8 @@ var home = (function () {
     var editarDenuncia = function () {
         var model = $("#editarDenuncia").serializeObject();
 
-        $.post(configs.urls.editarUsuario, model).done(() => {
-            location.href = configs.urls.viewListar;
+        $.post(configs.urls.editarDenuncia, model).done(() => {
+            location.href = configs.urls.viewHome;
         }).fail(function () {
             console.log("deu ruim");
         })

@@ -13,7 +13,8 @@
         <div class="container mt-5" style="color:white">
             <form id="editarDenuncia">
                 <div class="row">
-                    <input type="hidden" name="Id">
+                    <input type="hidden" asp-for="Id">
+                    <input type="hidden" asp-for="IdUsuario">
                     <div class="mb-3 col-md-6 cacete02">
                         <label class="cachorro" style="margin-left:120px">Data</label>
                         <input type="date" class="form-control" asp-for="Data" required>
