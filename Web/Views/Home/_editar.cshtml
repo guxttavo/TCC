@@ -1,4 +1,5 @@
 @* @model List<Categoria> *@
+@model Denuncia
 
 @{
     var bairros = ViewBag.BuscarBairros;
@@ -15,11 +16,11 @@
                     <input type="hidden" name="Id">
                     <div class="mb-3 col-md-6 cacete02">
                         <label class="cachorro" style="margin-left:120px">Data</label>
-                        <input type="date" class="form-control" name="data" required>
+                        <input type="date" class="form-control" asp-for="Data" required>
                     </div>
                     <div class="mb-3 col-md-6 boi" >
                         <label for="tipoUsuario" class="form-label" style="margin-left:120px;margin-top:-1px;margin-bottom: 1px">Bairro</label>
-                        <select id="bairros" class="form-select drop-down" name="Bairro" >
+                        <select id="bairros" class="form-select drop-down" asp-for="IdBairro" >
                             @foreach (var bairro in bairros)
                             {
                                 <option value="@bairro.Id">@bairro.Nome</option>
@@ -29,7 +30,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="cachorro form-label" style="margin-left:65px" >Categoria Denuncia</label>
-                        <select id="categorias" class="form-select drop-down" name="IdCategoria">
+                        <select id="categorias" class="form-select drop-down" asp-for="IdCategoria">
                             @foreach (var categoria in categorias)
                             {
                                 @if (categoria.IdCategoriaPai == null)
@@ -41,7 +42,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="tipoUsuario" class="cachorro form-label" style="margin-left:55px">Subcategoria Denuncia</label>
-                        <select id="subcategorias" class="form-select drop-down" name="IdCategoriaPai">
+                        <select id="subcategorias" class="form-select drop-down">
                             @foreach (var subcategoria in categorias)
                             {
                                 @if (subcategoria.IdCategoriaPai != null)
@@ -55,7 +56,7 @@
                     </div>
                     <div class="jooj-denuncia form-group">
                         <label class="cachorro">Descrição</label>
-                        <textarea rows="3" id="cadastrarDenuncia" name="Descricao"></textarea>
+                        <textarea rows="3" id="cadastrarDenuncia" asp-for="Descricao"></textarea>
                     </div>
                 </div>
                 <div class="ajuste-botoes">
