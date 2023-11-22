@@ -32,11 +32,6 @@ public class HomeController : AuthenticatedController
         return View("_editar", denunciaSelecionada);
     }
 
-    [HttpGet]
-    public IActionResult ConfirmacaoFecharDenuncia()
-    {
-        return View("_confirmacaoFecharDenuncia");
-    }
 
     [HttpPost]
     public IActionResult FecharDenuncia(int id)

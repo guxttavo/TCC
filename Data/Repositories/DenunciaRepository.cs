@@ -26,13 +26,13 @@ namespace Data.Repositories
             // }).ToListAsync();
             return _dbContext.Bairros.ToList();
 
-            
+
         }
 
         public IEnumerable<Categoria> BuscarCategorias()
         {
             return _dbContext.Categorias.ToList();
-            
+
         }
 
         public async Task<IEnumerable<Categoria>> BuscarSubcategorias()
@@ -48,7 +48,7 @@ namespace Data.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public Denuncia BuscarDenuncia(int id)  
+        public Denuncia BuscarDenuncia(int id)
         {
             return _dbContext.Denuncias.FirstOrDefault(x => x.Id == id);
         }
@@ -143,18 +143,16 @@ namespace Data.Repositories
         {
             Denuncia denunciaDb = BuscarDenuncia(denuncia.Id);
 
-            if (denunciaDb != null)
-            {
-                denuncia.IdCategoria = denuncia.IdCategoria;
-                denuncia.IdBairro = denuncia.IdBairro;
-                denuncia.Data = denuncia.Data.ToUniversalTime();
-                denuncia.Descricao = denuncia.Descricao;
+            denunciaDb.IdCategoria = denuncia.IdCategoria;
+            denunciaDb.IdBairro = denuncia.IdBairro;
+            denunciaDb.Data = denuncia.Data.ToUniversalTime();
+            denunciaDb.Descricao = denuncia.Descricao;
 
-                _dbContext.Update(denuncia);
-                _dbContext.SaveChanges();
-            }
+            _dbContext.Denuncias.Update(denunciaDb);
+            _dbContext.SaveChanges();
 
-            return denuncia;
+
+            return denunciaDb;
         }
 
     }

@@ -31,7 +31,7 @@
                         @denuncia.Descricao
                     </text-area>
                     <div class="botoes-macaco">
-                        <a class="btn btn-danger" onclick="home.viewConfirmacaoFecharDenuncia()">
+                        <a class="btn btn-danger" onclick="home.fecharDenuncia(@denuncia.Id)">
                             Fechar
                         </a>
                         <a class="btn btn-primary" onclick="home.viewEditarDenuncia(@denuncia.Id)">
@@ -58,7 +58,6 @@
             viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "home")',
             editarDenuncia: '@Url.Action("EditarDenuncia", "home")',
             viewHome: '@Url.Action("Index", "home")',
-            viewConfirmacaoFecharDenuncia: '@Url.Action("ConfirmacaoFecharDenuncia", "home")',
         }
     });
 </script>
