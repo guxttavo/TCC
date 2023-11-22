@@ -9,6 +9,7 @@
 <h1 class="titulo-geral">Suas Denúncias: </h1>
 <div class="container-geral"></div>
 <div class="container-batata"></div>
+<div class="confirmacao-fechar-denuncia"></div>
 
 <section class="container-geral">
     @foreach (Denuncia denuncia in Model)
@@ -17,7 +18,7 @@
             <div class="conteudo-denuncia">
                 <div class="opcoes-denuncia">
                     <h3>Nº: @denuncia.Id</h3>
-                    <h3>Data: @denuncia.Data.Date</h3>
+                    <h3>Data: @denuncia.Data.Date.ToString("dd/MM/yyyy")</h3>
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
                     <h3>Categoria: @denuncia.Categoria.Nome</h3>
                     @* @if (@denuncia.Categoria.IdCategoriaPai != null)
@@ -29,12 +30,12 @@
                     <text-area class="descricao">
                         @denuncia.Descricao
                     </text-area>
-                    <div class="botoes-denuncia">
-                        <a class="fechar-denuncia" onclick="home.fecharDenuncia(@denuncia.Id)">
-                            Fechar Denuncia
+                    <div class="botoes-macaco">
+                        <a class="btn btn-danger" onclick="home.viewConfirmacaoFecharDenuncia()">
+                            Fechar
                         </a>
-                        <a class="editar-denuncia" onclick="home.viewEditarDenuncia(@denuncia.Id)">
-                            Editar Denuncia
+                        <a class="btn btn-primary" onclick="home.viewEditarDenuncia(@denuncia.Id)">
+                            Editar
                         </a>
                     </div>
                 </div>
@@ -57,6 +58,7 @@
             viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "home")',
             editarDenuncia: '@Url.Action("EditarDenuncia", "home")',
             viewHome: '@Url.Action("Index", "home")',
+            viewConfirmacaoFecharDenuncia: '@Url.Action("ConfirmacaoFecharDenuncia", "home")',
         }
     });
 </script>

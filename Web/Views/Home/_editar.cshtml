@@ -19,9 +19,10 @@
                         <label class="cachorro" style="margin-left:120px">Data</label>
                         <input type="date" class="form-control" asp-for="Data" required>
                     </div>
-                    <div class="mb-3 col-md-6 boi" >
-                        <label for="tipoUsuario" class="form-label" style="margin-left:120px;margin-top:-1px;margin-bottom: 1px">Bairro</label>
-                        <select id="bairros" class="form-select drop-down" asp-for="IdBairro" >
+                    <div class="mb-3 col-md-6 boi">
+                        <label for="tipoUsuario" class="form-label"
+                            style="margin-left:120px;margin-top:-1px;margin-bottom: 1px">Bairro</label>
+                        <select id="bairros" class="form-select drop-down" asp-for="IdBairro">
                             @foreach (var bairro in bairros)
                             {
                                 <option value="@bairro.Id">@bairro.Nome</option>
@@ -30,7 +31,8 @@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:65px" >Categoria Denuncia</label>
+                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:65px">Categoria
+                            Denuncia</label>
                         <select id="categorias" class="form-select drop-down" asp-for="IdCategoria">
                             @foreach (var categoria in categorias)
                             {
@@ -42,7 +44,8 @@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:55px">Subcategoria Denuncia</label>
+                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:55px">Subcategoria
+                            Denuncia</label>
                         <select id="subcategorias" class="form-select drop-down">
                             @foreach (var subcategoria in categorias)
                             {
@@ -61,10 +64,10 @@
                     </div>
                 </div>
                 <div class="ajuste-botoes">
-                    <button type="button" class="btn btn-dark botao-denunciar"
+                    <button type="button" class="btn btn-danger botao-denunciar"
                         onclick="home.editarDenuncia()">Denunciar</button>
+                    <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Voltar</a>
                 </div>
-                <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Voltar</a>
             </form>
         </div>
     </div>

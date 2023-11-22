@@ -4,7 +4,8 @@ var home = (function () {
             viewEditarDenuncia: '',
             fecharDenuncia: '',
             viewHome: '',
-            editarDenuncia: ''
+            editarDenuncia: '',
+            viewConfirmacaoFecharDenuncia: ''
         },
     };
 
@@ -19,12 +20,20 @@ var home = (function () {
             window.location.href = '/Home/Index';
         })
     }
+    var viewConfirmacaoFecharDenuncia = function (id) {
+
+        $.get(configs.urls.viewConfirmacaoFecharDenuncia).done(function (html) {
+            $(".container-geral").hide();
+            $(".container-batata").html(html);
+            $(".container-batata").show();
+        })
+    }
 
     var viewEditarDenuncia = function (id) {
         $.get(configs.urls.viewEditarDenuncia, { id: id }).done(function (html) {
             $(".container-geral").hide();
-            $(".container-batata").html(html);
-            $(".container-batata").show();
+            $(".confirmacao-fechar-denuncia").html(html);
+            $(".confirmacao-fechar-denuncia").show();
         })
     };
 
@@ -43,7 +52,8 @@ var home = (function () {
         init: init,
         fecharDenuncia: fecharDenuncia,
         viewEditarDenuncia: viewEditarDenuncia,
-        editarDenuncia: editarDenuncia
+        editarDenuncia: editarDenuncia,
+        viewConfirmacaoFecharDenuncia: viewConfirmacaoFecharDenuncia
     }
 })()
 

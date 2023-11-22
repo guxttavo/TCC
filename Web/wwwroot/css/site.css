@@ -171,6 +171,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: -20px;
 }
 
 .botao-sair {
@@ -244,8 +245,8 @@ textarea {
   border-radius: 5px;
 }
 
-.container-batata{
-  margin-left: 155px;
+.container-batata {
+  margin-left: 310px;
 }
 
 .titulo-form-editar-denuncia {
@@ -259,11 +260,10 @@ textarea {
   text-align: center;
 }
 
-.cachorro{
+.cachorro {
   text-align: center;
 }
 
-.boi{
+.boi {
   margin-top: -200px;
 }
-

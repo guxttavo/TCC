@@ -28,8 +28,7 @@
 
 .opcoes-denuncia h3 {
     margin-right: 10px;
-    font-size: 15px;
-    border: solid 1px black;
+    font-size: 17px;
 }
 
 .descricao {
@@ -38,6 +37,7 @@
     background-color: rgba(0, 0, 0, 0.187);
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 12px;
 }
 
 .conteudo-denuncia {
@@ -45,24 +45,52 @@
     padding-left: 20px;
 }
 
+.botoes-denuncia {
+    margin-top: 20px;
+}
+
 .fechar-denuncia {
     width: 150px;
     text-decoration: none;
     background-color: red;
     cursor: pointer;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+}
+
+.fechar-denuncia:hover {
+    width: 150px;
+    text-decoration: none;
+    background-color: red;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100px;
     color: white;
 }
 
 .editar-denuncia {
-    width: 150px;
+    width: 180px;
     text-decoration: none;
-    background-color: rgb(154, 154, 7);
+    background-color: #0d6efd;
     cursor: pointer;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 100px;
     color: white;
+    margin-left: 10px;
+    border: none;
+}
+
+.editar-denuncia:hover {
+    width: 180px;
+    text-decoration: none;
+    background-color: #0d6efd;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+    margin-left: 10px;
+    border: none;
 }
 
 .ajuste {
@@ -70,4 +98,30 @@
     flex-direction: column;
 }
 
+.btn-primary {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
 
+.botao-voltar {
+    border-radius: 20px;
+    background-color: #0d6efd;
+    border: none;
+}
+
+.botao-voltar:hover {
+    border-radius: 20px;
+
+}
+
+.confirmacao-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 200px;
+    width: 60vw;
+}
+
+.botoes-macaco{
+    margin-bottom: 200px;
+}
