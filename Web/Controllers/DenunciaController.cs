@@ -23,23 +23,19 @@ namespace Web.Controllers
             return View("Index", categorias);
         }
 
-        public async Task<IActionResult> CadastrarDenuncia(int idCategoria, int idSubcategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
+        public async Task<IActionResult> CadastrarDenuncia(int idCategoria, int idBairro, DateTime data, string descricao, int idUsuario = 1)
         {
             // await _denunciaService.CadastrarDenuncia(idSubcategoria, idBairro, data, descricao, idUsuario);
             Denuncia denuncia = new Denuncia
             {
                 IdCategoria = idCategoria,
-                Categoria = new Categoria
-                {
-                    IdCategoriaPai = idSubcategoria
-                },
                 IdBairro = idBairro,
-                Data = data,
+                Data = data.ToUniversalTime(),
                 Descricao = descricao,
                 IdUsuario = idUsuario
             };
 
-            await _denunciaService.CadastrarDenuncia(denuncia);
+            await _denunciaRepository.CadastrarDenuncia(denuncia);
 
             return RedirectToAction("Index");
         }
@@ -59,12 +55,5 @@ namespace Web.Controllers
 
         //     return View("_editar", denunciaSelecionada);
         // }
-
-        [HttpPost]
-        public IActionResult EditarDenuncia(Denuncia denuncia)
-        {
-            _denunciaRepository.EditarDenuncia(denuncia);
-            return RedirectToAction("Index");
-        }
     }
 }

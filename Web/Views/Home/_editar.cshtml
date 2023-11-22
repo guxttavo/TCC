@@ -1,9 +1,8 @@
-@model List<Categoria>
+@* @model List<Categoria> *@
 
 @{
     var bairros = ViewBag.BuscarBairros;
     var categorias = ViewBag.BuscarCategorias;
-    var jooj = "string";
 }
 
 <div class="container-geral">
@@ -14,8 +13,9 @@
     <h1 class="titulo-form">Editar uma Denúncia</h1>
     <div class="cor-de-fundo" style="border-radius:5px">
         <div class="container mt-5">
-            <form id="cadastrarDenuncia">
+            <form id="editarDenuncia">
                 <div class="row">
+                    <input type="hidden" name="Id">
                     <div class="mb-3 col-md-6 cacete02">
                         <label>Data</label>
                         <input type="date" class="form-control" name="data" required>
@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <div class="ajuste-botoes">
-                    <button type="submit" class="btn btn-dark botao-denunciar"
-                        onclick="denuncia.cadastrarDenuncia()">Denunciar</button>
+                    <button type="button" class="btn btn-dark botao-denunciar"
+                        onclick="home.editarDenuncia()">Denunciar</button>
                 </div>
                 <a class="btn btn-dark" asp-controller="Usuario" asp-action="Index">Voltar</a>
             </form>

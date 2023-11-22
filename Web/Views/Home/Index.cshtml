@@ -18,10 +18,10 @@
                     <h3>Data: @denuncia.Data.Date</h3>
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
                     <h3>Categoria: @denuncia.Categoria.Nome</h3>
-                    @if (@denuncia.Categoria.IdCategoriaPai != null)
+                    @* @if (@denuncia.Categoria.IdCategoriaPai != null)
                     {
                         <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
-                    }
+                    } *@
                 </div>
                 <div class="ajuste">
                     <text-area class="descricao">
@@ -51,7 +51,8 @@
     home.init({
         urls: {
             fecharDenuncia: '@Url.Action("FecharDenuncia", "home")',
-            viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "home")'
+            viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "home")',
+            editarDenuncia: '@Url.Action("EditarDenuncia", "home")',
         }
     });
 </script>

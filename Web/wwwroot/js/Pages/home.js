@@ -18,16 +18,28 @@ var home = (function () {
         })
     }
 
-    var viewEditar = function () {
-        $.get(configs.urls.viewEditarDenuncia).done(function () {
+    var viewEditar = function (id) {
+        $.get(configs.urls.viewEditarDenuncia, { id: id }).done(function () {
             location.href = configs.urls.viewEditarDenuncia;
         })
     };
 
+    var editarDenuncia = function () {
+        var model = $("#editarDenuncia").serializeObject();
+
+        $.post(configs.urls.editarUsuario, model).done(() => {
+            location.href = configs.urls.viewListar;
+        }).fail(function () {
+            console.log("deu ruim");
+        })
+    }
+
+
     return {
         init: init,
         fecharDenuncia: fecharDenuncia,
-        viewEditar: viewEditar
+        viewEditar: viewEditar,
+        editarDenuncia: editarDenuncia
     }
 })()
 

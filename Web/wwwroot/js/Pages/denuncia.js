@@ -15,7 +15,7 @@ var denuncia = (function () {
     var cadastrarDenuncia = function () {
         var model = {
             idCategoria: $('#categorias').val(),
-            idSubcategoria: $('#subcategorias').val(),
+            // idSubcategoria: $('#subcategorias').val(),
             idBairro: $('#bairros').val(),
             data: $('#cadastrarDenuncia input[name="data"]').val(),
             descricao: $('#cadastrarDenuncia textarea[name="Descricao"]').val()

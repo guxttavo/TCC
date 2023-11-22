@@ -23,19 +23,26 @@ public class HomeController : AuthenticatedController
     }
 
     [HttpGet]
-    public async Task<IActionResult>  ViewEditarDenuncia(int id)
+    public async Task<IActionResult> ViewEditarDenuncia(int id)
     {
-        // var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
+        var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
         ViewBag.BuscarBairros = await _denunciaRepository.BuscarBairros();
         ViewBag.BuscarCategorias = await _denunciaRepository.BuscarCategorias();
 
-        return View("_editar");
+        return View("_editar", denunciaSelecionada);
     }
 
     [HttpPost]
     public IActionResult FecharDenuncia(int id)
     {
         _denunciaRepository.FecharDenuncia(id);
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public IActionResult EditarDenuncia(Denuncia denuncia)
+    {
+        _denunciaRepository.EditarDenuncia(denuncia);
         return RedirectToAction("Index");
     }
 }

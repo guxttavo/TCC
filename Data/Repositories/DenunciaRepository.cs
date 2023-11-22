@@ -48,7 +48,7 @@ namespace Data.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public Denuncia BuscarDenuncia(int id)
+        public Denuncia BuscarDenuncia(int id)  
         {
             return _dbContext.Denuncias.FirstOrDefault(x => x.Id == id);
         }
