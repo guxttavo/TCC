@@ -3,6 +3,7 @@ var home = (function () {
         urls: {
             viewEditarDenuncia: '',
             fecharDenuncia: '',
+            viewHome: ''
         },
     };
 
@@ -18,9 +19,11 @@ var home = (function () {
         })
     }
 
-    var viewEditar = function (id) {
-        $.get(configs.urls.viewEditarDenuncia, { id: id }).done(function () {
-            location.href = configs.urls.viewEditarDenuncia;
+    var viewEditarDenuncia = function (id) {
+        $.get(configs.urls.viewEditarDenuncia, { id: id }).done(function (html) {
+            $(".container-geral").hide();
+            $(".container-batata").html(html);
+            $(".container-batata").show();
         })
     };
 
@@ -38,7 +41,7 @@ var home = (function () {
     return {
         init: init,
         fecharDenuncia: fecharDenuncia,
-        viewEditar: viewEditar,
+        viewEditarDenuncia: viewEditarDenuncia,
         editarDenuncia: editarDenuncia
     }
 })()

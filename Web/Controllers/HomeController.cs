@@ -23,11 +23,11 @@ public class HomeController : AuthenticatedController
     }
 
     [HttpGet]
-    public async Task<IActionResult> ViewEditarDenuncia(int id)
+    public IActionResult ViewEditarDenuncia(int id)
     {
         var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
-        ViewBag.BuscarBairros = await _denunciaRepository.BuscarBairros();
-        ViewBag.BuscarCategorias = await _denunciaRepository.BuscarCategorias();
+        ViewBag.BuscarBairros = _denunciaRepository.BuscarBairros();
+        ViewBag.BuscarCategorias = _denunciaRepository.BuscarCategorias();
 
         return View("_editar", denunciaSelecionada);
     }

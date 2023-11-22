@@ -3,26 +3,23 @@
 @{
     var bairros = ViewBag.BuscarBairros;
     var categorias = ViewBag.BuscarCategorias;
+    Layout = null;
 }
 
-<div class="container-geral">
-    <h1 class="titulo-geral ">Realize uma Denuncia</h1>
-</div>
-
-<div class="container-cadastrar">
-    <h1 class="titulo-form">Editar uma Denúncia</h1>
-    <div class="cor-de-fundo" style="border-radius:5px">
-        <div class="container mt-5">
+<div class="container-batata">
+    <h1 class="titulo-form-editar-denuncia">Editar uma Denúncia</h1>
+    <div class="cor-de-fundo-editar-denuncia" style="border-radius:5px">
+        <div class="container mt-5" style="color:white">
             <form id="editarDenuncia">
                 <div class="row">
                     <input type="hidden" name="Id">
                     <div class="mb-3 col-md-6 cacete02">
-                        <label>Data</label>
+                        <label class="cachorro" style="margin-left:120px">Data</label>
                         <input type="date" class="form-control" name="data" required>
                     </div>
-                    <div class="mb-3 col-md-6 cacete">
-                        <label for="tipoUsuario" class="form-label">Bairro</label>
-                        <select id="bairros" class="form-select drop-down" name="Bairro">
+                    <div class="mb-3 col-md-6 boi" >
+                        <label for="tipoUsuario" class="form-label" style="margin-left:120px;margin-top:-1px;margin-bottom: 1px">Bairro</label>
+                        <select id="bairros" class="form-select drop-down" name="Bairro" >
                             @foreach (var bairro in bairros)
                             {
                                 <option value="@bairro.Id">@bairro.Nome</option>
@@ -31,7 +28,7 @@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="tipoUsuario" class="form-label">Categoria Denuncia</label>
+                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:65px" >Categoria Denuncia</label>
                         <select id="categorias" class="form-select drop-down" name="IdCategoria">
                             @foreach (var categoria in categorias)
                             {
@@ -43,7 +40,7 @@
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="tipoUsuario" class="form-label">Subcategoria Denuncia</label>
+                        <label for="tipoUsuario" class="cachorro form-label" style="margin-left:55px">Subcategoria Denuncia</label>
                         <select id="subcategorias" class="form-select drop-down" name="IdCategoriaPai">
                             @foreach (var subcategoria in categorias)
                             {
@@ -57,7 +54,7 @@
                         </select>
                     </div>
                     <div class="jooj form-group">
-                        <label class="descricao">Descrição</label>
+                        <label class="cachorro descricao">Descrição</label>
                         <textarea rows="3" id="cadastrarDenuncia" name="Descricao"></textarea>
                     </div>
                 </div>

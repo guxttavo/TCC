@@ -17,10 +17,10 @@ namespace Core.Services
         //     return _denunciaRepository.BuscarBairros();
         // }
 
-        public Task<IEnumerable<Categoria>> BuscarCategorias()
-        {
-            return _denunciaRepository.BuscarCategorias();
-        }
+        // public Task<IEnumerable<Categoria>> BuscarCategorias()
+        // {
+        //     return _denunciaRepository.BuscarCategorias();
+        // }
 
         public Task<IEnumerable<Categoria>> BuscarSubcategorias()
         {

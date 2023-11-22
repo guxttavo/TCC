@@ -15,7 +15,7 @@ namespace Data.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Bairro>> BuscarBairros()
+        public IEnumerable<Bairro> BuscarBairros()
         {
             // return _dbContext.Bairros
             // .AsSingleQuery()
@@ -24,15 +24,15 @@ namespace Data.Repositories
             //     Id = x.Id,
             //     Nome = x.Nome
             // }).ToListAsync();
-            var bairros = await _dbContext.Bairros.ToListAsync();
+            return _dbContext.Bairros.ToList();
 
-            return bairros;
+            
         }
 
-        public async Task<IEnumerable<Categoria>> BuscarCategorias()
+        public IEnumerable<Categoria> BuscarCategorias()
         {
-            var categorias = await _dbContext.Categorias.ToListAsync();
-            return categorias;
+            return _dbContext.Categorias.ToList();
+            
         }
 
         public async Task<IEnumerable<Categoria>> BuscarSubcategorias()

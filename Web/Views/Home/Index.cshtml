@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="~/lib/iziToast/dist/css/iziToast.min.css" />
 </header>
 
-<section class="container-geral">
-    <h1 class="titulo-geral">Suas Denúncias: </h1>
+<h1 class="titulo-geral">Suas Denúncias: </h1>
+<div class="container-geral"></div>
+<div class="container-batata"></div>
 
+<section class="container-geral">
     @foreach (Denuncia denuncia in Model)
     {
         <div class="container-denuncia">
@@ -19,9 +21,9 @@
                     <h3>Bairro: @denuncia.Bairro.Nome</h3>
                     <h3>Categoria: @denuncia.Categoria.Nome</h3>
                     @* @if (@denuncia.Categoria.IdCategoriaPai != null)
-                    {
-                        <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
-                    } *@
+                {
+                <h3>Subcategoria: @denuncia.Categoria.Nome</h3>
+                } *@
                 </div>
                 <div class="ajuste">
                     <text-area class="descricao">
@@ -31,7 +33,7 @@
                         <a class="fechar-denuncia" onclick="home.fecharDenuncia(@denuncia.Id)">
                             Fechar Denuncia
                         </a>
-                        <a class="editar-denuncia" onclick="home.viewEditar(@denuncia.Id)">
+                        <a class="editar-denuncia" onclick="home.viewEditarDenuncia(@denuncia.Id)">
                             Editar Denuncia
                         </a>
                     </div>
@@ -44,6 +46,7 @@
 <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/js/Pages/home.js" asp-append-version="true"></script>
+<script src="~/js/Pages/home.css" asp-append-version="true"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
@@ -53,6 +56,7 @@
             fecharDenuncia: '@Url.Action("FecharDenuncia", "home")',
             viewEditarDenuncia: '@Url.Action("ViewEditarDenuncia", "home")',
             editarDenuncia: '@Url.Action("EditarDenuncia", "home")',
+            viewHome: '@Url.Action("Index", "home")',
         }
     });
 </script>

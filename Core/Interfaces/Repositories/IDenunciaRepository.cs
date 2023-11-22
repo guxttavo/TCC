@@ -4,8 +4,8 @@ namespace Core.Interfaces.Repositories
 {
     public interface IDenunciaRepository
     {
-        Task<IEnumerable<Bairro>> BuscarBairros();
-        Task<IEnumerable<Categoria>> BuscarCategorias();
+        IEnumerable<Bairro> BuscarBairros();
+        IEnumerable<Categoria> BuscarCategorias();
         Denuncia BuscarDenuncia(int id);
         Task<IEnumerable<Categoria>> BuscarSubcategorias();
         Task CadastrarDenuncia(Denuncia denuncia);

@@ -227,3 +227,34 @@ textarea {
   background-color: #17171a;
   border-radius: 5px;
 }
+
+.cor-de-fundo-editar-denuncia {
+  height: 500px;
+  width: 620px;
+  background-color: #17171a;
+  border-radius: 5px;
+}
+
+.container-batata{
+  margin-left: 155px;
+}
+
+.titulo-form-editar-denuncia {
+  font-size: 45px;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+  background-color: #17171a;
+  border-radius: 15px 15px 15px 15px;
+  width: 40vw;
+  text-align: center;
+}
+
+.cachorro{
+  text-align: center;
+}
+
+.boi{
+  margin-top: -200px;
+}
+

@@ -15,10 +15,10 @@ namespace Web.Controllers
             _denunciaRepository = denunciaRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
         {
-            IEnumerable<Categoria> categorias = await _denunciaService.BuscarCategorias();
-            ViewBag.BuscarBairros = await _denunciaRepository.BuscarBairros();
+            IEnumerable<Categoria> categorias =  _denunciaRepository.BuscarCategorias();
+            ViewBag.BuscarBairros =  _denunciaRepository.BuscarBairros();
 
             return View("Index", categorias);
         }
@@ -45,15 +45,6 @@ namespace Web.Controllers
         // {
         //     _denunciaService.FecharDenuncia(id);
         //     return RedirectToAction("Index");
-        // }
-
-        // [HttpGet]
-        // public IActionResult ViewEditarDenuncia(int id)
-        // {
-        //     var denunciaSelecionada = _denunciaRepository.BuscarDenuncia(id);
-        //     ViewBag.BuscarBairros = _denunciaRepository.BuscarBairros();
-
-        //     return View("_editar", denunciaSelecionada);
         // }
     }
 }
