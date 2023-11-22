@@ -201,6 +201,15 @@ body {
   margin-top: -10px;
 }
 
+.jooj-denuncia {
+  display: flex;
+  flex-direction: column;
+  resize: none;
+  /* height: 150px; */
+  /* margin-bottom: -100px; */
+  margin-top: -10px;
+}
+
 textarea {
   margin-bottom: -20px;
 }
