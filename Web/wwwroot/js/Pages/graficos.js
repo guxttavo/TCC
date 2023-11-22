@@ -55,7 +55,7 @@ var graficos = (function () {
           categories: bairros,
           labels: {
             style: {
-              fontSize: '22px'
+              fontSize: '17px'
             }
           }
         },
@@ -63,6 +63,12 @@ var graficos = (function () {
           labels: {
             style: {
               fontSize: '15px'
+            }
+          },
+          title: {
+            text: "Quantidade de Denúncias",
+            style: {
+              fontSize: '16px'
             }
           },
           max: 100,
@@ -130,7 +136,7 @@ var graficos = (function () {
           categories: categorias,
           labels: {
             style: {
-              fontSize: '22px'
+              fontSize: '17px'
             }
           }
         },
