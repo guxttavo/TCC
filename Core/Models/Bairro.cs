@@ -2,7 +2,9 @@ namespace Core.Models
 {
     public class Bairro
     {
-        public short Id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
+
+        public IEnumerable<Denuncia> Denuncias { get; set; }
     }
 }
